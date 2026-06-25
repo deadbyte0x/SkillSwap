@@ -13,7 +13,12 @@ export default defineConfig({
       provider: 'v8',
       reporter: ['text', 'lcov'],
       include: ['src/**/*.{ts,tsx}'],
-      exclude: ['src/main.tsx', 'src/setupTests.ts', 'src/**/*.d.ts', 'src/**/*.stories.*'],
+      exclude: [
+        'src/main.tsx',
+        'src/setupTests.ts',
+        'src/**/*.d.ts',
+        'src/**/*.stories.*',
+      ],
       thresholds: {
         statements: 70,
       },
