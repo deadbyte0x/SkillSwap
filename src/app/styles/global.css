@@ -3,15 +3,27 @@
 /* ─── CSS Custom Properties ─────────────────────────────── */
 :root {
   /* Colors */
-  --color-primary: #6366f1;
-  --color-primary-hover: #4f46e5;
-  --color-bg: #fff;
-  --color-bg-secondary: #f9fafb;
-  --color-text: #111827;
-  --color-text-secondary: #6b7280;
-  --color-border: #e5e7eb;
-  --color-error: #ef4444;
-  --color-success: #22c55e;
+  --color-text: #253017;
+  --color-caption: #69735D;
+  --color-disabled-text: #9CA197;
+  --color-toggle: #B2B9A9;
+  --color-disabled: #E4E8DF;
+  --color-card: #FFF;
+  --color-input: #FFF;
+  --color-text-link: #508826;
+  --color-button-pressed: #508826;
+  --color-accent: #ABD27A;
+  --color-button-hover: #DEEBC5;
+  --color-background: #F9FAF7;
+  --color-alarm: #E0796E;
+  --color-error: #BF3920;
+  --color-tag-business-career: #EEE7F7;
+  --color-tag-art: #F7E7F2;
+  --color-tag-foreign-languages: #EBE5C5;
+  --color-tag-education: #E7F2F6;
+  --color-tag-home-comfort: #F7EBE5;
+  --color-tag-health: #E9F7E7;
+  --color-tag-plus: #E8ECF7;
 
   /* Spacing */
   --space-xs: 4px;
@@ -64,7 +76,7 @@ body {
   font-family: var(--font-roboto);
   font-size: var(--font-size-base);
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background-color: var(--color-background);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
