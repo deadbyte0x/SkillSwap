@@ -2,7 +2,7 @@
 
 /* Jost Medium */
 @font-face {
-  font-family: 'Jost';
+  font-family: Jost;
   font-weight: 500;
   font-display: swap;
   font-style: normal;
@@ -12,7 +12,7 @@
 
 /* Roboto Medium */
 @font-face {
-  font-family: 'Roboto';
+  font-family: Roboto;
   font-weight: 500;
   font-display: swap;
   font-style: normal;
@@ -22,7 +22,7 @@
 
 /* Roboto Regular */
 @font-face {
-  font-family: 'Roboto';
+  font-family: Roboto;
   font-weight: 400;
   font-display: swap;
   font-style: normal;
