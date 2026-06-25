@@ -1,3 +1,4 @@
+@import url("fonts.css");
 /* ─── CSS Custom Properties ─────────────────────────────── */
 :root {
   /* Colors */
@@ -20,7 +21,10 @@
   --space-2xl: 48px;
 
   /* Typography */
-  --font-sans: system-ui, -apple-system, sans-serif;
+  --font-jost: 'Jost', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
@@ -56,7 +60,7 @@
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-roboto);
   font-size: var(--font-size-base);
   color: var(--color-text);
   background-color: var(--color-bg);

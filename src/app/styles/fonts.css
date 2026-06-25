@@ -1,0 +1,31 @@
+/* файл для подключения шрифтов */
+
+/* Jost Medium */
+@font-face {
+  font-family: 'Jost';
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+  src: url('/fonts/jost-latin-500-normal.woff2') format('woff2'), /* latin — латинские буквы */
+       url('/fonts/jost-cyrillic-500-normal.woff2') format('woff2'); /* cyrillic — кириллица */
+}
+
+/* Roboto Medium */
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+  src: url('/fonts/roboto-latin-500-normal.woff2') format('woff2'),
+       url('/fonts/roboto-cyrillic-500-normal.woff2') format('woff2');
+}
+
+/* Roboto Regular */
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src: url('/fonts/roboto-latin-400-normal.woff2') format('woff2'),
+       url('/fonts/roboto-cyrillic-400-normal.woff2') format('woff2');
+}
