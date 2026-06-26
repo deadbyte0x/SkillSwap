@@ -20,4 +20,9 @@
   width: 24px;
   height: 24px;
   color: var(--color-text);
+  transition: color 0.2s ease;
+}
+
+.iconActive {
+  color: var(--color-accent);
 }

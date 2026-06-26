@@ -26,9 +26,7 @@ export const LikeButton = ({ defaultActive = false, onChange }: LikeButtonProps)
       aria-label={isActive ? 'Убрать из избранного' : 'Добавить в избранное'}
       aria-pressed={isActive}
     >
-      <Icon className={styles.icon}
-      style={isActive ? { color: 'var(--color-accent)' } : undefined}
-      />
+      <Icon className={`${styles.icon} ${isActive ? styles.iconActive : ''}`} />
     </button>
   )
 }
