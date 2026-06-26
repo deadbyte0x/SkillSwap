@@ -13,7 +13,7 @@
 }
 
 .button:hover {
-  background: oklch(from var(--color-text) l c h / 0.06);
+  background: oklch(from var(--color-text) l c h / 6%);
 }
 
 .icon {
