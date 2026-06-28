@@ -1,11 +1,11 @@
 .logoText {
-font-family: Jost, sans-serif;
-font-weight: 600;
-font-size: 24px;
+font-family: var(--font-jost);
+font-weight: var(--font-weight-medium);
+font-size: var(--font-size-2xl);
 line-height: 32px;
 letter-spacing: -1.1%;
 vertical-align: middle;
-color: #253017;
+color: var(--color-text);
 padding: 6px 0;
 }
 
@@ -17,4 +17,5 @@ padding: 6px 0;
 .logoImage {
     width: 40px;
     height: 40px;
+    fill: var(--color-accent);
 }
