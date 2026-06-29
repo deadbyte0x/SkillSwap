@@ -1,25 +1,16 @@
-import { useState } from 'react'
-import MoonIcon from '../icons/MoonIcon'
-import MoonIconFilled from '../icons/MoonIconFilled'
+import { MoonIcon, MoonIconFilled } from '../icons'
 import styles from './ThemeButton.module.css'
 
 interface ThemeButtonProps {
-  onChange?: (isDark: boolean) => void
+  isDark: boolean
+  onClick: () => void
 }
 
-const ThemeButton = ({ onChange }: ThemeButtonProps) => {
-  const [isDark, setIsDark] = useState(false)
-
-  const handleClick = () => {
-    const next = !isDark
-    setIsDark(next)
-    onChange?.(next)
-  }
-
+const ThemeButton = ({ isDark, onClick }: ThemeButtonProps) => {
   return (
     <button
       className={`${styles.button} ${isDark ? styles.active : ''}`}
-      onClick={handleClick}
+      onClick={onClick}
       aria-label={isDark ? 'Светлая тема' : 'Тёмная тема'}
     >
       {isDark ? <MoonIconFilled /> : <MoonIcon />}
