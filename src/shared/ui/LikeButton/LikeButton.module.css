@@ -9,20 +9,18 @@
   border: none;
   cursor: pointer;
   border-radius: var(--radius-md);
-  transition: background 180ms ease;
-}
-
-.button:hover {
-  background: oklch(from var(--color-text) l c h / 6%);
 }
 
 .icon {
   width: 24px;
   height: 24px;
   color: var(--color-text);
-  transition: color 0.2s ease;
 }
 
 .iconActive {
   color: var(--color-accent);
+}
+
+.iconActive:hover {
+  opacity: 0.8;
 }
