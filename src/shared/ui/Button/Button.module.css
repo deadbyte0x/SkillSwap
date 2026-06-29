@@ -8,7 +8,7 @@
   cursor: pointer;
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-medium);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   line-height: 24px;
 }
 
