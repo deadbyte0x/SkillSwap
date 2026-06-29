@@ -9,7 +9,7 @@
   border: none;
   cursor: pointer;
   color: var(--color-text-secondary);
-  transition: color 0.2s ease;
+  transition: opacity 180ms ease;
 }
 
 .button:hover {

@@ -1,4 +1,4 @@
-import { MoonIcon, MoonIconFilled } from '../icons'
+import { MoonIcon, SunIcon } from '../icons'
 import styles from './ThemeButton.module.css'
 
 interface ThemeButtonProps {
@@ -13,7 +13,7 @@ const ThemeButton = ({ isDark, onClick }: ThemeButtonProps) => {
       onClick={onClick}
       aria-label={isDark ? 'Светлая тема' : 'Тёмная тема'}
     >
-      {isDark ? <MoonIconFilled /> : <MoonIcon />}
+      {isDark ? <SunIcon /> : <MoonIcon />}
     </button>
   )
 }
