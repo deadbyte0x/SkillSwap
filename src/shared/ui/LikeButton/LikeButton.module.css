@@ -9,6 +9,11 @@
   border: none;
   cursor: pointer;
   border-radius: var(--radius-md);
+  transition: opacity 180ms ease;
+}
+
+.button:hover {
+  opacity: 0.7;
 }
 
 .icon {
@@ -19,8 +24,4 @@
 
 .iconActive {
   color: var(--color-accent);
-}
-
-.iconActive:hover {
-  opacity: 0.8;
 }
