@@ -837,5 +837,58 @@
     ],
     "authorId": "user-60",
     "createdAt": "2025-10-03T12:00:00.000Z"
+    "id": "1",
+    "title": "React",
+    "description": "Библиотека для создания пользовательских интерфейсов",
+    "type": "learn",
+    "category": "Frontend",
+    "tags": ["javascript", "ui", "components"],
+    "imageUrl": null,
+    "authorId": "user1",
+    "createdAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": "2",
+    "title": "TypeScript",
+    "description": "Типизированный JavaScript",
+    "type": "learn",
+    "category": "Programming",
+    "tags": ["javascript", "types"],
+    "imageUrl": null,
+    "authorId": "user2",
+    "createdAt": "2024-01-16T11:00:00Z"
+  },
+  {
+    "id": "3",
+    "title": "Redux Toolkit",
+    "description": "Инструменты для управления состоянием",
+    "type": "learn",
+    "category": "State Management",
+    "tags": ["react", "state", "store"],
+    "imageUrl": null,
+    "authorId": "user1",
+    "createdAt": "2024-01-17T12:00:00Z"
+  },
+  {
+    "id": "4",
+    "title": "Node.js",
+    "description": "Среда выполнения JavaScript на сервере",
+    "type": "learn",
+    "category": "Backend",
+    "tags": ["javascript", "server", "api"],
+    "imageUrl": null,
+    "authorId": "user3",
+    "createdAt": "2024-01-18T13:00:00Z"
+  },
+  {
+    "id": "5",
+    "title": "Tailwind CSS",
+    "description": "Утилитарный CSS-фреймворк",
+    "type": "learn",
+    "category": "Frontend",
+    "tags": ["css", "utilities", "design"],
+    "imageUrl": null,
+    "authorId": "user2",
+    "createdAt": "2024-01-19T14:00:00Z"
   }
 ]
