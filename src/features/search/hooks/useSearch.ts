@@ -2,20 +2,17 @@ import { useState, useCallback, ChangeEvent } from 'react'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { setSearchQuery, performSearch, clearSearch } from '../store/searchSlice'
 
-const useDebounce = <T extends (...args: any[]) => any>(
-  callback: T,
-  delay: number,
-): ((...args: Parameters<T>) => void) => {
+function useDebounce(callback: (value: string) => void, delay: number) {
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null)
 
   return useCallback(
-    (...args: Parameters<T>) => {
+    (value: string) => {
       if (timeoutId) {
         clearTimeout(timeoutId)
       }
 
       const id = setTimeout(() => {
-        callback(...args)
+        callback(value)
       }, delay)
 
       setTimeoutId(id)
@@ -30,7 +27,6 @@ export const useSearch = () => {
 
   const searchResults = useAppSelector((state) => state.search.results)
   const loading = useAppSelector((state) => state.search.loading)
-  const query = useAppSelector((state) => state.search.query)
 
   const debouncedSearch = useDebounce((value: string) => {
     if (value.trim()) {
