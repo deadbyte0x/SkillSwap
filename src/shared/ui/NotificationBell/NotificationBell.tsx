@@ -9,10 +9,10 @@ interface NotificationBellProps {
 export const NotificationBell= ({ isActive, onClick }: NotificationBellProps) => {
   return (
     <button onClick={onClick}>
-      <span className={styles.wrapper}>
+      <div className={styles.wrapper}>
         <SvgNotification />
-        {isActive ? <span className={styles.dot} /> : null}
-      </span>
+        {isActive ? <div className={styles.dot} /> : null}
+      </div>
     </button>
   );
 };
