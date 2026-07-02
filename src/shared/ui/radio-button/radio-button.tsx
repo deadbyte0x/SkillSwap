@@ -3,20 +3,20 @@ import { RadiobuttonActiveIcon,RadiobuttonEmptyIcon } from '../icons'
 
 interface RadioButtonProps {
     checked: boolean
-    onChange: () => void
+    onClick: () => void
 
 }
 
 
-export const RadioButton = ({checked, onChange}:RadioButtonProps) => {
+export const RadioButton = ({checked, onClick}:RadioButtonProps) => {
 
     return (
-<div className={styles.container} onClick={onChange}>
+<button className={styles.container} onClick={onClick}>
   {checked ? (
     <RadiobuttonActiveIcon className={styles.filledRadio} />
   ) : (
-    <RadiobuttonEmptyIcon className={styles.emptyRadio} />
+    <RadiobuttonEmptyIcon />
   )}
-</div>
+</button>
     )
 }

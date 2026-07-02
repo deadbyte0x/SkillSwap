@@ -3,10 +3,6 @@
     width: 1.5rem;
 }
 
-.emptyRadio {
-    color: #000;
-}
-
 .filledRadio {
     color: var(--color-button-pressed);
 }
