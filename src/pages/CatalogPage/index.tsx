@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { SearchInput } from '@/features/search'
 import { useSearch } from '@/features/search/hooks/useSearch'
 import styles from './CatalogPage.module.css'
