@@ -1,0 +1,27 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: opacity 180ms ease;
+}
+
+.button:hover {
+  opacity: 0.7;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-text);
+}
+
+.iconActive {
+  color: var(--color-accent);
+}
