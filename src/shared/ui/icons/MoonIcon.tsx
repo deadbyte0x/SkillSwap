@@ -1,5 +1,6 @@
 import type { SVGProps } from 'react'
-const SvgMoon = (props: SVGProps<SVGSVGElement>) => (
+
+const MoonIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" {...props}>
     <path
       fill="currentColor"
@@ -7,4 +8,5 @@ const SvgMoon = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
-export default SvgMoon
+
+export default MoonIcon

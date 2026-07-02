@@ -1,0 +1,70 @@
+.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 24px;
+}
+
+.primary {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.primary:hover {
+  background-color: var(--color-button-hover);
+}
+
+.primary:active {
+  background-color: var(--color-button-pressed);
+  color: var(--color-card);
+}
+
+.primary:disabled {
+  background-color: var(--color-disabled);
+  color: var(--color-caption);
+}
+
+.secondary {
+  background-color: var(--color-card);
+  color: var(--color-text);
+  border: 1px solid var(--color-accent);
+}
+
+.secondary:hover {
+  color: var(--color-caption);
+  border: 1px solid var(--color-button-hover);
+}
+
+.secondary:active {
+  color: var(--color-text);
+  border: 1px solid var(--color-button-pressed);
+}
+
+.secondary:disabled {
+  color: var(--color-disabled-text);
+  border: 1px solid var(--color-disabled);
+}
+
+.tertiary {
+  background-color: var(--color-card);
+  color: var(--color-text);
+}
+
+.tertiary:hover {
+  color: var(--color-caption);
+}
+
+.tertiary:active {
+  color: var(--color-text);
+}
+
+.tertiary:disabled {
+  color: var(--color-disabled-text);
+}
