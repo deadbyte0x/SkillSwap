@@ -1,4 +1,18 @@
-/* ─── Input (custom trigger) ─────────────────────────── */
+/* ─── Обёртка / подпись поля ─────────────────────────── */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-caption);
+}
+
+/* ─── Инпут (кастомный триггер) ───────────────────────── */
 
 .input {
   width: 208px;
@@ -50,7 +64,7 @@
   display: block;
 }
 
-/* ─── Custom header (месяц / год) ────────────────────── */
+/* ─── Кастомный заголовок (месяц / год) ──────────────── */
 
 .customHeader {
   display: flex;
@@ -120,7 +134,7 @@
   background: var(--color-button-hover);
 }
 
-/* ─── Footer (Отменить / Выбрать) ────────────────────── */
+/* ─── Футер (Отменить / Выбрать) ─────────────────────── */
 
 .footer {
   display: flex;
@@ -130,7 +144,7 @@
   box-sizing: border-box;
 }
 
-/* ─── react-datepicker: wrapper / container ──────────── */
+/* ─── react-datepicker: обёртка / контейнер ──────────── */
 
 :global(.react-datepicker-wrapper) {
   width: 100%;
@@ -166,7 +180,7 @@
   padding: 0;
 }
 
-/* ─── react-datepicker: header / navigation ──────────── */
+/* ─── react-datepicker: заголовок / навигация ────────── */
 
 :global(.react-datepicker__header) {
   background: var(--color-card);
@@ -187,7 +201,7 @@
   display: none;
 }
 
-/* ─── react-datepicker: month / days grid ────────────── */
+/* ─── react-datepicker: сетка месяца / дней ──────────── */
 
 :global(.react-datepicker__month-container) {
   width: 100%;
