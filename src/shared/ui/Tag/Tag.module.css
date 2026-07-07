@@ -1,0 +1,41 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-regular);
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-text);
+}
+
+.foreign-languages {
+  background-color: var(--color-tag-foreign-languages);
+}
+
+.education {
+  background-color: var(--color-tag-education);
+}
+
+.health {
+  background-color: var(--color-tag-health);
+}
+
+.business-career {
+  background-color: var(--color-tag-business-career);
+}
+
+.art {
+  background-color: var(--color-tag-art);
+}
+
+.home-comfort {
+  background-color: var(--color-tag-home-comfort);
+}
+
+.plus {
+  background-color: var(--color-tag-plus);
+}
