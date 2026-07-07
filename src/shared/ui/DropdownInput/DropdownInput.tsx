@@ -2,19 +2,25 @@ import React, { useState, useRef, useEffect, KeyboardEvent } from 'react'
 import styles from './DropdownInput.module.css'
 
 interface DropdownInputProps {
+  /** Массив вариантов для выбора */
   options: string[]
-  value: string
+  /** Текущее выбранное значение */
+  value?: string
+  /** Колбэк при выборе значения */
   onChange: (value: string) => void
+  /** Текст-подсказка в поле ввода */
   placeholder?: string
+  /** Текст метки над полем */
   label?: string
+  /** Отключить компонент */
   disabled?: boolean
 }
 
 export const DropdownInput: React.FC<DropdownInputProps> = ({
   options,
-  value,
+  value = '',
   onChange,
-  placeholder = 'Выберите или введите...',
+  placeholder = 'Не указан',
   label,
   disabled = false,
 }) => {
@@ -24,24 +30,27 @@ export const DropdownInput: React.FC<DropdownInputProps> = ({
   const wrapperRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
+  useEffect(() => setInputValue(value), [value])
+
   const filteredOptions = options.filter((option) =>
     option.toLowerCase().includes(inputValue.toLowerCase()),
   )
 
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
+    const handler = (e: MouseEvent) => {
       if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
         setIsOpen(false)
       }
     }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
   }, [])
 
   const handleSelect = (option: string) => {
     setInputValue(option)
     onChange(option)
     setIsOpen(false)
+    setHighlightedIndex(-1)
     inputRef.current?.focus()
   }
 
@@ -61,10 +70,16 @@ export const DropdownInput: React.FC<DropdownInputProps> = ({
     }
   }
 
+  const toggle = () => !disabled && setIsOpen(!isOpen)
+
+  const handleWrapperMouseDown = (e: React.MouseEvent) => {
+    if (!(e.target as HTMLElement).closest('ul')) toggle()
+  }
+
   return (
     <div className={styles.wrapper} ref={wrapperRef}>
       {label && <label className={styles.label}>{label}</label>}
-      <div className={styles.inputWrapper} onClick={() => !disabled && setIsOpen(!isOpen)}>
+      <div className={styles.inputWrapper} onMouseDown={handleWrapperMouseDown}>
         <input
           ref={inputRef}
           type="text"
@@ -80,7 +95,17 @@ export const DropdownInput: React.FC<DropdownInputProps> = ({
           onFocus={() => setIsOpen(true)}
           disabled={disabled}
         />
-        <span className={`${styles.arrow} ${isOpen ? styles.arrowUp : ''}`}>▼</span>
+        <span className={`${styles.arrow} ${isOpen ? styles.arrowUp : ''}`}>
+          <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+            <path
+              d="M1 1.5L6 6.5L11 1.5"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
       </div>
       {isOpen && (
         <ul className={styles.dropdown}>
@@ -89,7 +114,10 @@ export const DropdownInput: React.FC<DropdownInputProps> = ({
               <li
                 key={option}
                 className={`${styles.option} ${option === inputValue ? styles.selected : ''} ${index === highlightedIndex ? styles.highlighted : ''}`}
-                onClick={() => handleSelect(option)}
+                onMouseDown={(e) => {
+                  e.preventDefault()
+                  handleSelect(option)
+                }}
                 onMouseEnter={() => setHighlightedIndex(index)}
               >
                 {option}
