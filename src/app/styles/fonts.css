@@ -1,31 +1,55 @@
 /* файл для подключения шрифтов */
 
-/* Jost Medium */
+/* Jost Medium — Latin */
 @font-face {
   font-family: Jost;
   font-weight: 500;
   font-display: swap;
   font-style: normal;
-  src: url('/fonts/jost-latin-500-normal.woff2') format('woff2'), /* latin — латинские буквы */
-       url('/fonts/jost-cyrillic-500-normal.woff2') format('woff2'); /* cyrillic — кириллица */
+  src: url('/fonts/jost-latin-500-normal.woff2') format('woff2'); /* немного видоизменил порядок подключения шрифтов, чтобы браузер не игнорировал русскую раскладку */
+} 
+
+/* Jost Medium — Cyrillic */
+@font-face {
+  font-family: Jost;
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+  src: url('/fonts/jost-cyrillic-500-normal.woff2') format('woff2');
 }
 
-/* Roboto Medium */
+/* Roboto Medium — Latin */
 @font-face {
   font-family: Roboto;
   font-weight: 500;
   font-display: swap;
   font-style: normal;
-  src: url('/fonts/roboto-latin-500-normal.woff2') format('woff2'),
-       url('/fonts/roboto-cyrillic-500-normal.woff2') format('woff2');
+  src: url('/fonts/roboto-latin-500-normal.woff2') format('woff2');
 }
 
-/* Roboto Regular */
+/* Roboto Medium — Cyrillic */
+@font-face {
+  font-family: Roboto;
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+  src: url('/fonts/roboto-cyrillic-500-normal.woff2') format('woff2');
+}
+
+/* Roboto Regular — Latin */
 @font-face {
   font-family: Roboto;
   font-weight: 400;
   font-display: swap;
   font-style: normal;
-  src: url('/fonts/roboto-latin-400-normal.woff2') format('woff2'),
-       url('/fonts/roboto-cyrillic-400-normal.woff2') format('woff2');
+  src: url('/fonts/roboto-latin-400-normal.woff2') format('woff2');
+}
+
+/* Roboto Regular — Cyrillic */
+@font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src: url('/fonts/roboto-cyrillic-400-normal.woff2') format('woff2');
 }

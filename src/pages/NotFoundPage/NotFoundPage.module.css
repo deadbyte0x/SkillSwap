@@ -1,0 +1,61 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+.illustration {
+  width: 280px;
+  height: auto;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-top: 40px;
+}
+
+.title {
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -1.1%;
+  text-align: center;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2%;
+  text-align: center;
+  color: var(--color-caption);
+  max-width: 460px;
+  margin: 0;
+}
+
+/* Контейнер с кнопками действий */
+.actions {
+  display: flex;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.actions>* {
+  width: 218px;
+}
