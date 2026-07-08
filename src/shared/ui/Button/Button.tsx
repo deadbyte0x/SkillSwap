@@ -20,6 +20,7 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <button
+      type="button"
       className={`${styles.button} ${styles[variant]}`} // берем класс button и один из variant
       disabled={disabled}
       onClick={onClick}
