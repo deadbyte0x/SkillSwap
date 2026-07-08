@@ -8,21 +8,29 @@ interface PasswordProps {
     placeholder?:string
     hint?: string
     onChange?: (value:string) => void
-    validate?: string
+    validate?: (password: string) => string | null
 }
 
 export const Password = ({ title='Пароль', placeholder='Введите ваш пароль', hint='Пароль должен содержать не менее 8 знаков', onChange, validate}:PasswordProps) => {
     const [showPassword, setShowPassword] = useState(false)
     const [password, setPassword] = useState("")
+    const [error, setError] = useState<string | null>(null)
     const debouncedPassword = useDebounce(password, 300)
-    const isError = Boolean(validate);
+    const isError = Boolean(error);
     const onClick = () => {
         setShowPassword(!showPassword)
     }
 
     useEffect(() => {
+        if (validate) {
+            const result = validate(debouncedPassword)
+            setError(result)
+        } else {
+            return setError(null)
+        }
+
         onChange?.(debouncedPassword)
-    }, [debouncedPassword, onChange])
+    }, [debouncedPassword, onChange, validate])
     return (
         <div className={styles.container}>
             <label className={styles.label_text}>{title}</label>
@@ -30,7 +38,7 @@ export const Password = ({ title='Пароль', placeholder='Введите в�
             <input type={showPassword ? 'text' : 'password'} placeholder={placeholder} className={`${styles.input_field} ${isError ? styles.input_error : ''}`} value={password} onChange={(e) => setPassword(e.target.value)}/>
             <span className={styles.eye}><EyeToggle isVisible={showPassword} onClick={onClick}></EyeToggle></span>
             </div>
-            <span className={`${styles.hint_text} ${isError ? styles.hint_error : ''} `}>{validate || hint}</span>
+            <span className={`${styles.hint_text} ${isError ? styles.hint_error : ''} `}>{error || hint}</span>
         </div>
     )
 }
