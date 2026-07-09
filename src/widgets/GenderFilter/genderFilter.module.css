@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.text {
+    font-family: var(--font-roboto);
+    font-size:var(--space-md);
+    line-height: var(--space-xl);
+    letter-spacing: 2%;
+    vertical-align: middle;
+    color: var(--color-text);
+}
+
+.li {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.label {
+    font-family: var(--font-jost);   
+    font-size: 20px;
+    line-height: var(--space-lg);
+    letter-spacing: -1.1%;
+    vertical-align: middle;
+    margin-bottom: 20px;
+}
