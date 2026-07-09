@@ -1,0 +1,266 @@
+/* ─── Обёртка / подпись поля ─────────────────────────── */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-caption);
+}
+
+/* ─── Инпут (кастомный триггер) ───────────────────────── */
+
+.input {
+  width: 208px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: 12px 20px;
+  border: 1px solid var(--color-caption);
+  border-radius: var(--radius-lg);
+  background: var(--color-input);
+  color: var(--color-text);
+  cursor: pointer;
+  text-align: left;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.value {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: var(--font-size-base);
+  line-height: 1;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-caption);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  color: var(--color-text);
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ─── Кастомный заголовок (месяц / год) ──────────────── */
+
+.customHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: var(--space-xl);
+}
+
+.dropdownWrapper {
+  position: relative;
+}
+
+.dropdownTrigger {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background: none;
+  border: none;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text);
+  cursor: pointer;
+  padding: var(--space-xs) 12px;
+}
+
+.chevron {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.chevron svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.dropdownList {
+  position: absolute;
+  top: calc(100% + var(--space-xs));
+  left: 0;
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+  background: var(--color-card);
+  border: 1px solid var(--color-caption);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  min-width: 140px;
+}
+
+.dropdownItem {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: var(--space-sm) var(--space-md);
+  background: none;
+  border: none;
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.dropdownItem:hover {
+  background: var(--color-button-hover);
+}
+
+/* ─── Футер (Отменить / Выбрать) ─────────────────────── */
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  box-sizing: border-box;
+}
+
+/* ─── react-datepicker: обёртка / контейнер ──────────── */
+
+:global(.react-datepicker-wrapper) {
+  width: 100%;
+  display: block;
+}
+
+:global(.react-datepicker__input-container) {
+  width: 100%;
+  display: block;
+}
+
+:global(.react-datepicker__input-container input) {
+  width: 100%;
+}
+
+:global(.react-datepicker) {
+  min-width: 280px;
+  border: 1px solid var(--color-caption);
+  border-radius: var(--radius-lg);
+  background: var(--color-card);
+  font-family: inherit;
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+:global(.react-datepicker-popper) {
+  padding-top: var(--space-xs);
+}
+
+:global(.react-datepicker__children-container) {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── react-datepicker: заголовок / навигация ────────── */
+
+:global(.react-datepicker__header) {
+  background: var(--color-card);
+  border-bottom: none;
+}
+
+:global(.react-datepicker__current-month) {
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+}
+
+:global(.react-datepicker__navigation) {
+  top: var(--space-md);
+}
+
+:global(.react-datepicker__triangle) {
+  display: none;
+}
+
+/* ─── react-datepicker: сетка месяца / дней ──────────── */
+
+:global(.react-datepicker__month-container) {
+  width: 100%;
+}
+
+:global(.react-datepicker__month) {
+  margin: 0;
+  padding: 0 28px;
+}
+
+:global(.react-datepicker__day-names) {
+  padding-inline: 28px;
+}
+
+:global(.react-datepicker__day-name) {
+  width: 32px;
+  line-height: 32px;
+  margin: 0;
+  color: var(--color-button-pressed);
+  font-size: 12px;
+  font-weight: var(--font-weight-regular);
+}
+
+:global(.react-datepicker__week) {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  margin: 0;
+}
+
+:global(.react-datepicker__day) {
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  line-height: 32px;
+  font-size: 12px;
+  color: var(--color-text);
+  border-radius: 999px;
+  transition: background-color 0.15s ease;
+}
+
+:global(.react-datepicker__day):hover {
+  background: var(--color-button-hover);
+}
+
+:global(.react-datepicker__day--outside-month) {
+  color: var(--color-disabled-text);
+}
+
+:global(.react-datepicker__day--selected) {
+  background: var(--color-accent) !important;
+  color: var(--color-text) !important;
+}
+
+:global(.react-datepicker__day--keyboard-selected) {
+  background: transparent;
+  color: var(--color-text);
+}
+
+:global(.react-datepicker__day--today) {
+  font-weight: var(--font-weight-regular);
+}
