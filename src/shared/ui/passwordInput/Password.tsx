@@ -26,7 +26,7 @@ export const Password = ({ title='Пароль', placeholder='Введите в�
             const result = validate(debouncedPassword)
             setError(result)
         } else {
-            return setError(null)
+            setError(null)
         }
 
         onChange?.(debouncedPassword)
