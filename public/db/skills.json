@@ -1,1 +1,841 @@
-[]
+[
+  {
+    "id": "skill-1",
+    "title": "Научу: Домашние финансы",
+    "description": "Провожу занятия по теме «Домашние финансы». Подстраиваюсь под ваш уровень и цели, даю обратную связь после каждой встречи.",
+    "type": "teach",
+    "subCategoryId": "home-finance",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-1-0/600/400",
+      "https://picsum.photos/seed/skill-1-1/600/400"
+    ],
+    "authorId": "user-1",
+    "createdAt": "2026-06-05T12:00:00.000Z"
+  },
+  {
+    "id": "skill-2",
+    "title": "Скорочтение с нуля",
+    "description": "За несколько встреч разберём «Скорочтение» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "speed-reading",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-2-0/600/400",
+      "https://picsum.photos/seed/skill-2-1/600/400"
+    ],
+    "authorId": "user-2",
+    "createdAt": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "id": "skill-3",
+    "title": "Основы: Актёрское мастерство",
+    "description": "Помогу освоить направление «Актёрское мастерство». Занятия строятся на практике и разборе реальных кейсов, без лишней теории.",
+    "type": "teach",
+    "subCategoryId": "acting",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-3-0/600/400",
+      "https://picsum.photos/seed/skill-3-1/600/400"
+    ],
+    "authorId": "user-3",
+    "createdAt": "2026-06-24T12:00:00.000Z"
+  },
+  {
+    "id": "skill-4",
+    "title": "Скорочтение для начинающих",
+    "description": "За несколько встреч разберём «Скорочтение» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "speed-reading",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-4-0/600/400",
+      "https://picsum.photos/seed/skill-4-1/600/400",
+      "https://picsum.photos/seed/skill-4-2/600/400"
+    ],
+    "authorId": "user-4",
+    "createdAt": "2025-10-14T12:00:00.000Z"
+  },
+  {
+    "id": "skill-5",
+    "title": "Актёрское мастерство для начинающих",
+    "description": "Делюсь опытом в теме «Актёрское мастерство»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "acting",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-5-0/600/400",
+      "https://picsum.photos/seed/skill-5-1/600/400",
+      "https://picsum.photos/seed/skill-5-2/600/400",
+      "https://picsum.photos/seed/skill-5-3/600/400"
+    ],
+    "authorId": "user-5",
+    "createdAt": "2025-10-27T12:00:00.000Z"
+  },
+  {
+    "id": "skill-6",
+    "title": "Ментальное здоровье с нуля",
+    "description": "За несколько встреч разберём «Ментальное здоровье» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "mental-health",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-6-0/600/400",
+      "https://picsum.photos/seed/skill-6-1/600/400",
+      "https://picsum.photos/seed/skill-6-2/600/400",
+      "https://picsum.photos/seed/skill-6-3/600/400"
+    ],
+    "authorId": "user-6",
+    "createdAt": "2026-04-16T12:00:00.000Z"
+  },
+  {
+    "id": "skill-7",
+    "title": "Китайский для начинающих",
+    "description": "За несколько встреч разберём «Китайский» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "chinese",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-7-0/600/400",
+      "https://picsum.photos/seed/skill-7-1/600/400",
+      "https://picsum.photos/seed/skill-7-2/600/400",
+      "https://picsum.photos/seed/skill-7-3/600/400"
+    ],
+    "authorId": "user-7",
+    "createdAt": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "id": "skill-8",
+    "title": "Научу: Личностное развитие",
+    "description": "Помогу освоить направление «Личностное развитие». Занятия строятся на практике и разборе реальных кейсов, без лишней теории.",
+    "type": "teach",
+    "subCategoryId": "personal-development",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-8-0/600/400",
+      "https://picsum.photos/seed/skill-8-1/600/400",
+      "https://picsum.photos/seed/skill-8-2/600/400",
+      "https://picsum.photos/seed/skill-8-3/600/400"
+    ],
+    "authorId": "user-8",
+    "createdAt": "2025-09-21T12:00:00.000Z"
+  },
+  {
+    "id": "skill-9",
+    "title": "Коучинг для начинающих",
+    "description": "Помогу освоить направление «Коучинг». Занятия строятся на практике и разборе реальных кейсов, без лишней теории.",
+    "type": "teach",
+    "subCategoryId": "coaching",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-9-0/600/400",
+      "https://picsum.photos/seed/skill-9-1/600/400",
+      "https://picsum.photos/seed/skill-9-2/600/400"
+    ],
+    "authorId": "user-9",
+    "createdAt": "2026-03-04T12:00:00.000Z"
+  },
+  {
+    "id": "skill-10",
+    "title": "Основы: Резюме и собеседование",
+    "description": "Делюсь опытом в теме «Резюме и собеседование»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "resume-interview",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-10-0/600/400",
+      "https://picsum.photos/seed/skill-10-1/600/400",
+      "https://picsum.photos/seed/skill-10-2/600/400"
+    ],
+    "authorId": "user-10",
+    "createdAt": "2025-12-04T12:00:00.000Z"
+  },
+  {
+    "id": "skill-11",
+    "title": "Основы: Предпринимательство",
+    "description": "Провожу занятия по теме «Предпринимательство». Подстраиваюсь под ваш уровень и цели, даю обратную связь после каждой встречи.",
+    "type": "teach",
+    "subCategoryId": "entrepreneurship",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-11-0/600/400",
+      "https://picsum.photos/seed/skill-11-1/600/400",
+      "https://picsum.photos/seed/skill-11-2/600/400",
+      "https://picsum.photos/seed/skill-11-3/600/400"
+    ],
+    "authorId": "user-11",
+    "createdAt": "2026-06-02T12:00:00.000Z"
+  },
+  {
+    "id": "skill-12",
+    "title": "Домашние финансы: базовый практикум",
+    "description": "Помогу освоить направление «Домашние финансы». Занятия строятся на практике и разборе реальных кейсов, без лишней теории.",
+    "type": "teach",
+    "subCategoryId": "home-finance",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-12-0/600/400",
+      "https://picsum.photos/seed/skill-12-1/600/400",
+      "https://picsum.photos/seed/skill-12-2/600/400",
+      "https://picsum.photos/seed/skill-12-3/600/400"
+    ],
+    "authorId": "user-12",
+    "createdAt": "2026-04-01T12:00:00.000Z"
+  },
+  {
+    "id": "skill-13",
+    "title": "Навыки преподавания: базовый практикум",
+    "description": "Помогу освоить направление «Навыки преподавания». Занятия строятся на практике и разборе реальных кейсов, без лишней теории.",
+    "type": "teach",
+    "subCategoryId": "teaching-skills",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-13-0/600/400",
+      "https://picsum.photos/seed/skill-13-1/600/400"
+    ],
+    "authorId": "user-13",
+    "createdAt": "2025-10-24T12:00:00.000Z"
+  },
+  {
+    "id": "skill-14",
+    "title": "Основы: Тайм-менеджмент",
+    "description": "Делюсь опытом в теме «Тайм-менеджмент»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "time-management",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-14-0/600/400",
+      "https://picsum.photos/seed/skill-14-1/600/400"
+    ],
+    "authorId": "user-14",
+    "createdAt": "2026-02-07T12:00:00.000Z"
+  },
+  {
+    "id": "skill-15",
+    "title": "Навыки обучения с нуля",
+    "description": "За несколько встреч разберём «Навыки обучения» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "learning-skills",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-15-0/600/400",
+      "https://picsum.photos/seed/skill-15-1/600/400",
+      "https://picsum.photos/seed/skill-15-2/600/400"
+    ],
+    "authorId": "user-15",
+    "createdAt": "2025-12-28T12:00:00.000Z"
+  },
+  {
+    "id": "skill-16",
+    "title": "Основы: Проектное управление",
+    "description": "Помогу освоить направление «Проектное управление». Занятия строятся на практике и разборе реальных кейсов, без лишней теории.",
+    "type": "teach",
+    "subCategoryId": "project-management",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-16-0/600/400",
+      "https://picsum.photos/seed/skill-16-1/600/400"
+    ],
+    "authorId": "user-16",
+    "createdAt": "2026-04-21T12:00:00.000Z"
+  },
+  {
+    "id": "skill-17",
+    "title": "Испанский: базовый практикум",
+    "description": "За несколько встреч разберём «Испанский» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "spanish",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-17-0/600/400",
+      "https://picsum.photos/seed/skill-17-1/600/400",
+      "https://picsum.photos/seed/skill-17-2/600/400"
+    ],
+    "authorId": "user-17",
+    "createdAt": "2025-11-03T12:00:00.000Z"
+  },
+  {
+    "id": "skill-18",
+    "title": "Основы: Резюме и собеседование",
+    "description": "За несколько встреч разберём «Резюме и собеседование» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "resume-interview",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-18-0/600/400",
+      "https://picsum.photos/seed/skill-18-1/600/400",
+      "https://picsum.photos/seed/skill-18-2/600/400",
+      "https://picsum.photos/seed/skill-18-3/600/400"
+    ],
+    "authorId": "user-18",
+    "createdAt": "2026-06-02T12:00:00.000Z"
+  },
+  {
+    "id": "skill-19",
+    "title": "Приготовление еды с нуля",
+    "description": "Провожу занятия по теме «Приготовление еды». Подстраиваюсь под ваш уровень и цели, даю обратную связь после каждой встречи.",
+    "type": "teach",
+    "subCategoryId": "cooking",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-19-0/600/400",
+      "https://picsum.photos/seed/skill-19-1/600/400",
+      "https://picsum.photos/seed/skill-19-2/600/400"
+    ],
+    "authorId": "user-19",
+    "createdAt": "2026-05-02T12:00:00.000Z"
+  },
+  {
+    "id": "skill-20",
+    "title": "Научу: Маркетинг и реклама",
+    "description": "Помогу освоить направление «Маркетинг и реклама». Занятия строятся на практике и разборе реальных кейсов, без лишней теории.",
+    "type": "teach",
+    "subCategoryId": "marketing",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-20-0/600/400",
+      "https://picsum.photos/seed/skill-20-1/600/400"
+    ],
+    "authorId": "user-20",
+    "createdAt": "2026-01-15T12:00:00.000Z"
+  },
+  {
+    "id": "skill-21",
+    "title": "Разбираемся в теме «Физические тренировки»",
+    "description": "За несколько встреч разберём «Физические тренировки» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "fitness",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-21-0/600/400",
+      "https://picsum.photos/seed/skill-21-1/600/400",
+      "https://picsum.photos/seed/skill-21-2/600/400"
+    ],
+    "authorId": "user-21",
+    "createdAt": "2026-01-09T12:00:00.000Z"
+  },
+  {
+    "id": "skill-22",
+    "title": "Научу: Французский",
+    "description": "За несколько встреч разберём «Французский» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "french",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-22-0/600/400",
+      "https://picsum.photos/seed/skill-22-1/600/400",
+      "https://picsum.photos/seed/skill-22-2/600/400"
+    ],
+    "authorId": "user-22",
+    "createdAt": "2026-02-27T12:00:00.000Z"
+  },
+  {
+    "id": "skill-23",
+    "title": "Основы: Немецкий",
+    "description": "Делюсь опытом в теме «Немецкий»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "german",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-23-0/600/400",
+      "https://picsum.photos/seed/skill-23-1/600/400",
+      "https://picsum.photos/seed/skill-23-2/600/400"
+    ],
+    "authorId": "user-23",
+    "createdAt": "2026-04-21T12:00:00.000Z"
+  },
+  {
+    "id": "skill-24",
+    "title": "Разбираемся в теме «Видеомонтаж»",
+    "description": "За несколько встреч разберём «Видеомонтаж» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "video-editing",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-24-0/600/400",
+      "https://picsum.photos/seed/skill-24-1/600/400"
+    ],
+    "authorId": "user-24",
+    "createdAt": "2025-11-28T12:00:00.000Z"
+  },
+  {
+    "id": "skill-25",
+    "title": "Научу: Ремонт",
+    "description": "Делюсь опытом в теме «Ремонт»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "home-repair",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-25-0/600/400",
+      "https://picsum.photos/seed/skill-25-1/600/400"
+    ],
+    "authorId": "user-25",
+    "createdAt": "2026-01-07T12:00:00.000Z"
+  },
+  {
+    "id": "skill-26",
+    "title": "Основы: Физические тренировки",
+    "description": "За несколько встреч разберём «Физические тренировки» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "fitness",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-26-0/600/400",
+      "https://picsum.photos/seed/skill-26-1/600/400"
+    ],
+    "authorId": "user-26",
+    "createdAt": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "id": "skill-27",
+    "title": "Уборка и организация: базовый практикум",
+    "description": "Делюсь опытом в теме «Уборка и организация»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "cleaning-organization",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-27-0/600/400",
+      "https://picsum.photos/seed/skill-27-1/600/400",
+      "https://picsum.photos/seed/skill-27-2/600/400",
+      "https://picsum.photos/seed/skill-27-3/600/400"
+    ],
+    "authorId": "user-27",
+    "createdAt": "2025-09-23T12:00:00.000Z"
+  },
+  {
+    "id": "skill-28",
+    "title": "Основы: Навыки преподавания",
+    "description": "Делюсь опытом в теме «Навыки преподавания»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "teaching-skills",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-28-0/600/400",
+      "https://picsum.photos/seed/skill-28-1/600/400",
+      "https://picsum.photos/seed/skill-28-2/600/400"
+    ],
+    "authorId": "user-28",
+    "createdAt": "2025-11-19T12:00:00.000Z"
+  },
+  {
+    "id": "skill-29",
+    "title": "Музыка и звук с нуля",
+    "description": "Делюсь опытом в теме «Музыка и звук»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "music",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-29-0/600/400",
+      "https://picsum.photos/seed/skill-29-1/600/400"
+    ],
+    "authorId": "user-29",
+    "createdAt": "2025-10-31T12:00:00.000Z"
+  },
+  {
+    "id": "skill-30",
+    "title": "Разбираемся в теме «Хранение вещей»",
+    "description": "Помогу освоить направление «Хранение вещей». Занятия строятся на практике и разборе реальных кейсов, без лишней теории.",
+    "type": "teach",
+    "subCategoryId": "storage",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-30-0/600/400",
+      "https://picsum.photos/seed/skill-30-1/600/400",
+      "https://picsum.photos/seed/skill-30-2/600/400",
+      "https://picsum.photos/seed/skill-30-3/600/400"
+    ],
+    "authorId": "user-30",
+    "createdAt": "2025-12-11T12:00:00.000Z"
+  },
+  {
+    "id": "skill-31",
+    "title": "Научу: Рисование и иллюстрация",
+    "description": "Помогу освоить направление «Рисование и иллюстрация». Занятия строятся на практике и разборе реальных кейсов, без лишней теории.",
+    "type": "teach",
+    "subCategoryId": "drawing",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-31-0/600/400",
+      "https://picsum.photos/seed/skill-31-1/600/400",
+      "https://picsum.photos/seed/skill-31-2/600/400",
+      "https://picsum.photos/seed/skill-31-3/600/400"
+    ],
+    "authorId": "user-31",
+    "createdAt": "2025-09-12T12:00:00.000Z"
+  },
+  {
+    "id": "skill-32",
+    "title": "Разбираемся в теме «Личный бренд»",
+    "description": "Помогу освоить направление «Личный бренд». Занятия строятся на практике и разборе реальных кейсов, без лишней теории.",
+    "type": "teach",
+    "subCategoryId": "personal-brand",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-32-0/600/400",
+      "https://picsum.photos/seed/skill-32-1/600/400"
+    ],
+    "authorId": "user-32",
+    "createdAt": "2026-01-06T12:00:00.000Z"
+  },
+  {
+    "id": "skill-33",
+    "title": "Основы: Музыка и звук",
+    "description": "Делюсь опытом в теме «Музыка и звук»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "music",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-33-0/600/400",
+      "https://picsum.photos/seed/skill-33-1/600/400",
+      "https://picsum.photos/seed/skill-33-2/600/400"
+    ],
+    "authorId": "user-33",
+    "createdAt": "2025-12-26T12:00:00.000Z"
+  },
+  {
+    "id": "skill-34",
+    "title": "Основы: Тайм-менеджмент",
+    "description": "Провожу занятия по теме «Тайм-менеджмент». Подстраиваюсь под ваш уровень и цели, даю обратную связь после каждой встречи.",
+    "type": "teach",
+    "subCategoryId": "time-management",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-34-0/600/400",
+      "https://picsum.photos/seed/skill-34-1/600/400"
+    ],
+    "authorId": "user-34",
+    "createdAt": "2025-12-13T12:00:00.000Z"
+  },
+  {
+    "id": "skill-35",
+    "title": "Основы: Баланс жизни и работы",
+    "description": "Помогу освоить направление «Баланс жизни и работы». Занятия строятся на практике и разборе реальных кейсов, без лишней теории.",
+    "type": "teach",
+    "subCategoryId": "work-life-balance",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-35-0/600/400",
+      "https://picsum.photos/seed/skill-35-1/600/400",
+      "https://picsum.photos/seed/skill-35-2/600/400"
+    ],
+    "authorId": "user-35",
+    "createdAt": "2025-10-25T12:00:00.000Z"
+  },
+  {
+    "id": "skill-36",
+    "title": "Подготовка к экзаменам (IELTS, TOEFL) с нуля",
+    "description": "Делюсь опытом в теме «Подготовка к экзаменам (IELTS, TOEFL)»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "exam-prep",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-36-0/600/400",
+      "https://picsum.photos/seed/skill-36-1/600/400",
+      "https://picsum.photos/seed/skill-36-2/600/400",
+      "https://picsum.photos/seed/skill-36-3/600/400"
+    ],
+    "authorId": "user-36",
+    "createdAt": "2026-02-06T12:00:00.000Z"
+  },
+  {
+    "id": "skill-37",
+    "title": "Научу: Сон и восстановление",
+    "description": "Провожу занятия по теме «Сон и восстановление». Подстраиваюсь под ваш уровень и цели, даю обратную связь после каждой встречи.",
+    "type": "teach",
+    "subCategoryId": "sleep-recovery",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-37-0/600/400",
+      "https://picsum.photos/seed/skill-37-1/600/400",
+      "https://picsum.photos/seed/skill-37-2/600/400",
+      "https://picsum.photos/seed/skill-37-3/600/400"
+    ],
+    "authorId": "user-37",
+    "createdAt": "2025-12-12T12:00:00.000Z"
+  },
+  {
+    "id": "skill-38",
+    "title": "Подготовка к экзаменам (IELTS, TOEFL) с нуля",
+    "description": "Провожу занятия по теме «Подготовка к экзаменам (IELTS, TOEFL)». Подстраиваюсь под ваш уровень и цели, даю обратную связь после каждой встречи.",
+    "type": "teach",
+    "subCategoryId": "exam-prep",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-38-0/600/400",
+      "https://picsum.photos/seed/skill-38-1/600/400"
+    ],
+    "authorId": "user-38",
+    "createdAt": "2026-05-06T12:00:00.000Z"
+  },
+  {
+    "id": "skill-39",
+    "title": "Осознанность для начинающих",
+    "description": "Делюсь опытом в теме «Осознанность»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "mindfulness",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-39-0/600/400",
+      "https://picsum.photos/seed/skill-39-1/600/400"
+    ],
+    "authorId": "user-39",
+    "createdAt": "2026-05-26T12:00:00.000Z"
+  },
+  {
+    "id": "skill-40",
+    "title": "Видеомонтаж с нуля",
+    "description": "Делюсь опытом в теме «Видеомонтаж»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "video-editing",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-40-0/600/400",
+      "https://picsum.photos/seed/skill-40-1/600/400",
+      "https://picsum.photos/seed/skill-40-2/600/400",
+      "https://picsum.photos/seed/skill-40-3/600/400"
+    ],
+    "authorId": "user-40",
+    "createdAt": "2025-12-18T12:00:00.000Z"
+  },
+  {
+    "id": "skill-41",
+    "title": "Баланс жизни и работы для начинающих",
+    "description": "Провожу занятия по теме «Баланс жизни и работы». Подстраиваюсь под ваш уровень и цели, даю обратную связь после каждой встречи.",
+    "type": "teach",
+    "subCategoryId": "work-life-balance",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-41-0/600/400",
+      "https://picsum.photos/seed/skill-41-1/600/400",
+      "https://picsum.photos/seed/skill-41-2/600/400"
+    ],
+    "authorId": "user-41",
+    "createdAt": "2026-02-08T12:00:00.000Z"
+  },
+  {
+    "id": "skill-42",
+    "title": "Разбираемся в теме «Проектное управление»",
+    "description": "За несколько встреч разберём «Проектное управление» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "project-management",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-42-0/600/400",
+      "https://picsum.photos/seed/skill-42-1/600/400",
+      "https://picsum.photos/seed/skill-42-2/600/400",
+      "https://picsum.photos/seed/skill-42-3/600/400"
+    ],
+    "authorId": "user-42",
+    "createdAt": "2025-09-14T12:00:00.000Z"
+  },
+  {
+    "id": "skill-43",
+    "title": "Коучинг: базовый практикум",
+    "description": "За несколько встреч разберём «Коучинг» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "coaching",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-43-0/600/400",
+      "https://picsum.photos/seed/skill-43-1/600/400",
+      "https://picsum.photos/seed/skill-43-2/600/400"
+    ],
+    "authorId": "user-43",
+    "createdAt": "2025-11-06T12:00:00.000Z"
+  },
+  {
+    "id": "skill-44",
+    "title": "Домашние растения: базовый практикум",
+    "description": "Провожу занятия по теме «Домашние растения». Подстраиваюсь под ваш уровень и цели, даю обратную связь после каждой встречи.",
+    "type": "teach",
+    "subCategoryId": "houseplants",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-44-0/600/400",
+      "https://picsum.photos/seed/skill-44-1/600/400",
+      "https://picsum.photos/seed/skill-44-2/600/400",
+      "https://picsum.photos/seed/skill-44-3/600/400"
+    ],
+    "authorId": "user-44",
+    "createdAt": "2026-04-13T12:00:00.000Z"
+  },
+  {
+    "id": "skill-45",
+    "title": "Французский с нуля",
+    "description": "За несколько встреч разберём «Французский» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "french",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-45-0/600/400",
+      "https://picsum.photos/seed/skill-45-1/600/400",
+      "https://picsum.photos/seed/skill-45-2/600/400"
+    ],
+    "authorId": "user-45",
+    "createdAt": "2025-11-28T12:00:00.000Z"
+  },
+  {
+    "id": "skill-46",
+    "title": "Разбираемся в теме «Личный бренд»",
+    "description": "Помогу освоить направление «Личный бренд». Занятия строятся на практике и разборе реальных кейсов, без лишней теории.",
+    "type": "teach",
+    "subCategoryId": "personal-brand",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-46-0/600/400",
+      "https://picsum.photos/seed/skill-46-1/600/400",
+      "https://picsum.photos/seed/skill-46-2/600/400"
+    ],
+    "authorId": "user-46",
+    "createdAt": "2025-09-30T12:00:00.000Z"
+  },
+  {
+    "id": "skill-47",
+    "title": "Креативное письмо: базовый практикум",
+    "description": "Делюсь опытом в теме «Креативное письмо»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "creative-writing",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-47-0/600/400",
+      "https://picsum.photos/seed/skill-47-1/600/400"
+    ],
+    "authorId": "user-47",
+    "createdAt": "2026-03-23T12:00:00.000Z"
+  },
+  {
+    "id": "skill-48",
+    "title": "Рисование и иллюстрация с нуля",
+    "description": "Провожу занятия по теме «Рисование и иллюстрация». Подстраиваюсь под ваш уровень и цели, даю обратную связь после каждой встречи.",
+    "type": "teach",
+    "subCategoryId": "drawing",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-48-0/600/400",
+      "https://picsum.photos/seed/skill-48-1/600/400"
+    ],
+    "authorId": "user-48",
+    "createdAt": "2026-01-25T12:00:00.000Z"
+  },
+  {
+    "id": "skill-49",
+    "title": "Основы: Испанский",
+    "description": "Провожу занятия по теме «Испанский». Подстраиваюсь под ваш уровень и цели, даю обратную связь после каждой встречи.",
+    "type": "teach",
+    "subCategoryId": "spanish",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-49-0/600/400",
+      "https://picsum.photos/seed/skill-49-1/600/400"
+    ],
+    "authorId": "user-49",
+    "createdAt": "2026-03-27T12:00:00.000Z"
+  },
+  {
+    "id": "skill-50",
+    "title": "Научу: Личностное развитие",
+    "description": "Делюсь опытом в теме «Личностное развитие»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "personal-development",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-50-0/600/400",
+      "https://picsum.photos/seed/skill-50-1/600/400",
+      "https://picsum.photos/seed/skill-50-2/600/400",
+      "https://picsum.photos/seed/skill-50-3/600/400"
+    ],
+    "authorId": "user-50",
+    "createdAt": "2026-05-21T12:00:00.000Z"
+  },
+  {
+    "id": "skill-51",
+    "title": "Научу: Английский",
+    "description": "Делюсь опытом в теме «Английский»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "english",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-51-0/600/400",
+      "https://picsum.photos/seed/skill-51-1/600/400",
+      "https://picsum.photos/seed/skill-51-2/600/400"
+    ],
+    "authorId": "user-51",
+    "createdAt": "2025-10-18T12:00:00.000Z"
+  },
+  {
+    "id": "skill-52",
+    "title": "Французский для начинающих",
+    "description": "Делюсь опытом в теме «Французский»: от базовых принципов до применения в повседневных задачах.",
+    "type": "teach",
+    "subCategoryId": "french",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-52-0/600/400",
+      "https://picsum.photos/seed/skill-52-1/600/400",
+      "https://picsum.photos/seed/skill-52-2/600/400",
+      "https://picsum.photos/seed/skill-52-3/600/400"
+    ],
+    "authorId": "user-52",
+    "createdAt": "2026-03-19T12:00:00.000Z"
+  },
+  {
+    "id": "skill-53",
+    "title": "Научу: Личностное развитие",
+    "description": "Провожу занятия по теме «Личностное развитие». Подстраиваюсь под ваш уровень и цели, даю обратную связь после каждой встречи.",
+    "type": "teach",
+    "subCategoryId": "personal-development",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-53-0/600/400",
+      "https://picsum.photos/seed/skill-53-1/600/400"
+    ],
+    "authorId": "user-53",
+    "createdAt": "2026-02-22T12:00:00.000Z"
+  },
+  {
+    "id": "skill-54",
+    "title": "Навыки преподавания с нуля",
+    "description": "За несколько встреч разберём «Навыки преподавания» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "teaching-skills",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-54-0/600/400",
+      "https://picsum.photos/seed/skill-54-1/600/400",
+      "https://picsum.photos/seed/skill-54-2/600/400",
+      "https://picsum.photos/seed/skill-54-3/600/400"
+    ],
+    "authorId": "user-54",
+    "createdAt": "2025-09-17T12:00:00.000Z"
+  },
+  {
+    "id": "skill-55",
+    "title": "Личный бренд с нуля",
+    "description": "За несколько встреч разберём «Личный бренд» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "personal-brand",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-55-0/600/400",
+      "https://picsum.photos/seed/skill-55-1/600/400",
+      "https://picsum.photos/seed/skill-55-2/600/400"
+    ],
+    "authorId": "user-55",
+    "createdAt": "2026-02-22T12:00:00.000Z"
+  },
+  {
+    "id": "skill-56",
+    "title": "Основы: Навыки обучения",
+    "description": "Помогу освоить направление «Навыки обучения». Занятия строятся на практике и разборе реальных кейсов, без лишней теории.",
+    "type": "teach",
+    "subCategoryId": "learning-skills",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-56-0/600/400",
+      "https://picsum.photos/seed/skill-56-1/600/400"
+    ],
+    "authorId": "user-56",
+    "createdAt": "2025-11-07T12:00:00.000Z"
+  },
+  {
+    "id": "skill-57",
+    "title": "Навыки преподавания с нуля",
+    "description": "Провожу занятия по теме «Навыки преподавания». Подстраиваюсь под ваш уровень и цели, даю обратную связь после каждой встречи.",
+    "type": "teach",
+    "subCategoryId": "teaching-skills",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-57-0/600/400",
+      "https://picsum.photos/seed/skill-57-1/600/400",
+      "https://picsum.photos/seed/skill-57-2/600/400",
+      "https://picsum.photos/seed/skill-57-3/600/400"
+    ],
+    "authorId": "user-57",
+    "createdAt": "2026-03-19T12:00:00.000Z"
+  },
+  {
+    "id": "skill-58",
+    "title": "Научу: Сон и восстановление",
+    "description": "Провожу занятия по теме «Сон и восстановление». Подстраиваюсь под ваш уровень и цели, даю обратную связь после каждой встречи.",
+    "type": "teach",
+    "subCategoryId": "sleep-recovery",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-58-0/600/400",
+      "https://picsum.photos/seed/skill-58-1/600/400"
+    ],
+    "authorId": "user-58",
+    "createdAt": "2025-10-20T12:00:00.000Z"
+  },
+  {
+    "id": "skill-59",
+    "title": "Основы: Проектное управление",
+    "description": "За несколько встреч разберём «Проектное управление» на понятных примерах и небольших заданиях, которые сразу можно применить.",
+    "type": "teach",
+    "subCategoryId": "project-management",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-59-0/600/400",
+      "https://picsum.photos/seed/skill-59-1/600/400",
+      "https://picsum.photos/seed/skill-59-2/600/400"
+    ],
+    "authorId": "user-59",
+    "createdAt": "2026-04-25T12:00:00.000Z"
+  },
+  {
+    "id": "skill-60",
+    "title": "Китайский с нуля",
+    "description": "Помогу освоить направление «Китайский». Занятия строятся на практике и разборе реальных кейсов, без лишней теории.",
+    "type": "teach",
+    "subCategoryId": "chinese",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-60-0/600/400",
+      "https://picsum.photos/seed/skill-60-1/600/400",
+      "https://picsum.photos/seed/skill-60-2/600/400",
+      "https://picsum.photos/seed/skill-60-3/600/400"
+    ],
+    "authorId": "user-60",
+    "createdAt": "2025-10-03T12:00:00.000Z"
+  }
+]

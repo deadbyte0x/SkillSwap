@@ -1,1 +1,985 @@
-[]
+[
+  {
+    "id": "user-1",
+    "name": "Ксения Семёнова",
+    "about": "Из города Махачкала. Готова преподавать «Домашние финансы» и открыта к обмену навыками.",
+    "age": 36,
+    "sex": "female",
+    "email": "kseniya.semenova1@example.com",
+    "city": "Махачкала",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-1",
+    "createdAt": "2026-06-05T12:00:00.000Z",
+    "teachSkillId": "skill-1",
+    "learnSubcategoryIds": [
+      "english",
+      "acting",
+      "chinese",
+      "music"
+    ]
+  },
+  {
+    "id": "user-2",
+    "name": "Елена Семёнова",
+    "about": "Из города Ульяновск. Готова преподавать «Скорочтение» и открыта к обмену навыками.",
+    "age": 28,
+    "sex": "female",
+    "email": "elena.semenova2@example.com",
+    "city": "Ульяновск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-2",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "teachSkillId": "skill-2",
+    "learnSubcategoryIds": [
+      "spanish",
+      "japanese",
+      "home-finance"
+    ]
+  },
+  {
+    "id": "user-3",
+    "name": "Михаил Голубев",
+    "about": "Практик, а не теоретик: научу основам темы «Актёрское мастерство» на живых примерах из жизни.",
+    "age": 49,
+    "sex": "male",
+    "email": "mihail.golubev3@example.com",
+    "city": "Уфа",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-3",
+    "createdAt": "2026-06-24T12:00:00.000Z",
+    "teachSkillId": "skill-3",
+    "learnSubcategoryIds": [
+      "french",
+      "german",
+      "japanese",
+      "storage"
+    ]
+  },
+  {
+    "id": "user-4",
+    "name": "Татьяна Новикова",
+    "about": "Практик, а не теоретик: научу основам темы «Скорочтение» на живых примерах из жизни.",
+    "age": 22,
+    "sex": "female",
+    "email": "tatyana.novikova4@example.com",
+    "city": "Севастополь",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-4",
+    "createdAt": "2025-10-14T12:00:00.000Z",
+    "teachSkillId": "skill-4",
+    "learnSubcategoryIds": [
+      "cleaning-organization",
+      "fitness",
+      "work-life-balance"
+    ]
+  },
+  {
+    "id": "user-5",
+    "name": "Юлия Семёнова",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Актёрское мастерство», буду рада новым ученикам.",
+    "age": 52,
+    "sex": "female",
+    "email": "yuliya.semenova5@example.com",
+    "city": "Ростов-на-Дону",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-5",
+    "createdAt": "2025-10-27T12:00:00.000Z",
+    "teachSkillId": "skill-5",
+    "learnSubcategoryIds": [
+      "entrepreneurship"
+    ]
+  },
+  {
+    "id": "user-6",
+    "name": "Вероника Кузнецова",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Ментальное здоровье», буду рада новым ученикам.",
+    "age": 36,
+    "sex": "female",
+    "email": "veronika.kuznetsova6@example.com",
+    "city": "Владивосток",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-6",
+    "createdAt": "2026-04-16T12:00:00.000Z",
+    "teachSkillId": "skill-6",
+    "learnSubcategoryIds": [
+      "chinese",
+      "fitness",
+      "japanese"
+    ]
+  },
+  {
+    "id": "user-7",
+    "name": "Павел Воробьёв",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Китайский», буду рад новым ученикам.",
+    "age": 20,
+    "sex": "male",
+    "email": "pavel.vorobev7@example.com",
+    "city": "Красноярск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-7",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "teachSkillId": "skill-7",
+    "learnSubcategoryIds": [
+      "time-management",
+      "speed-reading",
+      "project-management",
+      "nutrition"
+    ]
+  },
+  {
+    "id": "user-8",
+    "name": "Павел Павлов",
+    "about": "Из города Владивосток. Готов преподавать «Личностное развитие» и открыт к обмену навыками.",
+    "age": 43,
+    "sex": "male",
+    "email": "pavel.pavlov8@example.com",
+    "city": "Владивосток",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-8",
+    "createdAt": "2025-09-21T12:00:00.000Z",
+    "teachSkillId": "skill-8",
+    "learnSubcategoryIds": [
+      "exam-prep",
+      "sales",
+      "music"
+    ]
+  },
+  {
+    "id": "user-9",
+    "name": "Максим Семёнов",
+    "about": "Практик, а не теоретик: научу основам темы «Коучинг» на живых примерах из жизни.",
+    "age": 53,
+    "sex": "male",
+    "email": "maksim.semenov9@example.com",
+    "city": "Оренбург",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-9",
+    "createdAt": "2026-03-04T12:00:00.000Z",
+    "teachSkillId": "skill-9",
+    "learnSubcategoryIds": [
+      "nutrition",
+      "personal-brand"
+    ]
+  },
+  {
+    "id": "user-10",
+    "name": "Виктория Павлова",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Резюме и собеседование», буду рада новым ученикам.",
+    "age": 63,
+    "sex": "female",
+    "email": "viktoriya.pavlova10@example.com",
+    "city": "Тюмень",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-10",
+    "createdAt": "2025-12-04T12:00:00.000Z",
+    "teachSkillId": "skill-10",
+    "learnSubcategoryIds": [
+      "coaching"
+    ]
+  },
+  {
+    "id": "user-11",
+    "name": "Владимир Смирнов",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Предпринимательство», буду рад новым ученикам.",
+    "age": 45,
+    "sex": "male",
+    "email": "vladimir.smirnov11@example.com",
+    "city": "Ульяновск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-11",
+    "createdAt": "2026-06-02T12:00:00.000Z",
+    "teachSkillId": "skill-11",
+    "learnSubcategoryIds": [
+      "home-finance",
+      "mental-health"
+    ]
+  },
+  {
+    "id": "user-12",
+    "name": "Иван Кузнецов",
+    "about": "Из города Казань. Готов преподавать «Домашние финансы» и открыт к обмену навыками.",
+    "age": 21,
+    "sex": "male",
+    "email": "ivan.kuznetsov12@example.com",
+    "city": "Казань",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-12",
+    "createdAt": "2026-04-01T12:00:00.000Z",
+    "teachSkillId": "skill-12",
+    "learnSubcategoryIds": [
+      "marketing",
+      "resume-interview",
+      "work-life-balance"
+    ]
+  },
+  {
+    "id": "user-13",
+    "name": "Сергей Лебедев",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Навыки преподавания», буду рад новым ученикам.",
+    "age": 28,
+    "sex": "male",
+    "email": "sergey.lebedev13@example.com",
+    "city": "Омск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-13",
+    "createdAt": "2025-10-24T12:00:00.000Z",
+    "teachSkillId": "skill-13",
+    "learnSubcategoryIds": [
+      "project-management",
+      "drawing"
+    ]
+  },
+  {
+    "id": "user-14",
+    "name": "Дмитрий Виноградов",
+    "about": "Из города Волгоград. Готов преподавать «Тайм-менеджмент» и открыт к обмену навыками.",
+    "age": 25,
+    "sex": "male",
+    "email": "dmitriy.vinogradov14@example.com",
+    "city": "Волгоград",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-14",
+    "createdAt": "2026-02-07T12:00:00.000Z",
+    "teachSkillId": "skill-14",
+    "learnSubcategoryIds": [
+      "home-repair",
+      "teaching-skills",
+      "cleaning-organization"
+    ]
+  },
+  {
+    "id": "user-15",
+    "name": "Ксения Кузнецова",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Навыки обучения», буду рада новым ученикам.",
+    "age": 32,
+    "sex": "female",
+    "email": "kseniya.kuznetsova15@example.com",
+    "city": "Челябинск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-15",
+    "createdAt": "2025-12-28T12:00:00.000Z",
+    "teachSkillId": "skill-15",
+    "learnSubcategoryIds": [
+      "home-repair"
+    ]
+  },
+  {
+    "id": "user-16",
+    "name": "Алина Попова",
+    "about": "Из города Оренбург. Готова преподавать «Проектное управление» и открыта к обмену навыками.",
+    "age": 33,
+    "sex": "female",
+    "email": "alina.popova16@example.com",
+    "city": "Оренбург",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-16",
+    "createdAt": "2026-04-21T12:00:00.000Z",
+    "teachSkillId": "skill-16",
+    "learnSubcategoryIds": [
+      "cleaning-organization",
+      "nutrition",
+      "german",
+      "creative-writing"
+    ]
+  },
+  {
+    "id": "user-17",
+    "name": "Максим Васильев",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Испанский», буду рад новым ученикам.",
+    "age": 47,
+    "sex": "male",
+    "email": "maksim.vasilev17@example.com",
+    "city": "Набережные Челны",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-17",
+    "createdAt": "2025-11-03T12:00:00.000Z",
+    "teachSkillId": "skill-17",
+    "learnSubcategoryIds": [
+      "houseplants",
+      "music",
+      "marketing",
+      "time-management"
+    ]
+  },
+  {
+    "id": "user-18",
+    "name": "Евгения Иванова",
+    "about": "Практик, а не теоретик: научу основам темы «Резюме и собеседование» на живых примерах из жизни.",
+    "age": 28,
+    "sex": "female",
+    "email": "evgeniya.ivanova18@example.com",
+    "city": "Воронеж",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-18",
+    "createdAt": "2026-06-02T12:00:00.000Z",
+    "teachSkillId": "skill-18",
+    "learnSubcategoryIds": [
+      "teaching-skills",
+      "german"
+    ]
+  },
+  {
+    "id": "user-19",
+    "name": "Анна Морозова",
+    "about": "Из города Краснодар. Готова преподавать «Приготовление еды» и открыта к обмену навыками.",
+    "age": 44,
+    "sex": "female",
+    "email": "anna.morozova19@example.com",
+    "city": "Краснодар",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-19",
+    "createdAt": "2026-05-02T12:00:00.000Z",
+    "teachSkillId": "skill-19",
+    "learnSubcategoryIds": [
+      "sleep-recovery",
+      "cognitive-techniques"
+    ]
+  },
+  {
+    "id": "user-20",
+    "name": "Мария Морозова",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Маркетинг и реклама», буду рада новым ученикам.",
+    "age": 49,
+    "sex": "female",
+    "email": "mariya.morozova20@example.com",
+    "city": "Омск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-20",
+    "createdAt": "2026-01-15T12:00:00.000Z",
+    "teachSkillId": "skill-20",
+    "learnSubcategoryIds": [
+      "learning-skills"
+    ]
+  },
+  {
+    "id": "user-21",
+    "name": "Екатерина Козлова",
+    "about": "Занимаюсь темой «Физические тренировки» не первый год и рада помочь новичкам разобраться.",
+    "age": 33,
+    "sex": "female",
+    "email": "ekaterina.kozlova21@example.com",
+    "city": "Санкт-Петербург",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-21",
+    "createdAt": "2026-01-09T12:00:00.000Z",
+    "teachSkillId": "skill-21",
+    "learnSubcategoryIds": [
+      "cognitive-techniques",
+      "cooking"
+    ]
+  },
+  {
+    "id": "user-22",
+    "name": "Ксения Павлова",
+    "about": "Практик, а не теоретик: научу основам темы «Французский» на живых примерах из жизни.",
+    "age": 38,
+    "sex": "female",
+    "email": "kseniya.pavlova22@example.com",
+    "city": "Челябинск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-22",
+    "createdAt": "2026-02-27T12:00:00.000Z",
+    "teachSkillId": "skill-22",
+    "learnSubcategoryIds": [
+      "exam-prep",
+      "english",
+      "teaching-skills"
+    ]
+  },
+  {
+    "id": "user-23",
+    "name": "Кирилл Виноградов",
+    "about": "Практик, а не теоретик: научу основам темы «Немецкий» на живых примерах из жизни.",
+    "age": 65,
+    "sex": "male",
+    "email": "kirill.vinogradov23@example.com",
+    "city": "Балашиха",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-23",
+    "createdAt": "2026-04-21T12:00:00.000Z",
+    "teachSkillId": "skill-23",
+    "learnSubcategoryIds": [
+      "cooking",
+      "team-management"
+    ]
+  },
+  {
+    "id": "user-24",
+    "name": "Татьяна Соловьёва",
+    "about": "Из города Красноярск. Готова преподавать «Видеомонтаж» и открыта к обмену навыками.",
+    "age": 25,
+    "sex": "female",
+    "email": "tatyana.soloveva24@example.com",
+    "city": "Красноярск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-24",
+    "createdAt": "2025-11-28T12:00:00.000Z",
+    "teachSkillId": "skill-24",
+    "learnSubcategoryIds": [
+      "coaching",
+      "nutrition"
+    ]
+  },
+  {
+    "id": "user-25",
+    "name": "Наталья Виноградова",
+    "about": "Практик, а не теоретик: научу основам темы «Ремонт» на живых примерах из жизни.",
+    "age": 50,
+    "sex": "female",
+    "email": "natalya.vinogradova25@example.com",
+    "city": "Томск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-25",
+    "createdAt": "2026-01-07T12:00:00.000Z",
+    "teachSkillId": "skill-25",
+    "learnSubcategoryIds": [
+      "coaching",
+      "marketing",
+      "decor-diy",
+      "music"
+    ]
+  },
+  {
+    "id": "user-26",
+    "name": "Полина Васильева",
+    "about": "Из города Ростов-на-Дону. Готова преподавать «Физические тренировки» и открыта к обмену навыками.",
+    "age": 18,
+    "sex": "female",
+    "email": "polina.vasileva26@example.com",
+    "city": "Ростов-на-Дону",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-26",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "teachSkillId": "skill-26",
+    "learnSubcategoryIds": [
+      "project-management",
+      "sleep-recovery",
+      "cooking"
+    ]
+  },
+  {
+    "id": "user-27",
+    "name": "Александр Павлов",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Уборка и организация», буду рад новым ученикам.",
+    "age": 53,
+    "sex": "male",
+    "email": "aleksandr.pavlov27@example.com",
+    "city": "Махачкала",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-27",
+    "createdAt": "2025-09-23T12:00:00.000Z",
+    "teachSkillId": "skill-27",
+    "learnSubcategoryIds": [
+      "home-repair",
+      "yoga-meditation",
+      "mental-health",
+      "video-editing"
+    ]
+  },
+  {
+    "id": "user-28",
+    "name": "Елена Козлова",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Навыки преподавания», буду рада новым ученикам.",
+    "age": 44,
+    "sex": "female",
+    "email": "elena.kozlova28@example.com",
+    "city": "Томск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-28",
+    "createdAt": "2025-11-19T12:00:00.000Z",
+    "teachSkillId": "skill-28",
+    "learnSubcategoryIds": [
+      "cooking"
+    ]
+  },
+  {
+    "id": "user-29",
+    "name": "Андрей Кузнецов",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Музыка и звук», буду рад новым ученикам.",
+    "age": 19,
+    "sex": "male",
+    "email": "andrey.kuznetsov29@example.com",
+    "city": "Иркутск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-29",
+    "createdAt": "2025-10-31T12:00:00.000Z",
+    "teachSkillId": "skill-29",
+    "learnSubcategoryIds": [
+      "storage",
+      "resume-interview"
+    ]
+  },
+  {
+    "id": "user-30",
+    "name": "Егор Попов",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Хранение вещей», буду рад новым ученикам.",
+    "age": 21,
+    "sex": "male",
+    "email": "egor.popov30@example.com",
+    "city": "Тольятти",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-30",
+    "createdAt": "2025-12-11T12:00:00.000Z",
+    "teachSkillId": "skill-30",
+    "learnSubcategoryIds": [
+      "drawing"
+    ]
+  },
+  {
+    "id": "user-31",
+    "name": "Юлия Козлова",
+    "about": "Из города Ярославль. Готова преподавать «Рисование и иллюстрация» и открыта к обмену навыками.",
+    "age": 34,
+    "sex": "female",
+    "email": "yuliya.kozlova31@example.com",
+    "city": "Ярославль",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-31",
+    "createdAt": "2025-09-12T12:00:00.000Z",
+    "teachSkillId": "skill-31",
+    "learnSubcategoryIds": [
+      "fitness"
+    ]
+  },
+  {
+    "id": "user-32",
+    "name": "Дарья Морозова",
+    "about": "Из города Екатеринбург. Готова преподавать «Личный бренд» и открыта к обмену навыками.",
+    "age": 61,
+    "sex": "female",
+    "email": "darya.morozova32@example.com",
+    "city": "Екатеринбург",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-32",
+    "createdAt": "2026-01-06T12:00:00.000Z",
+    "teachSkillId": "skill-32",
+    "learnSubcategoryIds": [
+      "mindfulness",
+      "spanish",
+      "storage",
+      "music"
+    ]
+  },
+  {
+    "id": "user-33",
+    "name": "Евгения Козлова",
+    "about": "Из города Тольятти. Готова преподавать «Музыка и звук» и открыта к обмену навыками.",
+    "age": 29,
+    "sex": "female",
+    "email": "evgeniya.kozlova33@example.com",
+    "city": "Тольятти",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-33",
+    "createdAt": "2025-12-26T12:00:00.000Z",
+    "teachSkillId": "skill-33",
+    "learnSubcategoryIds": [
+      "japanese"
+    ]
+  },
+  {
+    "id": "user-34",
+    "name": "Егор Семёнов",
+    "about": "Практик, а не теоретик: научу основам темы «Тайм-менеджмент» на живых примерах из жизни.",
+    "age": 52,
+    "sex": "male",
+    "email": "egor.semenov34@example.com",
+    "city": "Оренбург",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-34",
+    "createdAt": "2025-12-13T12:00:00.000Z",
+    "teachSkillId": "skill-34",
+    "learnSubcategoryIds": [
+      "marketing"
+    ]
+  },
+  {
+    "id": "user-35",
+    "name": "Виктория Лебедева",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Баланс жизни и работы», буду рада новым ученикам.",
+    "age": 28,
+    "sex": "female",
+    "email": "viktoriya.lebedeva35@example.com",
+    "city": "Краснодар",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-35",
+    "createdAt": "2025-10-25T12:00:00.000Z",
+    "teachSkillId": "skill-35",
+    "learnSubcategoryIds": [
+      "personal-development",
+      "exam-prep",
+      "sales",
+      "coaching"
+    ]
+  },
+  {
+    "id": "user-36",
+    "name": "Елена Новикова",
+    "about": "Занимаюсь темой «Подготовка к экзаменам (IELTS, TOEFL)» не первый год и рада помочь новичкам разобраться.",
+    "age": 54,
+    "sex": "female",
+    "email": "elena.novikova36@example.com",
+    "city": "Севастополь",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-36",
+    "createdAt": "2026-02-06T12:00:00.000Z",
+    "teachSkillId": "skill-36",
+    "learnSubcategoryIds": [
+      "personal-development"
+    ]
+  },
+  {
+    "id": "user-37",
+    "name": "Сергей Голубев",
+    "about": "Занимаюсь темой «Сон и восстановление» не первый год и рад помочь новичкам разобраться.",
+    "age": 43,
+    "sex": "male",
+    "email": "sergey.golubev37@example.com",
+    "city": "Оренбург",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-37",
+    "createdAt": "2025-12-12T12:00:00.000Z",
+    "teachSkillId": "skill-37",
+    "learnSubcategoryIds": [
+      "project-management"
+    ]
+  },
+  {
+    "id": "user-38",
+    "name": "Юлия Морозова",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Подготовка к экзаменам (IELTS, TOEFL)», буду рада новым ученикам.",
+    "age": 27,
+    "sex": "female",
+    "email": "yuliya.morozova38@example.com",
+    "city": "Иркутск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-38",
+    "createdAt": "2026-05-06T12:00:00.000Z",
+    "teachSkillId": "skill-38",
+    "learnSubcategoryIds": [
+      "cooking"
+    ]
+  },
+  {
+    "id": "user-39",
+    "name": "Евгения Кузнецова",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Осознанность», буду рада новым ученикам.",
+    "age": 26,
+    "sex": "female",
+    "email": "evgeniya.kuznetsova39@example.com",
+    "city": "Ижевск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-39",
+    "createdAt": "2026-05-26T12:00:00.000Z",
+    "teachSkillId": "skill-39",
+    "learnSubcategoryIds": [
+      "time-management"
+    ]
+  },
+  {
+    "id": "user-40",
+    "name": "Ксения Смирнова",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Видеомонтаж», буду рада новым ученикам.",
+    "age": 22,
+    "sex": "female",
+    "email": "kseniya.smirnova40@example.com",
+    "city": "Севастополь",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-40",
+    "createdAt": "2025-12-18T12:00:00.000Z",
+    "teachSkillId": "skill-40",
+    "learnSubcategoryIds": [
+      "nutrition"
+    ]
+  },
+  {
+    "id": "user-41",
+    "name": "Екатерина Новикова",
+    "about": "Занимаюсь темой «Баланс жизни и работы» не первый год и рада помочь новичкам разобраться.",
+    "age": 45,
+    "sex": "female",
+    "email": "ekaterina.novikova41@example.com",
+    "city": "Владивосток",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-41",
+    "createdAt": "2026-02-08T12:00:00.000Z",
+    "teachSkillId": "skill-41",
+    "learnSubcategoryIds": [
+      "cooking",
+      "nutrition",
+      "chinese"
+    ]
+  },
+  {
+    "id": "user-42",
+    "name": "Никита Козлов",
+    "about": "Практик, а не теоретик: научу основам темы «Проектное управление» на живых примерах из жизни.",
+    "age": 40,
+    "sex": "male",
+    "email": "nikita.kozlov42@example.com",
+    "city": "Воронеж",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-42",
+    "createdAt": "2025-09-14T12:00:00.000Z",
+    "teachSkillId": "skill-42",
+    "learnSubcategoryIds": [
+      "sleep-recovery",
+      "teaching-skills",
+      "drawing",
+      "time-management"
+    ]
+  },
+  {
+    "id": "user-43",
+    "name": "Софья Попова",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Коучинг», буду рада новым ученикам.",
+    "age": 21,
+    "sex": "female",
+    "email": "sofya.popova43@example.com",
+    "city": "Ижевск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-43",
+    "createdAt": "2025-11-06T12:00:00.000Z",
+    "teachSkillId": "skill-43",
+    "learnSubcategoryIds": [
+      "entrepreneurship",
+      "french",
+      "photography"
+    ]
+  },
+  {
+    "id": "user-44",
+    "name": "Андрей Кузнецов",
+    "about": "Практик, а не теоретик: научу основам темы «Домашние растения» на живых примерах из жизни.",
+    "age": 19,
+    "sex": "male",
+    "email": "andrey.kuznetsov44@example.com",
+    "city": "Барнаул",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-44",
+    "createdAt": "2026-04-13T12:00:00.000Z",
+    "teachSkillId": "skill-44",
+    "learnSubcategoryIds": [
+      "cooking",
+      "cognitive-techniques"
+    ]
+  },
+  {
+    "id": "user-45",
+    "name": "Илья Козлов",
+    "about": "Практик, а не теоретик: научу основам темы «Французский» на живых примерах из жизни.",
+    "age": 30,
+    "sex": "male",
+    "email": "ilya.kozlov45@example.com",
+    "city": "Ярославль",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-45",
+    "createdAt": "2025-11-28T12:00:00.000Z",
+    "teachSkillId": "skill-45",
+    "learnSubcategoryIds": [
+      "drawing"
+    ]
+  },
+  {
+    "id": "user-46",
+    "name": "Денис Волков",
+    "about": "Из города Ростов-на-Дону. Готов преподавать «Личный бренд» и открыт к обмену навыками.",
+    "age": 52,
+    "sex": "male",
+    "email": "denis.volkov46@example.com",
+    "city": "Ростов-на-Дону",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-46",
+    "createdAt": "2025-09-30T12:00:00.000Z",
+    "teachSkillId": "skill-46",
+    "learnSubcategoryIds": [
+      "music",
+      "video-editing",
+      "exam-prep",
+      "japanese"
+    ]
+  },
+  {
+    "id": "user-47",
+    "name": "Илья Богданов",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Креативное письмо», буду рад новым ученикам.",
+    "age": 61,
+    "sex": "male",
+    "email": "ilya.bogdanov47@example.com",
+    "city": "Ярославль",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-47",
+    "createdAt": "2026-03-23T12:00:00.000Z",
+    "teachSkillId": "skill-47",
+    "learnSubcategoryIds": [
+      "cleaning-organization",
+      "fitness"
+    ]
+  },
+  {
+    "id": "user-48",
+    "name": "Кирилл Соловьёв",
+    "about": "Из города Севастополь. Готов преподавать «Рисование и иллюстрация» и открыт к обмену навыками.",
+    "age": 55,
+    "sex": "male",
+    "email": "kirill.solovev48@example.com",
+    "city": "Севастополь",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-48",
+    "createdAt": "2026-01-25T12:00:00.000Z",
+    "teachSkillId": "skill-48",
+    "learnSubcategoryIds": [
+      "mindfulness",
+      "video-editing"
+    ]
+  },
+  {
+    "id": "user-49",
+    "name": "Павел Виноградов",
+    "about": "Практик, а не теоретик: научу основам темы «Испанский» на живых примерах из жизни.",
+    "age": 61,
+    "sex": "male",
+    "email": "pavel.vinogradov49@example.com",
+    "city": "Махачкала",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-49",
+    "createdAt": "2026-03-27T12:00:00.000Z",
+    "teachSkillId": "skill-49",
+    "learnSubcategoryIds": [
+      "personal-development"
+    ]
+  },
+  {
+    "id": "user-50",
+    "name": "Никита Кузнецов",
+    "about": "Практик, а не теоретик: научу основам темы «Личностное развитие» на живых примерах из жизни.",
+    "age": 64,
+    "sex": "male",
+    "email": "nikita.kuznetsov50@example.com",
+    "city": "Ижевск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-50",
+    "createdAt": "2026-05-21T12:00:00.000Z",
+    "teachSkillId": "skill-50",
+    "learnSubcategoryIds": [
+      "cleaning-organization",
+      "mindfulness"
+    ]
+  },
+  {
+    "id": "user-51",
+    "name": "Ольга Козлова",
+    "about": "Из города Красноярск. Готова преподавать «Английский» и открыта к обмену навыками.",
+    "age": 56,
+    "sex": "female",
+    "email": "olga.kozlova51@example.com",
+    "city": "Красноярск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-51",
+    "createdAt": "2025-10-18T12:00:00.000Z",
+    "teachSkillId": "skill-51",
+    "learnSubcategoryIds": [
+      "decor-diy",
+      "houseplants",
+      "marketing",
+      "spanish"
+    ]
+  },
+  {
+    "id": "user-52",
+    "name": "Елена Зайцева",
+    "about": "Из города Нижний Новгород. Готова преподавать «Французский» и открыта к обмену навыками.",
+    "age": 61,
+    "sex": "female",
+    "email": "elena.zaytseva52@example.com",
+    "city": "Нижний Новгород",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-52",
+    "createdAt": "2026-03-19T12:00:00.000Z",
+    "teachSkillId": "skill-52",
+    "learnSubcategoryIds": [
+      "coaching",
+      "personal-brand",
+      "speed-reading"
+    ]
+  },
+  {
+    "id": "user-53",
+    "name": "Ксения Васильева",
+    "about": "Из города Ижевск. Готова преподавать «Личностное развитие» и открыта к обмену навыками.",
+    "age": 53,
+    "sex": "female",
+    "email": "kseniya.vasileva53@example.com",
+    "city": "Ижевск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-53",
+    "createdAt": "2026-02-22T12:00:00.000Z",
+    "teachSkillId": "skill-53",
+    "learnSubcategoryIds": [
+      "home-finance"
+    ]
+  },
+  {
+    "id": "user-54",
+    "name": "Владимир Богданов",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Навыки преподавания», буду рад новым ученикам.",
+    "age": 43,
+    "sex": "male",
+    "email": "vladimir.bogdanov54@example.com",
+    "city": "Новосибирск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-54",
+    "createdAt": "2025-09-17T12:00:00.000Z",
+    "teachSkillId": "skill-54",
+    "learnSubcategoryIds": [
+      "resume-interview",
+      "japanese",
+      "houseplants"
+    ]
+  },
+  {
+    "id": "user-55",
+    "name": "Денис Иванов",
+    "about": "Из города Новосибирск. Готов преподавать «Личный бренд» и открыт к обмену навыками.",
+    "age": 51,
+    "sex": "male",
+    "email": "denis.ivanov55@example.com",
+    "city": "Новосибирск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-55",
+    "createdAt": "2026-02-22T12:00:00.000Z",
+    "teachSkillId": "skill-55",
+    "learnSubcategoryIds": [
+      "chinese",
+      "mindfulness",
+      "french"
+    ]
+  },
+  {
+    "id": "user-56",
+    "name": "Екатерина Смирнова",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Навыки обучения», буду рада новым ученикам.",
+    "age": 46,
+    "sex": "female",
+    "email": "ekaterina.smirnova56@example.com",
+    "city": "Рязань",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-56",
+    "createdAt": "2025-11-07T12:00:00.000Z",
+    "teachSkillId": "skill-56",
+    "learnSubcategoryIds": [
+      "yoga-meditation",
+      "team-management",
+      "resume-interview",
+      "personal-brand"
+    ]
+  },
+  {
+    "id": "user-57",
+    "name": "Вероника Воробьёва",
+    "about": "Из города Пермь. Готова преподавать «Навыки преподавания» и открыта к обмену навыками.",
+    "age": 39,
+    "sex": "female",
+    "email": "veronika.vorobeva57@example.com",
+    "city": "Пермь",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-57",
+    "createdAt": "2026-03-19T12:00:00.000Z",
+    "teachSkillId": "skill-57",
+    "learnSubcategoryIds": [
+      "sales",
+      "video-editing",
+      "spanish",
+      "storage"
+    ]
+  },
+  {
+    "id": "user-58",
+    "name": "Дмитрий Виноградов",
+    "about": "Верю, что учиться можно в любом возрасте. Моя тема — «Сон и восстановление», буду рад новым ученикам.",
+    "age": 36,
+    "sex": "male",
+    "email": "dmitriy.vinogradov58@example.com",
+    "city": "Ярославль",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-58",
+    "createdAt": "2025-10-20T12:00:00.000Z",
+    "teachSkillId": "skill-58",
+    "learnSubcategoryIds": [
+      "cognitive-techniques"
+    ]
+  },
+  {
+    "id": "user-59",
+    "name": "Денис Фёдоров",
+    "about": "Из города Хабаровск. Готов преподавать «Проектное управление» и открыт к обмену навыками.",
+    "age": 62,
+    "sex": "male",
+    "email": "denis.fedorov59@example.com",
+    "city": "Хабаровск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-59",
+    "createdAt": "2026-04-25T12:00:00.000Z",
+    "teachSkillId": "skill-59",
+    "learnSubcategoryIds": [
+      "yoga-meditation",
+      "cleaning-organization",
+      "decor-diy"
+    ]
+  },
+  {
+    "id": "user-60",
+    "name": "Максим Козлов",
+    "about": "Из города Ижевск. Готов преподавать «Китайский» и открыт к обмену навыками.",
+    "age": 49,
+    "sex": "male",
+    "email": "maksim.kozlov60@example.com",
+    "city": "Ижевск",
+    "avatarUrl": "https://i.pravatar.cc/300?u=user-60",
+    "createdAt": "2025-10-03T12:00:00.000Z",
+    "teachSkillId": "skill-60",
+    "learnSubcategoryIds": [
+      "decor-diy"
+    ]
+  }
+]
