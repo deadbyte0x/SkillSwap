@@ -5,7 +5,7 @@
 }
 
 .text {
-    font-style: var(--font-roboto);
+    font-family: var(--font-roboto);
     font-size:var(--space-md);
     line-height: var(--space-xl);
     letter-spacing: 2%;
