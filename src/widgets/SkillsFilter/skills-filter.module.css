@@ -10,7 +10,7 @@
     line-height: var(--space-xl);
     letter-spacing: 2%;
     vertical-align: middle;
-
+    color: var(--color-text);
 }
 
 .li {
