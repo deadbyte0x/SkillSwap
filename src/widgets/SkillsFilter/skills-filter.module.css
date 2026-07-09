@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.text {
+    font-style: var(--font-roboto);
+    font-size:var(--space-md);
+    line-height: var(--space-xl);
+    letter-spacing: 2%;
+    vertical-align: middle;
+
+}
+
+.li {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
