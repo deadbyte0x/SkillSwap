@@ -1,0 +1,34 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 284px;
+}
+
+.categoryRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subcategories {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 20px;
+  margin-top: 12px;
+}
+
+.showAllButton {
+  background: none;
+  border: none;
+  color: var(--color-text-link);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.title {
+  margin-bottom: 8px;
+}
