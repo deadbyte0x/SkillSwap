@@ -6,7 +6,7 @@ interface FilterProps {
     onChange: (value: FilterValue) => void
 }
 
-type FilterValue = "unknown" | "man" | "woman"
+type FilterValue = "unknown" | "male" | "female"
 
 export const GenderFilter = ({ onChange }: FilterProps) => {
   const [selected, setSelected] = useState<FilterValue>("unknown");
@@ -30,16 +30,16 @@ export const GenderFilter = ({ onChange }: FilterProps) => {
 
       <li className={styles.li}>
         <RadioButton
-          checked={selected === "man"}
-          onClick={() => handleClick("man")}
+          checked={selected === "male"}
+          onClick={() => handleClick("male")}
         />
         <span className={styles.text}>Мужской</span>
       </li>
 
       <li className={styles.li}>
         <RadioButton
-          checked={selected === "woman"}
-          onClick={() => handleClick("woman")}
+          checked={selected === "female"}
+          onClick={() => handleClick("female")}
         />
         <span className={styles.text}>Женский</span>
       </li>
