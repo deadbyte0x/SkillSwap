@@ -19,3 +19,13 @@ export function truncate(str: string, maxLength: number): string {
 export function generateId(): string {
   return crypto.randomUUID()
 }
+
+// возвращает правильное слово: год/года/лет
+export const getAgeWord = (age: number): string => {
+  const lastTwo = age % 100;
+  const lastOne = age % 10;
+  if (lastTwo >= 11 && lastTwo <= 14) return 'лет';
+  if (lastOne === 1) return 'год';
+  if (lastOne >= 2 && lastOne <= 4) return 'года';
+  return 'лет';
+};
