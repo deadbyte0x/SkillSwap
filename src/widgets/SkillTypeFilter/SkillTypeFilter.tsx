@@ -1,6 +1,6 @@
 import { RadioButton } from "@/shared/ui/radio-button"
 import { useState } from "react"
-import styles from './skills-filter.module.css'
+import styles from './skill-type-filter.module.css'
 
 interface FilterProps {
     onChange: (value: FilterValue) => void
@@ -8,7 +8,7 @@ interface FilterProps {
 
 type FilterValue = "all" | "learn" | "teach"
 
-export const SkillsFilter = ({ onChange }: FilterProps) => {
+export const SkillTypeFilter = ({ onChange }: FilterProps) => {
   const [selected, setSelected] = useState<FilterValue>("all");
 
   const handleClick = (value: FilterValue) => {

@@ -1,1 +1,0 @@
-export {SkillsFilter} from './SkillsFilter'
