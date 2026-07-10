@@ -82,7 +82,6 @@ export const DropdownInput: React.FC<DropdownInputProps> = ({
     <div className={styles.wrapper} ref={wrapperRef}>
       {label && <label className={styles.label}>{label}</label>}
 
-      {/* ✅ ДОБАВЛЕН КЛАСС .open */}
       <div
         className={`${styles.inputWrapper} ${isOpen ? styles.open : ''}`}
         onMouseDown={handleWrapperMouseDown}
@@ -102,9 +101,7 @@ export const DropdownInput: React.FC<DropdownInputProps> = ({
           onFocus={() => setIsOpen(true)}
           disabled={disabled}
         />
-         <span className={styles.arrow}>
-          {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
-        </span>
+        <span className={styles.arrow}>{isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}</span>
       </div>
 
       {isOpen && (

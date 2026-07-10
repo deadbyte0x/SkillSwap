@@ -1,5 +1,3 @@
-/* src/shared/ui/DropdownInput/DropdownInput.module.css */
-
 .wrapper {
   position: relative;
   width: 100%;
@@ -71,8 +69,6 @@
   justify-content: center;
   color: var(--color-toggle, #999);
 }
-
-
 
 .dropdown {
   position: absolute;
