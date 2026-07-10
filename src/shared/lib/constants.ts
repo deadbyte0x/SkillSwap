@@ -8,6 +8,7 @@ export const ROUTES = {
   CREATE: '/create',
   LOGIN: '/login',
   REGISTER: '/register',
+  ERROR: '/500'
 } as const
 
 export const SKILL_CATEGORIES: Category[] = [
