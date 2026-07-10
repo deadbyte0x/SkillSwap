@@ -1,8 +1,10 @@
 import styles from './Tag.module.css';
 
+export type TagCategory = 'foreign-languages' | 'education' | 'health' | 'business-career' | 'art' | 'home-comfort' | 'plus';
+
 interface TagProps {
-  category: 'foreign-languages' | 'education' | 'health' | 'business-career' | 'art' | 'home-comfort' | 'plus'; // категория тега
-  children: React.ReactNode; // текст тега
+  category: TagCategory;
+  children: React.ReactNode;
 }
 
 export const Tag = ({ category, children }: TagProps) => {

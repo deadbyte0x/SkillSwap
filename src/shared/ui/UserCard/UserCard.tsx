@@ -1,30 +1,37 @@
 import styles from './UserCard.module.css';
 import { Button } from '../Button';
 import { LikeButton } from '../LikeButton';
-import { Tag } from '../Tag';
+import { Tag, TagCategory } from '../Tag';
+import { getAgeWord } from '../../lib/helpers';
+import { SUBCATEGORY_BY_ID } from '../../lib/constants';
+import { User } from '../../types';
 
 interface UserCardProps {
-  name: string;
-  city: string;
-  age: number;
-  avatar: string | null;  // null - если нет аватара
-  teachSkills: string[];     // массив навыков "может научить"
-  learnSkills: string[];     // массив навыков "хочет научиться"
-  onDetailsClick: () => void; // кнопка "Подробнее"
+  user: User;                 // данные пользователя
+  teachSkill: {               // навык отдельно, так как хранится в другой таблице
+    title: string;
+    subCategoryId: string;
+  };
+  isLiked: boolean;
+  onLike: () => void;
+  onDetailsClick: () => void;
 }
 
-export const UserCard = ({ name, city, age, avatar, teachSkills, learnSkills, onDetailsClick }: UserCardProps) => {
+export const UserCard = ({ user, teachSkill, isLiked, onLike, onDetailsClick }: UserCardProps) => {
+  // получаем категорию навыка "может научить" для цвета тега
+  const teachSub = SUBCATEGORY_BY_ID.get(teachSkill.subCategoryId);
+  const teachCategoryId = (teachSub?.categoryId ?? 'plus') as TagCategory;
   return (
     <div className={styles.card}>
-      <div className={styles.likeButton}>
-        <LikeButton isActive={false} onClick={() => {}} />
-      </div>
       {/* блок с аватаром и информацией о пользователе */}
       <div className={styles.user}>
-        {avatar && <img src={avatar} alt={name} />}
+        {user.avatarUrl && <img src={user.avatarUrl} alt={user.name} />}
         <div className={styles.userInfo}>
-          <p className={styles.name}>{name}</p>
-          <p className={styles.location}>{city}, {age} лет</p>
+          <p className={styles.name}>{user.name}</p>
+          <p className={styles.location}>{user.city}, {user.age} {getAgeWord(user.age)}</p>
+        </div>
+        <div className={styles.likeButton}>
+          <LikeButton isActive={isLiked} onClick={onLike} />
         </div>
       </div>
 
@@ -33,20 +40,23 @@ export const UserCard = ({ name, city, age, avatar, teachSkills, learnSkills, on
         <div className={styles.skillsBlock}>
           <p>Может научить:</p>
           <div className={styles.skills}>
-            {/* для каждого навыка из массива создаем Tag с этим навыком внутри */}
-            {teachSkills.map(skill => (
-              <Tag key={skill} category="plus">{skill}</Tag>
-            ))}
+            <Tag category={teachCategoryId}>{teachSkill.title}</Tag>
           </div>
         </div>
 
         <div className={styles.skillsBlock}>
           <p>Хочет научиться:</p>
           <div className={styles.skills}>
-            {/* показываем только первые два навыка */}
-            {learnSkills.slice(0, 2).map(skill => <Tag key={skill} category="plus">{skill}</Tag>)}
-            {/* если навыков больше 2 — показываем счётчик остальных */}
-            {learnSkills.length > 2 && <Tag category="plus">+{learnSkills.length - 2}</Tag>}
+            {/* показываем первые два навыка с цветом категории */}
+            {user.learnSubcategoryIds.slice(0, 2).map(subId => {
+              const sub = SUBCATEGORY_BY_ID.get(subId);
+              const categoryId = (sub?.categoryId ?? 'plus') as TagCategory;
+              return <Tag key={subId} category={categoryId}>{sub?.name ?? subId}</Tag>;
+            })}
+            {/* если навыков больше 2 — показываем счётчик */}
+            {user.learnSubcategoryIds.length > 2 && (
+              <Tag category="plus">+{user.learnSubcategoryIds.length - 2}</Tag>
+            )}
           </div>
         </div>
       </div>
