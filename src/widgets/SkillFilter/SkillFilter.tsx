@@ -2,19 +2,8 @@ import { useState } from 'react';
 import styles from './SkillFilter.module.css';
 import { CheckBox } from '../../shared/ui/CheckBox';
 import { ChevronDownIcon, ChevronUpIcon } from '../../shared/ui/icons';
+import { Category } from '@/shared/types'
 
-// структура подкатегории
-interface Subcategory {
-  id: string;
-  name: string;
-}
-
-// структура категории
-interface Category {
-  id: string;
-  name: string;
-  subcategories: Subcategory[];
-}
 
 // пропсы компонента
 interface SkillFilterProps {
@@ -24,15 +13,17 @@ interface SkillFilterProps {
 }
 
 export const SkillFilter = ({ categories, onCategoryChange, onSubcategoryChange }: SkillFilterProps) => {
-  const [openCategoryId, setOpenCategoryId] = useState<string | null>(null); // какая категория открыта
+  const [selectedCategoryIds, setSelectedCategoryIds] = useState<string[]>([]); // какая категория открыта
   const [showAll, setShowAll] = useState(false); // показывать все категории или только 6
   const [selectedSubIds, setSelectedSubIds] = useState<string[]>([]); // выбранные подкатегории
 
   // открываем/закрываем подкатегории при клике на категорию
   const handleCategoryClick = (categoryId: string) => {
-    setOpenCategoryId(openCategoryId === categoryId ? null : categoryId);
-    onCategoryChange(categoryId);
-  };
+    setSelectedCategoryIds((prev) =>
+      prev.includes(categoryId) ? prev.filter((id) => id != categoryId) : [...prev, categoryId]
+    )
+    onCategoryChange(categoryId)
+  }
 
   // переключаем выбор подкатегории
   const handleSubcategoryClick = (subId: string) => {
@@ -53,16 +44,16 @@ export const SkillFilter = ({ categories, onCategoryChange, onSubcategoryChange 
           {/* строка с чекбоксом и названием категории */}
           <div className={styles.categoryRow}>
             <CheckBox
-              isActive={openCategoryId === category.id}
-              type={openCategoryId === category.id ? 'minus' : 'check'}
+              isActive={selectedCategoryIds.includes(category.id)}
+              type='minus'
               onClick={() => handleCategoryClick(category.id)}
             />
             <span>{category.name}</span>
           </div>
           {/* подкатегории снизу */}
-          {openCategoryId === category.id && (
+          {selectedCategoryIds.includes(category.id) && (
             <div className={styles.subcategories}>
-              {category.subcategories.map(sub => (
+              {category.subCategories.map(sub => (
                 <div key={sub.id} className={styles.categoryRow}>
                   <CheckBox
                     isActive={selectedSubIds.includes(sub.id)}
