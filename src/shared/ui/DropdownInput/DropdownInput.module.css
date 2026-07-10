@@ -1,40 +1,18 @@
-:root {
-  --dropdown-bg: #fff;
-  --dropdown-text: #1a1a1a;
-  --dropdown-border: #e0e0e0;
-  --dropdown-border-hover: #bdbdbd;
-  --dropdown-border-focus: #4a6cf7;
-  --dropdown-border-open: #999;
-  --dropdown-shadow: 0 4px 12px rgba(0 0 0 0 / 8%);
-  --dropdown-shadow-focus: 0 0 0 4px rgba(74, 108, 247/10%);
-  --dropdown-label: #333;
-  --dropdown-arrow: #999;
-
-  /* Состояния вариантов */
-  --dropdown-option-hover: #f5f5f5;
-  --dropdown-option-selected: #e8f0fe;
-  --dropdown-option-selected-text: #1a1a1a;
-  --dropdown-option-highlighted: #f0f0f0;
-  --dropdown-option-text: #1a1a1a;
-  --dropdown-disabled: #f5f5f5;
-  --dropdown-no-options: #999;
-  --dropdown-scroll: #d0d0d0;
-  --dropdown-scroll-hover: #b0b0b0;
-  --dropdown-margin-top: 4px;
-}
+/* src/shared/ui/DropdownInput/DropdownInput.module.css */
 
 .wrapper {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 436px;
 }
 
 .label {
   display: block;
-  margin-bottom: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #333;
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  font-family: var(--font-roboto);
 }
 
 .inputWrapper {
@@ -45,22 +23,38 @@
 
 .input {
   width: 100%;
-  padding: 10px 40px 10px 14px;
-  font-size: 16px;
-  border: 2px solid #69735d;
-  border-radius: 8px;
+  height: 48px;
+  padding: 12px 54px 12px 20px;
+  font-size: var(--font-size-base);
+  font-family: var(--font-roboto);
+  border: 1px solid var(--color-caption);
+  border-radius: var(--radius-lg);
   outline: none;
   transition: all 0.2s ease;
-  background: #fff;
-  color: #1a1a1a;
+  background: var(--color-input);
+  color: var(--color-text);
   cursor: pointer;
   box-sizing: border-box;
 }
 
+.input::placeholder {
+  color: var(--color-caption);
+}
+
 .input:disabled {
-  background: #f5f5f5;
+  background: var(--color-disabled);
   cursor: not-allowed;
   opacity: 0.7;
+}
+
+.inputWrapper.open .input {
+  border-bottom: 1px solid var(--color-caption);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.inputWrapper.open .arrow {
+  color: var(--color-caption);
 }
 
 .arrow {
@@ -68,75 +62,87 @@
   right: 14px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 14px;
-  color: #999;
-  transition: transform 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-toggle, #999);
 }
 
-.arrowUp {
-  transform: translateY(-50%) rotate(180deg);
-}
+
 
 .dropdown {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  padding: 4px 0;
-  background: #fff;
-  border: 2px solid #69735d;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-card);
+  border: 1px solid var(--color-caption);
   border-top: none;
-  box-shadow: 0 4px 12px rgba(0 0 0 / 8%);
-  max-height: 200px;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  margin-top: -1px;
+  max-height: 120px;
   overflow-y: auto;
+  gap: var(--space-sm);
   z-index: 1000;
+  padding: var(--space-sm) 0;
   list-style: none;
+  box-shadow: var(--shadow-md);
 }
 
 .option {
-  padding: 10px 14px;
-  font-size: 16px;
-  color: #1a1a1a;
+  font-size: var(--font-size-base);
+  font-family: var(--font-roboto);
+  color: var(--color-text);
   cursor: pointer;
+  padding: var(--space-xs) var(--space-lg);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .option:hover {
-  background: #f5f5f5;
+  color: var(--color-text);
+  background: var(--color-disabled);
 }
 
 .option.selected {
-  background: #e8f0fe;
-  color: #1a1a1a;
+  color: var(--color-text-link);
+  font-weight: var(--font-weight-medium);
 }
 
 .option.highlighted {
-  background: #f0f0f0;
+  background: var(--color-disabled);
 }
 
 .noOptions {
-  padding: 10px 14px;
-  font-size: 16px;
-  color: #999;
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-size-base);
+  font-family: var(--font-roboto);
+  color: var(--color-disabled-text);
   text-align: center;
   cursor: default;
 }
 
 .dropdown::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 .dropdown::-webkit-scrollbar-track {
-  background: #f5f5f5;
-  border-radius: 4px;
+  background: var(--color-disabled);
+  border-radius: var(--radius-sm);
 }
 
 .dropdown::-webkit-scrollbar-thumb {
-  background: #d0d0d0;
-  border-radius: 4px;
+  background: var(--color-caption);
+  border-radius: var(--radius-sm);
 }
 
 .dropdown::-webkit-scrollbar-thumb:hover {
-  background: #b0b0b0;
+  background: var(--color-toggle);
 }

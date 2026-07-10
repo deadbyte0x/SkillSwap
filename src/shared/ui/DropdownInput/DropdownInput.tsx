@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect, KeyboardEvent } from 'react'
 import styles from './DropdownInput.module.css'
+import { ChevronUpIcon } from '../icons'
+import { ChevronDownIcon } from '../icons'
 
 interface DropdownInputProps {
   /** Массив вариантов для выбора */
@@ -79,7 +81,12 @@ export const DropdownInput: React.FC<DropdownInputProps> = ({
   return (
     <div className={styles.wrapper} ref={wrapperRef}>
       {label && <label className={styles.label}>{label}</label>}
-      <div className={styles.inputWrapper} onMouseDown={handleWrapperMouseDown}>
+
+      {/* ✅ ДОБАВЛЕН КЛАСС .open */}
+      <div
+        className={`${styles.inputWrapper} ${isOpen ? styles.open : ''}`}
+        onMouseDown={handleWrapperMouseDown}
+      >
         <input
           ref={inputRef}
           type="text"
@@ -95,18 +102,11 @@ export const DropdownInput: React.FC<DropdownInputProps> = ({
           onFocus={() => setIsOpen(true)}
           disabled={disabled}
         />
-        <span className={`${styles.arrow} ${isOpen ? styles.arrowUp : ''}`}>
-          <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-            <path
-              d="M1 1.5L6 6.5L11 1.5"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+         <span className={styles.arrow}>
+          {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
         </span>
       </div>
+
       {isOpen && (
         <ul className={styles.dropdown}>
           {filteredOptions.length > 0 ? (
