@@ -1,0 +1,27 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 556px;
+  height: 420px;
+  padding: 80px 60px;
+  gap: 52px;
+}
+
+.containerWide {
+  width: 1024px;
+  height: 532px;
+  padding: 44px 60px 72px 60px;
+  gap: 40px;
+}
