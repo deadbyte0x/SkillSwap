@@ -1,0 +1,1 @@
+export { ProposalCreatedModal } from './ProposalCreatedModal';

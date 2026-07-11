@@ -15,8 +15,8 @@
   flex-direction: column;
   width: 556px;
   height: 420px;
-  padding: 80px 60px;
-  gap: 52px;
+  padding: 62px 60px;
+  position: relative;
 }
 
 .containerWide {
@@ -24,4 +24,5 @@
   height: 532px;
   padding: 44px 60px 72px 60px;
   gap: 40px;
+  position: relative;
 }
