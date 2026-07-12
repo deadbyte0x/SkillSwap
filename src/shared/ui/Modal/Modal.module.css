@@ -4,14 +4,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(0 0 0 / 50%);
   z-index: 1000;
 }
 
 .container,
 .containerMedium,
 .containerWide {
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -34,6 +34,6 @@
 .containerWide {
   width: 1024px;
   height: 532px;
-  padding: 44px 60px 72px 60px;
+  padding: 44px 60px 72px;
   gap: 40px;
 }
