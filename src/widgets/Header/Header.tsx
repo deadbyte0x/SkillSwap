@@ -5,6 +5,9 @@ import SvgCross from '../../shared/ui/icons/CrossIcon';
 import { ThemeButton } from '../../shared/ui/ThemeButton';
 // import { NotificationBell } from '../../shared/ui/NotificationBell';
 import { LikeButton } from '../../shared/ui/LikeButton';
+import { useState } from 'react';
+import { ChevronDownIcon } from '@/shared/ui';
+import { SkillsMenu } from '../SkillsMenu';
 
 interface HeaderProps {
   variant?: 'logged-out' | 'logged-in' | 'pure'; // вариант хэдера
@@ -13,6 +16,7 @@ interface HeaderProps {
 }
 
 export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderProps) => {
+  const [isSkillsOpened, setIsSkillsOpened] = useState(false)
   return (
     <header className={styles.header}>
       <div className={styles.left}>
@@ -20,7 +24,10 @@ export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderP
         {variant !== 'pure' && (
           <nav className={styles.nav}>
             <a href="#">О проекте</a>
-            <a href="#">Все навыки</a>
+            <button className={styles.skillsContainer} type='button' onClick={() => setIsSkillsOpened(!isSkillsOpened)}>
+            <a href="#" onClick={(e) => e.preventDefault()}>Все навыки</a>
+            <ChevronDownIcon/>
+            </button>
           </nav>
         )}
       </div>
@@ -46,6 +53,7 @@ export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderP
           {userAvatar && <img src={userAvatar} alt={userName} />}
         </div>
       )}
+      {isSkillsOpened && <SkillsMenu/>}
     </header>
   );
 };

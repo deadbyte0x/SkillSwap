@@ -1,0 +1,75 @@
+
+
+.background {
+    width: 1136px;
+    height: 1040px;
+    background-color: var(--color-card) ;
+    position: absolute;
+    top: 5.875rem;
+    left: 2.25rem;
+    border-radius: 0.75rem;
+    padding: 60px;
+    border: 1px solid var(--color-caption);
+}
+
+.gridLayout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 2.5rem;
+}
+
+.title {
+font-family: var(--font-jost);
+font-size: 1.5rem;
+line-height: 1.75rem;
+letter-spacing: -1.1%;
+font-weight: var(--font-weight-medium);
+}
+
+.cardTitle {
+display: flex;
+gap: 0.75rem;
+align-items: center;
+margin-bottom: 0.75rem;
+}
+
+.icon {
+    border-radius: 50%;
+}
+
+.briefIcon {
+      background-color: var(--color-tag-business-career);
+}
+
+.paletteIcon {
+    background-color: var(--color-tag-art);
+}
+
+.paragraph {
+    font-family: var(--font-roboto);
+    font-weight: var(--font-weight-regular);
+}
+
+.paragraphList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-left: 2.25rem;
+}
+
+.globalIcon {
+    background-color: var(--color-tag-foreign-languages);
+}
+
+.bookIcon {
+    background-color: var(--color-tag-education);
+}
+
+.homeIcon {
+    background-color: var(--color-tag-home-comfort);
+}
+
+.lifestyleIcon {
+    background-color: var(--color-tag-health);
+}
