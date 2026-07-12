@@ -7,13 +7,13 @@ import {
 } from '@/shared/ui/Modal';
 import {UserCircleIcon} from '@/shared/ui/icons';
 
-interface ProposalCreatedModalProps {
+interface RegistrationSuccessModalProps {
   onClose: () => void;
 }
 
-export const ProposalCreatedModal = ({ onClose }: ProposalCreatedModalProps) => {
+export const RegistrationSuccessModal = ({ onClose }: RegistrationSuccessModalProps) => {
   return (
-    <Modal onModalClose={onClose}>
+    <Modal onModalClose={onClose} size="default">
       <ModalIcon>
         <UserCircleIcon width={100} height={100} />
       </ModalIcon>

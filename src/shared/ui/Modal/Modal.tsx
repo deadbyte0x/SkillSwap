@@ -5,9 +5,16 @@ interface ModalProps {
   children: ReactNode;
   onModalClose: () => void;
   // Управляет размером белого контейнера: 'default' — узкая модалка-уведомление,
+  // 'medium' — средняя модалка с отступом gap между блоками,
   // 'wide' — широкая модалка с дополнительным контентом (например, галереей).
-  size?: 'default' | 'wide';
+  size?: 'default' | 'medium' | 'wide';
 }
+
+const CONTAINER_CLASS_BY_SIZE = {
+  default: styles.container,
+  medium: styles.containerMedium,
+  wide: styles.containerWide,
+} as const;
 
 export const Modal = ({ children, onModalClose, size = 'default' }: ModalProps) => {
   const handleOverlayClick = (event: MouseEvent<HTMLDivElement>) => {
@@ -41,7 +48,7 @@ export const Modal = ({ children, onModalClose, size = 'default' }: ModalProps) 
     };
   }, []);
 
-  const containerClassName = size === 'wide' ? styles.containerWide : styles.container;
+  const containerClassName = CONTAINER_CLASS_BY_SIZE[size];
 
   return (
     <div className={styles.overlay} onClick={handleOverlayClick}>

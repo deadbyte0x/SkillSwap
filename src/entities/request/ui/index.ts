@@ -1,1 +1,1 @@
-export { ProposalCreatedModal } from './RegistrationSuccessModal';
+export { RegistrationSuccessModal } from './RegistrationSuccessModal';

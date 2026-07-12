@@ -8,15 +8,27 @@
   z-index: 1000;
 }
 
-.container {
+.container,
+.containerMedium,
+.containerWide {
   background-color: #ffffff;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.container {
   width: 556px;
   height: 420px;
   padding: 62px 60px;
-  position: relative;
+}
+
+.containerMedium {
+  width: 556px;
+  height: 480px;
+  padding: 80px 60px;
 }
 
 .containerWide {
@@ -24,5 +36,4 @@
   height: 532px;
   padding: 44px 60px 72px 60px;
   gap: 40px;
-  position: relative;
 }
