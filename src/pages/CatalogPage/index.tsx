@@ -1,3 +1,5 @@
+// TODO: реализовать страницу CatalogPage
+
 export default function CatalogPage() {
   return (
     <main>
