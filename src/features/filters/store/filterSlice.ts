@@ -67,19 +67,48 @@ const filterSlice = createSlice({
       state.sort = 'popular'
     },
   },
+
+  // селекторы
+
+  selectors: {
+    selectType: (state) => state.type,
+    selectCategories: (state) => state.categories,
+    selectGender: (state) => state.gender,
+    selectCity: (state) => state.city,
+    selectSearchQuery: (state) => state.searchQuery,
+    selectSort: (state) => state.sort,
+    selectAll: (state) => state,
+    selectActiveFiltersCount: (state) => {
+      let count = 0
+      if (state.type !== 'all') count++
+      if (state.categories.length > 0) count++
+      if (state.gender !== 'any') count++
+      if (state.city) count++
+      return count
+    },
+    selectHasActiveFilters: (state) => {
+      return (
+        state.type !== 'all' ||
+        state.categories.length > 0 ||
+        state.gender !== 'any' ||
+        !!state.city
+      )
+    },
+    selectFilterState: (state) => ({
+      type: state.type,
+      categories: state.categories,
+      gender: state.gender,
+      city: state.city,
+      searchQuery: state.searchQuery,
+      sort: state.sort,
+      activeFiltersCount:
+        (state.type !== 'all' ? 1 : 0) +
+        (state.categories.length > 0 ? 1 : 0) +
+        (state.gender !== 'any' ? 1 : 0) +
+        (state.city ? 1 : 0),
+    }),
+  },
 })
-
-// селекторы
-
-export const selectActiveFiltersCount = (state: { filters: FilterState }): number => {
-  let count = 0
-  const { filters } = state
-  if (filters.type !== 'all') count++
-  if (filters.categories.length > 0) count++
-  if (filters.gender !== 'any') count++
-  if (filters.city) count++
-  return count
-}
 
 export const {
   setType,
@@ -91,5 +120,18 @@ export const {
   setSort,
   resetFilters,
 } = filterSlice.actions
+
+export const {
+  selectType,
+  selectCategories,
+  selectGender,
+  selectCity,
+  selectSearchQuery,
+  selectSort,
+  selectAll,
+  selectActiveFiltersCount,
+  selectHasActiveFilters,
+  selectFilterState,
+} = filterSlice.selectors
 
 export default filterSlice.reducer
