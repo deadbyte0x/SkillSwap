@@ -28,6 +28,14 @@ const initialState: FilterState = {
 
 // слайс
 
+const countActiveFilters = (state: FilterState) =>
+  (state.type !== 'all' ? 1 : 0) +
+  (state.categories.length > 0 ? 1 : 0) +
+  (state.gender !== 'any' ? 1 : 0) +
+  (state.city ? 1 : 0)
+
+
+
 const filterSlice = createSlice({
   name: 'filters',
   initialState,
@@ -78,35 +86,10 @@ const filterSlice = createSlice({
     selectSearchQuery: (state) => state.searchQuery,
     selectSort: (state) => state.sort,
     selectAll: (state) => state,
-    selectActiveFiltersCount: (state) => {
-      let count = 0
-      if (state.type !== 'all') count++
-      if (state.categories.length > 0) count++
-      if (state.gender !== 'any') count++
-      if (state.city) count++
-      return count
-    },
+    selectActiveFiltersCount: (state) => countActiveFilters(state),
     selectHasActiveFilters: (state) => {
-      return (
-        state.type !== 'all' ||
-        state.categories.length > 0 ||
-        state.gender !== 'any' ||
-        !!state.city
-      )
+      return countActiveFilters(state) > 0
     },
-    selectFilterState: (state) => ({
-      type: state.type,
-      categories: state.categories,
-      gender: state.gender,
-      city: state.city,
-      searchQuery: state.searchQuery,
-      sort: state.sort,
-      activeFiltersCount:
-        (state.type !== 'all' ? 1 : 0) +
-        (state.categories.length > 0 ? 1 : 0) +
-        (state.gender !== 'any' ? 1 : 0) +
-        (state.city ? 1 : 0),
-    }),
   },
 })
 
@@ -131,7 +114,6 @@ export const {
   selectAll,
   selectActiveFiltersCount,
   selectHasActiveFilters,
-  selectFilterState,
 } = filterSlice.selectors
 
 export default filterSlice.reducer
