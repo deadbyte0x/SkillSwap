@@ -17,7 +17,6 @@ const initialState: AuthState = {
   error: null,
 }
 export const getUser = createAsyncThunk('auth/getUser', async () => {
-  await new Promise((r) => setTimeout(r, 300))
   const user = getAuthUser()
   if (!user) throw new Error('Не авторизован')
   return user
@@ -26,13 +25,11 @@ export const getUser = createAsyncThunk('auth/getUser', async () => {
 export const saveUser = createAsyncThunk(
   'auth/saveUser',
   async (userData: Omit<AuthUser, 'token'>) => {
-    await new Promise((r) => setTimeout(r, 500))
     return saveAuthUser(userData)
   },
 )
 
 export const clearUser = createAsyncThunk('auth/clearUser', async () => {
-  await new Promise((r) => setTimeout(r, 200))
   clearAuthUser()
 })
 
@@ -97,27 +94,17 @@ const authSlice = createSlice({
         state.error = action.error.message || 'Ошибка выхода'
       })
   },
+  selectors: {
+    selectAuth: state => state,
+    selectUser: state => state.user,
+    selectIsAuthenticated: (state) => state.isAuthenticated,
+    selectIsLoading: state => state.isLoading,
+    selectAuthError: state => state.error
+  }
 })
 
 // ─── СЕЛЕКТОРЫ ───
-
-export const selectAuth = (state: { auth: AuthState }) => state.auth
-export const selectUser = (state: { auth: AuthState }) => state.auth.user
-export const selectIsAuthenticated = (state: { auth: AuthState }) => state.auth.isAuthenticated
-export const selectIsLoading = (state: { auth: AuthState }) => state.auth.isLoading
-export const selectAuthError = (state: { auth: AuthState }) => state.auth.error
-
-export const selectAuthStatus = (state: { auth: AuthState }) => ({
-  isAuthenticated: state.auth.isAuthenticated,
-  isLoading: state.auth.isLoading,
-  error: state.auth.error,
-})
-
-export const selectUserWithStatus = (state: { auth: AuthState }) => ({
-  user: state.auth.user,
-  isAuthenticated: state.auth.isAuthenticated,
-  isLoading: state.auth.isLoading,
-})
+export const { selectAuth, selectUser, selectIsAuthenticated, selectIsLoading, selectAuthError } = authSlice.selectors
 
 export const { clearError } = authSlice.actions
 export default authSlice.reducer
