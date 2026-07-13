@@ -1,0 +1,46 @@
+.title {
+  font-family: var(--font-jost);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  line-height: 28px;
+  letter-spacing: -0.011em;
+  text-align: center;
+  margin: 0 0 12px;
+}
+
+.subtitle {
+  font-family: var(--font-roboto);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: var(--color-caption);
+  text-align: center;
+  margin: 0 0 32px;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 52px;
+}
+
+.buttonFullWidth {
+  width: 100%;
+  font-family: var(--font-roboto);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: 24px;
+  letter-spacing: 0.02em;
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-lg);
+}
