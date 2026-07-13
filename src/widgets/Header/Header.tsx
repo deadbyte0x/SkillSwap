@@ -5,9 +5,11 @@ import SvgCross from '../../shared/ui/icons/CrossIcon';
 import { ThemeButton } from '../../shared/ui/ThemeButton';
 // import { NotificationBell } from '../../shared/ui/NotificationBell';
 import { LikeButton } from '../../shared/ui/LikeButton';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { ChevronDownIcon } from '@/shared/ui';
 import { SkillsMenu } from '../SkillsMenu';
+import { useClickOutside } from '@/shared/hooks/useClickOutside';
+import { useEscapeKey } from '@/shared/hooks/useEscapeKey';
 
 interface HeaderProps {
   variant?: 'logged-out' | 'logged-in' | 'pure'; // вариант хэдера
@@ -17,6 +19,9 @@ interface HeaderProps {
 
 export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderProps) => {
   const [isSkillsOpened, setIsSkillsOpened] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
+  useClickOutside(menuRef, () => setIsSkillsOpened(false), isSkillsOpened)
+  useEscapeKey(() => setIsSkillsOpened(false), isSkillsOpened)
   return (
     <header className={styles.header}>
       <div className={styles.left}>
@@ -53,7 +58,7 @@ export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderP
           {userAvatar && <img src={userAvatar} alt={userName} />}
         </div>
       )}
-      {isSkillsOpened && <SkillsMenu/>}
+      {isSkillsOpened && <SkillsMenu ref={menuRef}/>}
     </header>
   );
 };
