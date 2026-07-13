@@ -12,7 +12,7 @@ const CATEGORY_ICONS: Record<string,{Icon: React.ComponentType<{className?: stri
     'health': {Icon: LifestyleIcon, className: styles.lifestyleIcon},
 }
 
-export const SkillsMenu = forwardRef<HTMLDivElement>((props, ref) => {
+export const SkillsMenu = forwardRef<HTMLDivElement>(( _props, ref) => {
     return (
         <div ref={ref} className={styles.background}>
             <div className={styles.gridLayout}>
