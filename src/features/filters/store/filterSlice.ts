@@ -85,7 +85,7 @@ const filterSlice = createSlice({
     selectCity: (state) => state.city,
     selectSearchQuery: (state) => state.searchQuery,
     selectSort: (state) => state.sort,
-    selectAll: (state) => state,
+    selectAllFilters: (state) => state,
     selectActiveFiltersCount: (state) => countActiveFilters(state),
     selectHasActiveFilters: (state) => {
       return countActiveFilters(state) > 0
@@ -111,7 +111,7 @@ export const {
   selectCity,
   selectSearchQuery,
   selectSort,
-  selectAll,
+  selectAllFilters,
   selectActiveFiltersCount,
   selectHasActiveFilters,
 } = filterSlice.selectors

@@ -46,6 +46,7 @@ export interface User {
   createdAt: string
   teachSkillId: string
   learnSubcategoryIds: string[]
+  likesCount: number
 }
 
 // ─── Request ─────────────────────────────────────────────

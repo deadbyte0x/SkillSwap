@@ -1,4 +1,10 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import {
+  createSlice,
+  createAsyncThunk,
+  nanoid,
+  PayloadAction,
+  createSelector,
+} from '@reduxjs/toolkit'
 import type {  TeachSkill, User } from '@/shared/types'
 
 interface DataState {
@@ -55,11 +61,39 @@ const dataSlice = createSlice({
     clearData: (state) => {
       state.skills = []
       state.users = []
+      state.loading = false
       state.isLoaded = false
       state.error = null
     },
     clearError: (state) => {
       state.error = null
+    },
+    addUserWithSkill: {
+      prepare: (data: {
+        user: Omit<User, 'id' | 'teachSkillId'>
+        skill: Omit<TeachSkill, 'id' | 'authorId'>
+      }) => {
+        const userId = nanoid()
+        const skillId = nanoid()
+        return {
+          payload: {
+            user: {
+              ...data.user,
+              id: userId,
+              teachSkillId: skillId,
+            },
+            skill: {
+              ...data.skill,
+              id: skillId,
+              authorId: userId,
+            },
+          },
+        }
+      },
+      reducer: (state, action: PayloadAction<{ user: User; skill: TeachSkill }>) => {
+        state.users = [...state.users, action.payload.user]
+        state.skills = [...state.skills, action.payload.skill]
+      },
     },
   },
   extraReducers: (builder) => {
@@ -86,7 +120,71 @@ const dataSlice = createSlice({
         state.users = action.payload.users
       })
   },
+  selectors: {
+    getAllSkills: (sliceState) => sliceState.skills,
+    getAllUsers: (sliceState) => sliceState.users,
+    getDataError: (sliceState) => sliceState.error,
+    getDataIsLoading: (sliceState) => sliceState.loading,
+    getDataIsLoaded: (sliceState) => sliceState.isLoaded,
+    getUserById: (sliceState, id: string) => sliceState.users.find((u) => u.id === id),
+    getSkillById: (sliceState, id: string) => sliceState.skills.find((s) => s.id === id),
+    getUsersByIds: (sliceState, ids: string[]) =>
+      sliceState.users.filter((u) => ids.includes(u.id)),
+    getUsersNewest: createSelector(
+      [
+        (sliceState: DataState) => sliceState.users,
+        (_sliceState: DataState, limit: number) => limit,
+        (_sliceState: DataState, _limit: number, offset: number) => offset,
+      ],
+      (users, limit, offset) =>
+        [...users]
+          .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
+          .slice(offset, offset + limit),
+    ),
+
+    getUsersPopular: createSelector(
+      [
+        (sliceState: DataState) => sliceState.users,
+        (_sliceState: DataState, limit: number) => limit,
+        (_sliceState: DataState, _limit: number, offset: number) => offset,
+      ],
+      (users, limit, offset) =>
+        [...users]
+          .sort((a, b) => (b.likesCount ?? 0) - (a.likesCount ?? 0))
+          .slice(offset, offset + limit),
+    ),
+    getUsersRecommended: createSelector(
+      [
+        (sliceState: DataState) => sliceState.users,
+        (_sliceState: DataState, limit: number) => limit,
+        (_sliceState: DataState, _limit: number, offset: number) => offset,
+      ],
+      (users, limit, offset) => {
+        // Some smart recommendation system
+        const n = users.length
+        const step = 13
+        const result: User[] = []
+        for (let k = 0, i = step - 1; k < n; k++, i = (i+ step) % n) {
+          result.push(users[i])
+        }
+        return result.slice(offset, offset + limit)
+      }
+    ),
+  },
 })
 
-export const { clearData, clearError } = dataSlice.actions
+export const {
+  getAllSkills,
+  getAllUsers,
+  getDataError,
+  getDataIsLoading,
+  getDataIsLoaded,
+  getUserById,
+  getSkillById,
+  getUsersByIds,
+  getUsersNewest,
+  getUsersPopular,
+  getUsersRecommended
+} = dataSlice.selectors
+export const { clearData, clearError, addUserWithSkill } = dataSlice.actions
 export default dataSlice.reducer
