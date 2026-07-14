@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import type { Skill, User } from '@/shared/types'
+import type {  TeachSkill, User } from '@/shared/types'
 
 interface DataState {
-  skills: Skill[]
+  skills: TeachSkill[]
   users: User[]
   loading: boolean
   error: string | null
