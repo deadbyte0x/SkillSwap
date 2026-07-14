@@ -1,5 +1,6 @@
 import { LikeIcon, LikeIconFilled } from '../icons'
 import styles from './LikeButton.module.css'
+import clsx from 'clsx'
 
 interface LikeButtonProps {
   isActive: boolean
@@ -16,7 +17,7 @@ export const LikeButton = ({ isActive, onClick }: LikeButtonProps) => {
       aria-label={isActive ? 'Убрать из избранного' : 'Добавить в избранное'}
       aria-pressed={isActive}
     >
-      <Icon className={`${styles.icon} ${isActive ? styles.iconActive : ''}`} />
+      <Icon className={clsx(styles.icon, isActive ? styles.iconActive : '')} />
     </button>
   )
 }

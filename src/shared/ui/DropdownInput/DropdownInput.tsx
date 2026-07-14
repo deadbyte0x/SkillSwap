@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, KeyboardEvent } from 'react'
 import styles from './DropdownInput.module.css'
 import { ChevronUpIcon } from '../icons'
 import { ChevronDownIcon } from '../icons'
+import clsx from 'clsx'
 
 interface DropdownInputProps {
   /** Массив вариантов для выбора */
@@ -83,7 +84,7 @@ export const DropdownInput: React.FC<DropdownInputProps> = ({
       {label && <label className={styles.label}>{label}</label>}
 
       <div
-        className={`${styles.inputWrapper} ${isOpen ? styles.open : ''}`}
+        className={clsx(styles.inputWrapper, isOpen ? styles.open : '')}
         onMouseDown={handleWrapperMouseDown}
       >
         <input
@@ -110,7 +111,7 @@ export const DropdownInput: React.FC<DropdownInputProps> = ({
             filteredOptions.map((option, index) => (
               <li
                 key={option}
-                className={`${styles.option} ${option === inputValue ? styles.selected : ''} ${index === highlightedIndex ? styles.highlighted : ''}`}
+                className={clsx(styles.option, option === inputValue ? styles.selected : '', index === highlightedIndex ? styles.highlighted : '')}
                 onMouseDown={(e) => {
                   e.preventDefault()
                   handleSelect(option)

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Button.module.css';
+import clsx from 'clsx'
 
 interface ButtonProps {
   children: React.ReactNode; // текст или иконка внутри кнопки
@@ -23,7 +24,7 @@ export const Button = ({
   return (
     <button
       type="button"
-      className={`${styles.button} ${styles[variant]} ${className ?? ''}`} // берем класс button, variant и внешний className
+      className={clsx(styles.button, styles[variant],className ?? '')} // берем класс button, variant и внешний className
       disabled={disabled}
       onClick={onClick}
     >

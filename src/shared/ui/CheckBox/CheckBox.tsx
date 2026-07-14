@@ -1,5 +1,6 @@
 import styles from './CheckBox.module.css';
 import { CheckboxDoneIcon, CheckboxEmptyIcon, CheckboxRemoveIcon } from '@/shared/ui'
+import clsx from 'clsx'
 
 interface CheckBoxProps {
   isActive: boolean;
@@ -18,7 +19,7 @@ export const CheckBox= ({ isActive, onClick, type }: CheckBoxProps) => {
   })();
 
   return (
-    <button onClick={onClick} className={`${styles.button} ${isActive ? styles.active : ''}`}>
+    <button onClick={onClick} className={clsx(styles.button, isActive ? styles.active : '')}>
       {isActive ? <CheckboxActiveIcon /> : <CheckboxEmptyIcon />}
     </button>
   )
