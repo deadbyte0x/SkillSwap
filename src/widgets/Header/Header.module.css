@@ -24,9 +24,21 @@
   gap: 32px;
 }
 
-.skillsContainer {
-  display: flex;
-  gap:4px
-  
+.search {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 32px;
 }
 
+.navButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-roboto);
+  font-size: 16px;
+  color: var(--color-text);
+  padding: 0;
+}
