@@ -3,14 +3,8 @@ import useEmblaCarousel from 'embla-carousel-react';
 import ChevronRightIcon from '../icons/ChevronRightIcon';
 import styles from './GalleryCarousel.module.css';
 
-// Одно фото галереи
-type GalleryImage = {
-  id: string;
-  src: string;
-};
-
 type GalleryCarouselProps = {
-  images: GalleryImage[];
+  images: string[];
   // Сколько миниатюр показывать до появления оверлея "+N"
   maxThumbs?: number;
 };
@@ -52,9 +46,9 @@ export const GalleryCarousel = ({ images, maxThumbs = 3 }: GalleryCarouselProps)
         <div className={styles.viewport} ref={emblaRef}>
           {/* container — обёртка слайдов, должен быть flex-контейнером */}
           <div className={styles.container}>
-            {images.map((image) => (
-              <div className={styles.slide} key={image.id}>
-                <img src={image.src} alt="" className={styles.mainImage} />
+            {images.map((src, index) => (
+              <div className={styles.slide} key={index}>
+                <img src={src} alt={`Фото ${index + 1}`} className={styles.mainImage} />
               </div>
             ))}
           </div>
@@ -83,18 +77,18 @@ export const GalleryCarousel = ({ images, maxThumbs = 3 }: GalleryCarouselProps)
 
       {/* Правая часть: колонка миниатюр */}
       <div className={styles.thumbs}>
-        {visibleThumbs.map((image, index) => {
+        {visibleThumbs.map((src, index) => {
           // Оверлей "+N" рисуем только на последней видимой миниатюре, если есть скрытые фото
           const isLast = index === maxThumbs - 1 && remainingCount > 0;
 
           return (
             <button
               type="button"
-              key={image.id}
+              key={index}
               className={styles.thumbButton}
               onClick={() => goToSlide(index)}
             >
-              <img src={image.src} alt="" className={styles.thumbImage} />
+              <img src={src} alt={`Миниатюра ${index + 1}`} className={styles.thumbImage} />
               {isLast && (
                 <span className={styles.thumbOverlay}>+{remainingCount}</span>
               )}
