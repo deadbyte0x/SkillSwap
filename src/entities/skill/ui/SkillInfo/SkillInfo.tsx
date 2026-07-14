@@ -10,9 +10,7 @@ export function SkillInfo({ skill }: SkillInfoProps) {
   const subCategory = SUBCATEGORY_BY_ID.get(skill.subCategoryId)
 
   // У подкатегории есть обратная ссылка categoryId — резолвим родительскую категорию
-  const category = subCategory?.categoryId
-    ? CATEGORY_BY_ID.get(subCategory.categoryId)
-    : undefined
+  const category = subCategory?.categoryId ? CATEGORY_BY_ID.get(subCategory.categoryId) : undefined
 
   // Фолбэк на случай невалидного/устаревшего subCategoryId в данных
   const breadcrumb =
