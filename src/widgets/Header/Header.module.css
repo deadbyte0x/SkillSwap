@@ -4,6 +4,7 @@
   justify-content: space-between;
   padding: 36px;
   background-color: var(--color-background);
+  position: relative;
 }
 
 .nav {
@@ -22,3 +23,10 @@
   align-items: center;
   gap: 32px;
 }
+
+.skillsContainer {
+  display: flex;
+  gap:4px
+  
+}
+
