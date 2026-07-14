@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useDebounce } from "@/shared/hooks/useDebounce"
 import { EyeToggle } from "../EyeToggle"
 import styles from "./Password.module.css"
+import clsx from 'clsx'
 
 interface PasswordProps {
     title?:string
@@ -35,7 +36,7 @@ export const Password = ({ title='Пароль', placeholder='Введите в�
         <div className={styles.container}>
             <label className={styles.label_text}>{title}</label>
             <div className={styles.input_wraper}>
-            <input type={showPassword ? 'text' : 'password'} placeholder={placeholder} className={`${styles.input_field} ${isError ? styles.input_error : ''}`} value={password} onChange={(e) => setPassword(e.target.value)}/>
+            <input type={showPassword ? 'text' : 'password'} placeholder={placeholder} className={clsx(styles.input_field, isError ? styles.input_error : '')} value={password} onChange={(e) => setPassword(e.target.value)}/>
             <span className={styles.eye}><EyeToggle isVisible={showPassword} onClick={onClick}></EyeToggle></span>
             </div>
             <span className={`${styles.hint_text} ${isError ? styles.hint_error : ''} `}>{error || hint}</span>
