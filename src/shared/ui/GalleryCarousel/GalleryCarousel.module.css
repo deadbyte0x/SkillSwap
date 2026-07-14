@@ -98,13 +98,13 @@
 }
 
 .thumbOverlay {
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.323);
+  background-color: rgb(255 255 255 / 32.3%);
   color: #253017;
   font-size: 16px;
   font-weight: 400;
