@@ -10,12 +10,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-1",
     "createdAt": "2026-06-05T12:00:00.000Z",
     "teachSkillId": "skill-1",
-    "learnSubcategoryIds": [
-      "english",
-      "acting",
-      "chinese",
-      "music"
-    ]
+    "learnSubcategoryIds": ["english", "acting", "chinese", "music"],
+    "likesCount": 1
   },
   {
     "id": "user-2",
@@ -28,11 +24,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-2",
     "createdAt": "2026-05-25T12:00:00.000Z",
     "teachSkillId": "skill-2",
-    "learnSubcategoryIds": [
-      "spanish",
-      "japanese",
-      "home-finance"
-    ]
+    "learnSubcategoryIds": ["spanish", "japanese", "home-finance"],
+    "likesCount": 15
   },
   {
     "id": "user-3",
@@ -45,12 +38,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-3",
     "createdAt": "2026-06-24T12:00:00.000Z",
     "teachSkillId": "skill-3",
-    "learnSubcategoryIds": [
-      "french",
-      "german",
-      "japanese",
-      "storage"
-    ]
+    "learnSubcategoryIds": ["french", "german", "japanese", "storage"],
+    "likesCount": 19
   },
   {
     "id": "user-4",
@@ -63,11 +52,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-4",
     "createdAt": "2025-10-14T12:00:00.000Z",
     "teachSkillId": "skill-4",
-    "learnSubcategoryIds": [
-      "cleaning-organization",
-      "fitness",
-      "work-life-balance"
-    ]
+    "learnSubcategoryIds": ["cleaning-organization", "fitness", "work-life-balance"],
+    "likesCount": 45
   },
   {
     "id": "user-5",
@@ -80,9 +66,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-5",
     "createdAt": "2025-10-27T12:00:00.000Z",
     "teachSkillId": "skill-5",
-    "learnSubcategoryIds": [
-      "entrepreneurship"
-    ]
+    "learnSubcategoryIds": ["entrepreneurship"],
+    "likesCount": 19
   },
   {
     "id": "user-6",
@@ -95,11 +80,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-6",
     "createdAt": "2026-04-16T12:00:00.000Z",
     "teachSkillId": "skill-6",
-    "learnSubcategoryIds": [
-      "chinese",
-      "fitness",
-      "japanese"
-    ]
+    "learnSubcategoryIds": ["chinese", "fitness", "japanese"],
+    "likesCount": 37
   },
   {
     "id": "user-7",
@@ -112,12 +94,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-7",
     "createdAt": "2026-05-25T12:00:00.000Z",
     "teachSkillId": "skill-7",
-    "learnSubcategoryIds": [
-      "time-management",
-      "speed-reading",
-      "project-management",
-      "nutrition"
-    ]
+    "learnSubcategoryIds": ["time-management", "speed-reading", "project-management", "nutrition"],
+    "likesCount": 12
   },
   {
     "id": "user-8",
@@ -130,11 +108,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-8",
     "createdAt": "2025-09-21T12:00:00.000Z",
     "teachSkillId": "skill-8",
-    "learnSubcategoryIds": [
-      "exam-prep",
-      "sales",
-      "music"
-    ]
+    "learnSubcategoryIds": ["exam-prep", "sales", "music"],
+    "likesCount": 59
   },
   {
     "id": "user-9",
@@ -147,10 +122,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-9",
     "createdAt": "2026-03-04T12:00:00.000Z",
     "teachSkillId": "skill-9",
-    "learnSubcategoryIds": [
-      "nutrition",
-      "personal-brand"
-    ]
+    "learnSubcategoryIds": ["nutrition", "personal-brand"],
+    "likesCount": 44
   },
   {
     "id": "user-10",
@@ -163,9 +136,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-10",
     "createdAt": "2025-12-04T12:00:00.000Z",
     "teachSkillId": "skill-10",
-    "learnSubcategoryIds": [
-      "coaching"
-    ]
+    "learnSubcategoryIds": ["coaching"],
+    "likesCount": 60
   },
   {
     "id": "user-11",
@@ -178,10 +150,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-11",
     "createdAt": "2026-06-02T12:00:00.000Z",
     "teachSkillId": "skill-11",
-    "learnSubcategoryIds": [
-      "home-finance",
-      "mental-health"
-    ]
+    "learnSubcategoryIds": ["home-finance", "mental-health"],
+    "likesCount": 41
   },
   {
     "id": "user-12",
@@ -194,11 +164,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-12",
     "createdAt": "2026-04-01T12:00:00.000Z",
     "teachSkillId": "skill-12",
-    "learnSubcategoryIds": [
-      "marketing",
-      "resume-interview",
-      "work-life-balance"
-    ]
+    "learnSubcategoryIds": ["marketing", "resume-interview", "work-life-balance"],
+    "likesCount": 10
   },
   {
     "id": "user-13",
@@ -211,10 +178,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-13",
     "createdAt": "2025-10-24T12:00:00.000Z",
     "teachSkillId": "skill-13",
-    "learnSubcategoryIds": [
-      "project-management",
-      "drawing"
-    ]
+    "learnSubcategoryIds": ["project-management", "drawing"],
+    "likesCount": 5
   },
   {
     "id": "user-14",
@@ -227,11 +192,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-14",
     "createdAt": "2026-02-07T12:00:00.000Z",
     "teachSkillId": "skill-14",
-    "learnSubcategoryIds": [
-      "home-repair",
-      "teaching-skills",
-      "cleaning-organization"
-    ]
+    "learnSubcategoryIds": ["home-repair", "teaching-skills", "cleaning-organization"],
+    "likesCount": 60
   },
   {
     "id": "user-15",
@@ -244,9 +206,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-15",
     "createdAt": "2025-12-28T12:00:00.000Z",
     "teachSkillId": "skill-15",
-    "learnSubcategoryIds": [
-      "home-repair"
-    ]
+    "learnSubcategoryIds": ["home-repair"],
+    "likesCount": 58
   },
   {
     "id": "user-16",
@@ -259,12 +220,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-16",
     "createdAt": "2026-04-21T12:00:00.000Z",
     "teachSkillId": "skill-16",
-    "learnSubcategoryIds": [
-      "cleaning-organization",
-      "nutrition",
-      "german",
-      "creative-writing"
-    ]
+    "learnSubcategoryIds": ["cleaning-organization", "nutrition", "german", "creative-writing"],
+    "likesCount": 49
   },
   {
     "id": "user-17",
@@ -277,12 +234,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-17",
     "createdAt": "2025-11-03T12:00:00.000Z",
     "teachSkillId": "skill-17",
-    "learnSubcategoryIds": [
-      "houseplants",
-      "music",
-      "marketing",
-      "time-management"
-    ]
+    "learnSubcategoryIds": ["houseplants", "music", "marketing", "time-management"],
+    "likesCount": 38
   },
   {
     "id": "user-18",
@@ -295,10 +248,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-18",
     "createdAt": "2026-06-02T12:00:00.000Z",
     "teachSkillId": "skill-18",
-    "learnSubcategoryIds": [
-      "teaching-skills",
-      "german"
-    ]
+    "learnSubcategoryIds": ["teaching-skills", "german"],
+    "likesCount": 6
   },
   {
     "id": "user-19",
@@ -311,10 +262,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-19",
     "createdAt": "2026-05-02T12:00:00.000Z",
     "teachSkillId": "skill-19",
-    "learnSubcategoryIds": [
-      "sleep-recovery",
-      "cognitive-techniques"
-    ]
+    "learnSubcategoryIds": ["sleep-recovery", "cognitive-techniques"],
+    "likesCount": 37
   },
   {
     "id": "user-20",
@@ -327,9 +276,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-20",
     "createdAt": "2026-01-15T12:00:00.000Z",
     "teachSkillId": "skill-20",
-    "learnSubcategoryIds": [
-      "learning-skills"
-    ]
+    "learnSubcategoryIds": ["learning-skills"],
+    "likesCount": 47
   },
   {
     "id": "user-21",
@@ -342,10 +290,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-21",
     "createdAt": "2026-01-09T12:00:00.000Z",
     "teachSkillId": "skill-21",
-    "learnSubcategoryIds": [
-      "cognitive-techniques",
-      "cooking"
-    ]
+    "learnSubcategoryIds": ["cognitive-techniques", "cooking"],
+    "likesCount": 16
   },
   {
     "id": "user-22",
@@ -358,11 +304,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-22",
     "createdAt": "2026-02-27T12:00:00.000Z",
     "teachSkillId": "skill-22",
-    "learnSubcategoryIds": [
-      "exam-prep",
-      "english",
-      "teaching-skills"
-    ]
+    "learnSubcategoryIds": ["exam-prep", "english", "teaching-skills"],
+    "likesCount": 21
   },
   {
     "id": "user-23",
@@ -375,10 +318,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-23",
     "createdAt": "2026-04-21T12:00:00.000Z",
     "teachSkillId": "skill-23",
-    "learnSubcategoryIds": [
-      "cooking",
-      "team-management"
-    ]
+    "learnSubcategoryIds": ["cooking", "team-management"],
+    "likesCount": 29
   },
   {
     "id": "user-24",
@@ -391,10 +332,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-24",
     "createdAt": "2025-11-28T12:00:00.000Z",
     "teachSkillId": "skill-24",
-    "learnSubcategoryIds": [
-      "coaching",
-      "nutrition"
-    ]
+    "learnSubcategoryIds": ["coaching", "nutrition"],
+    "likesCount": 20
   },
   {
     "id": "user-25",
@@ -407,12 +346,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-25",
     "createdAt": "2026-01-07T12:00:00.000Z",
     "teachSkillId": "skill-25",
-    "learnSubcategoryIds": [
-      "coaching",
-      "marketing",
-      "decor-diy",
-      "music"
-    ]
+    "learnSubcategoryIds": ["coaching", "marketing", "decor-diy", "music"],
+    "likesCount": 56
   },
   {
     "id": "user-26",
@@ -425,11 +360,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-26",
     "createdAt": "2026-05-25T12:00:00.000Z",
     "teachSkillId": "skill-26",
-    "learnSubcategoryIds": [
-      "project-management",
-      "sleep-recovery",
-      "cooking"
-    ]
+    "learnSubcategoryIds": ["project-management", "sleep-recovery", "cooking"],
+    "likesCount": 50
   },
   {
     "id": "user-27",
@@ -442,12 +374,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-27",
     "createdAt": "2025-09-23T12:00:00.000Z",
     "teachSkillId": "skill-27",
-    "learnSubcategoryIds": [
-      "home-repair",
-      "yoga-meditation",
-      "mental-health",
-      "video-editing"
-    ]
+    "learnSubcategoryIds": ["home-repair", "yoga-meditation", "mental-health", "video-editing"],
+    "likesCount": 19
   },
   {
     "id": "user-28",
@@ -460,9 +388,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-28",
     "createdAt": "2025-11-19T12:00:00.000Z",
     "teachSkillId": "skill-28",
-    "learnSubcategoryIds": [
-      "cooking"
-    ]
+    "learnSubcategoryIds": ["cooking"],
+    "likesCount": 19
   },
   {
     "id": "user-29",
@@ -475,10 +402,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-29",
     "createdAt": "2025-10-31T12:00:00.000Z",
     "teachSkillId": "skill-29",
-    "learnSubcategoryIds": [
-      "storage",
-      "resume-interview"
-    ]
+    "learnSubcategoryIds": ["storage", "resume-interview"],
+    "likesCount": 14
   },
   {
     "id": "user-30",
@@ -491,9 +416,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-30",
     "createdAt": "2025-12-11T12:00:00.000Z",
     "teachSkillId": "skill-30",
-    "learnSubcategoryIds": [
-      "drawing"
-    ]
+    "learnSubcategoryIds": ["drawing"],
+    "likesCount": 41
   },
   {
     "id": "user-31",
@@ -506,9 +430,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-31",
     "createdAt": "2025-09-12T12:00:00.000Z",
     "teachSkillId": "skill-31",
-    "learnSubcategoryIds": [
-      "fitness"
-    ]
+    "learnSubcategoryIds": ["fitness"],
+    "likesCount": 8
   },
   {
     "id": "user-32",
@@ -521,12 +444,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-32",
     "createdAt": "2026-01-06T12:00:00.000Z",
     "teachSkillId": "skill-32",
-    "learnSubcategoryIds": [
-      "mindfulness",
-      "spanish",
-      "storage",
-      "music"
-    ]
+    "learnSubcategoryIds": ["mindfulness", "spanish", "storage", "music"],
+    "likesCount": 14
   },
   {
     "id": "user-33",
@@ -539,9 +458,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-33",
     "createdAt": "2025-12-26T12:00:00.000Z",
     "teachSkillId": "skill-33",
-    "learnSubcategoryIds": [
-      "japanese"
-    ]
+    "learnSubcategoryIds": ["japanese"],
+    "likesCount": 4
   },
   {
     "id": "user-34",
@@ -554,9 +472,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-34",
     "createdAt": "2025-12-13T12:00:00.000Z",
     "teachSkillId": "skill-34",
-    "learnSubcategoryIds": [
-      "marketing"
-    ]
+    "learnSubcategoryIds": ["marketing"],
+    "likesCount": 39
   },
   {
     "id": "user-35",
@@ -569,12 +486,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-35",
     "createdAt": "2025-10-25T12:00:00.000Z",
     "teachSkillId": "skill-35",
-    "learnSubcategoryIds": [
-      "personal-development",
-      "exam-prep",
-      "sales",
-      "coaching"
-    ]
+    "learnSubcategoryIds": ["personal-development", "exam-prep", "sales", "coaching"],
+    "likesCount": 29
   },
   {
     "id": "user-36",
@@ -587,9 +500,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-36",
     "createdAt": "2026-02-06T12:00:00.000Z",
     "teachSkillId": "skill-36",
-    "learnSubcategoryIds": [
-      "personal-development"
-    ]
+    "learnSubcategoryIds": ["personal-development"],
+    "likesCount": 49
   },
   {
     "id": "user-37",
@@ -602,9 +514,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-37",
     "createdAt": "2025-12-12T12:00:00.000Z",
     "teachSkillId": "skill-37",
-    "learnSubcategoryIds": [
-      "project-management"
-    ]
+    "learnSubcategoryIds": ["project-management"],
+    "likesCount": 46
   },
   {
     "id": "user-38",
@@ -617,9 +528,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-38",
     "createdAt": "2026-05-06T12:00:00.000Z",
     "teachSkillId": "skill-38",
-    "learnSubcategoryIds": [
-      "cooking"
-    ]
+    "learnSubcategoryIds": ["cooking"],
+    "likesCount": 52
   },
   {
     "id": "user-39",
@@ -632,9 +542,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-39",
     "createdAt": "2026-05-26T12:00:00.000Z",
     "teachSkillId": "skill-39",
-    "learnSubcategoryIds": [
-      "time-management"
-    ]
+    "learnSubcategoryIds": ["time-management"],
+    "likesCount": 23
   },
   {
     "id": "user-40",
@@ -647,9 +556,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-40",
     "createdAt": "2025-12-18T12:00:00.000Z",
     "teachSkillId": "skill-40",
-    "learnSubcategoryIds": [
-      "nutrition"
-    ]
+    "learnSubcategoryIds": ["nutrition"],
+    "likesCount": 15
   },
   {
     "id": "user-41",
@@ -662,11 +570,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-41",
     "createdAt": "2026-02-08T12:00:00.000Z",
     "teachSkillId": "skill-41",
-    "learnSubcategoryIds": [
-      "cooking",
-      "nutrition",
-      "chinese"
-    ]
+    "learnSubcategoryIds": ["cooking", "nutrition", "chinese"],
+    "likesCount": 60
   },
   {
     "id": "user-42",
@@ -679,12 +584,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-42",
     "createdAt": "2025-09-14T12:00:00.000Z",
     "teachSkillId": "skill-42",
-    "learnSubcategoryIds": [
-      "sleep-recovery",
-      "teaching-skills",
-      "drawing",
-      "time-management"
-    ]
+    "learnSubcategoryIds": ["sleep-recovery", "teaching-skills", "drawing", "time-management"],
+    "likesCount": 20
   },
   {
     "id": "user-43",
@@ -697,11 +598,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-43",
     "createdAt": "2025-11-06T12:00:00.000Z",
     "teachSkillId": "skill-43",
-    "learnSubcategoryIds": [
-      "entrepreneurship",
-      "french",
-      "photography"
-    ]
+    "learnSubcategoryIds": ["entrepreneurship", "french", "photography"],
+    "likesCount": 0
   },
   {
     "id": "user-44",
@@ -714,10 +612,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-44",
     "createdAt": "2026-04-13T12:00:00.000Z",
     "teachSkillId": "skill-44",
-    "learnSubcategoryIds": [
-      "cooking",
-      "cognitive-techniques"
-    ]
+    "learnSubcategoryIds": ["cooking", "cognitive-techniques"],
+    "likesCount": 14
   },
   {
     "id": "user-45",
@@ -730,9 +626,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-45",
     "createdAt": "2025-11-28T12:00:00.000Z",
     "teachSkillId": "skill-45",
-    "learnSubcategoryIds": [
-      "drawing"
-    ]
+    "learnSubcategoryIds": ["drawing"],
+    "likesCount": 2
   },
   {
     "id": "user-46",
@@ -745,12 +640,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-46",
     "createdAt": "2025-09-30T12:00:00.000Z",
     "teachSkillId": "skill-46",
-    "learnSubcategoryIds": [
-      "music",
-      "video-editing",
-      "exam-prep",
-      "japanese"
-    ]
+    "learnSubcategoryIds": ["music", "video-editing", "exam-prep", "japanese"],
+    "likesCount": 57
   },
   {
     "id": "user-47",
@@ -763,10 +654,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-47",
     "createdAt": "2026-03-23T12:00:00.000Z",
     "teachSkillId": "skill-47",
-    "learnSubcategoryIds": [
-      "cleaning-organization",
-      "fitness"
-    ]
+    "learnSubcategoryIds": ["cleaning-organization", "fitness"],
+    "likesCount": 50
   },
   {
     "id": "user-48",
@@ -779,10 +668,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-48",
     "createdAt": "2026-01-25T12:00:00.000Z",
     "teachSkillId": "skill-48",
-    "learnSubcategoryIds": [
-      "mindfulness",
-      "video-editing"
-    ]
+    "learnSubcategoryIds": ["mindfulness", "video-editing"],
+    "likesCount": 43
   },
   {
     "id": "user-49",
@@ -795,9 +682,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-49",
     "createdAt": "2026-03-27T12:00:00.000Z",
     "teachSkillId": "skill-49",
-    "learnSubcategoryIds": [
-      "personal-development"
-    ]
+    "learnSubcategoryIds": ["personal-development"],
+    "likesCount": 3
   },
   {
     "id": "user-50",
@@ -810,10 +696,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-50",
     "createdAt": "2026-05-21T12:00:00.000Z",
     "teachSkillId": "skill-50",
-    "learnSubcategoryIds": [
-      "cleaning-organization",
-      "mindfulness"
-    ]
+    "learnSubcategoryIds": ["cleaning-organization", "mindfulness"],
+    "likesCount": 46
   },
   {
     "id": "user-51",
@@ -826,12 +710,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-51",
     "createdAt": "2025-10-18T12:00:00.000Z",
     "teachSkillId": "skill-51",
-    "learnSubcategoryIds": [
-      "decor-diy",
-      "houseplants",
-      "marketing",
-      "spanish"
-    ]
+    "learnSubcategoryIds": ["decor-diy", "houseplants", "marketing", "spanish"],
+    "likesCount": 55
   },
   {
     "id": "user-52",
@@ -844,11 +724,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-52",
     "createdAt": "2026-03-19T12:00:00.000Z",
     "teachSkillId": "skill-52",
-    "learnSubcategoryIds": [
-      "coaching",
-      "personal-brand",
-      "speed-reading"
-    ]
+    "learnSubcategoryIds": ["coaching", "personal-brand", "speed-reading"],
+    "likesCount": 12
   },
   {
     "id": "user-53",
@@ -861,9 +738,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-53",
     "createdAt": "2026-02-22T12:00:00.000Z",
     "teachSkillId": "skill-53",
-    "learnSubcategoryIds": [
-      "home-finance"
-    ]
+    "learnSubcategoryIds": ["home-finance"],
+    "likesCount": 33
   },
   {
     "id": "user-54",
@@ -876,11 +752,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-54",
     "createdAt": "2025-09-17T12:00:00.000Z",
     "teachSkillId": "skill-54",
-    "learnSubcategoryIds": [
-      "resume-interview",
-      "japanese",
-      "houseplants"
-    ]
+    "learnSubcategoryIds": ["resume-interview", "japanese", "houseplants"],
+    "likesCount": 60
   },
   {
     "id": "user-55",
@@ -893,11 +766,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-55",
     "createdAt": "2026-02-22T12:00:00.000Z",
     "teachSkillId": "skill-55",
-    "learnSubcategoryIds": [
-      "chinese",
-      "mindfulness",
-      "french"
-    ]
+    "learnSubcategoryIds": ["chinese", "mindfulness", "french"],
+    "likesCount": 7
   },
   {
     "id": "user-56",
@@ -915,7 +785,8 @@
       "team-management",
       "resume-interview",
       "personal-brand"
-    ]
+    ],
+    "likesCount": 39
   },
   {
     "id": "user-57",
@@ -928,12 +799,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-57",
     "createdAt": "2026-03-19T12:00:00.000Z",
     "teachSkillId": "skill-57",
-    "learnSubcategoryIds": [
-      "sales",
-      "video-editing",
-      "spanish",
-      "storage"
-    ]
+    "learnSubcategoryIds": ["sales", "video-editing", "spanish", "storage"],
+    "likesCount": 19
   },
   {
     "id": "user-58",
@@ -946,9 +813,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-58",
     "createdAt": "2025-10-20T12:00:00.000Z",
     "teachSkillId": "skill-58",
-    "learnSubcategoryIds": [
-      "cognitive-techniques"
-    ]
+    "learnSubcategoryIds": ["cognitive-techniques"],
+    "likesCount": 28
   },
   {
     "id": "user-59",
@@ -961,11 +827,8 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-59",
     "createdAt": "2026-04-25T12:00:00.000Z",
     "teachSkillId": "skill-59",
-    "learnSubcategoryIds": [
-      "yoga-meditation",
-      "cleaning-organization",
-      "decor-diy"
-    ]
+    "learnSubcategoryIds": ["yoga-meditation", "cleaning-organization", "decor-diy"],
+    "likesCount": 12
   },
   {
     "id": "user-60",
@@ -978,8 +841,7 @@
     "avatarUrl": "https://i.pravatar.cc/300?u=user-60",
     "createdAt": "2025-10-03T12:00:00.000Z",
     "teachSkillId": "skill-60",
-    "learnSubcategoryIds": [
-      "decor-diy"
-    ]
+    "learnSubcategoryIds": ["decor-diy"],
+    "likesCount": 60
   }
 ]
