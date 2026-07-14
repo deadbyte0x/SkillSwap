@@ -5,6 +5,7 @@
   padding: 36px;
   background-color: var(--color-background);
   position: relative;
+  z-index: 100; 
 }
 
 .nav {
