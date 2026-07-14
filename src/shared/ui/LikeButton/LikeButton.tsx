@@ -4,7 +4,7 @@ import clsx from 'clsx'
 
 interface LikeButtonProps {
   isActive: boolean
-  onClick: () => void
+  onClick?: () => void
 }
 
 export const LikeButton = ({ isActive, onClick }: LikeButtonProps) => {
