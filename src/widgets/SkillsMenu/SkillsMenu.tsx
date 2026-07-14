@@ -2,6 +2,7 @@ import styles from './SkillsMenu.module.css'
 import { BriefcaseIcon, BookIcon, PaletteIcon, GlobalIcon, HomeIcon, LifestyleIcon } from '@/shared/ui'
 import { SKILL_CATEGORIES } from '@/shared/lib/constants';
 import { forwardRef } from 'react';
+import clsx from 'clsx'
 
 const CATEGORY_ICONS: Record<string,{Icon: React.ComponentType<{className?: string}>; className:string}> = {
     'business-career': {Icon: BriefcaseIcon, className: styles.briefIcon},
@@ -20,21 +21,19 @@ export const SkillsMenu = forwardRef<HTMLDivElement>(( _props, ref) => {
                 const iconConfig = CATEGORY_ICONS[category.id]
                 const Icon = iconConfig?.Icon
                 return (
-                    <article className={styles.card} key={category.id}>
-                        <div className={styles.cardTitle}>
-                            {Icon && (
-                                <Icon className={`${styles.icon} ${iconConfig.className}`} />
-                            )}
-                            <h2 className={styles.title}>{category.name}</h2>
-                        </div>
-                        <ul className={styles.paragraphList}>
-                            {category.subCategories.map((sub) => (
-                                <li key={sub.id}>{sub.name}</li>
-                            ))}
-                        </ul>
-                    </article>
+                  <article className={styles.card} key={category.id}>
+                    {Icon && <Icon className={clsx(styles.icon, iconConfig.className)} />}
+                    <div className={styles.cardTitle}>
+                      <h2 className={styles.title}>{category.name}</h2>
+                      <ul className={styles.paragraphList}>
+                        {category.subCategories.map((sub) => (
+                          <li key={sub.id}>{sub.name}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </article>
                 )
-             })}                                                                                             
+             })}
             </div>
         </div>
     )

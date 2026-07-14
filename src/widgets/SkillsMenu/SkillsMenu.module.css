@@ -1,4 +1,7 @@
-
+.card {
+  display: flex;
+  gap: 0.75rem;
+}
 
 .background {
     width: 1136px;
@@ -20,30 +23,33 @@
 }
 
 .title {
-font-family: var(--font-jost);
-font-size: 1.5rem;
-line-height: 1.75rem;
-letter-spacing: -1.1%;
-font-weight: var(--font-weight-medium);
+  font-family: var(--font-jost);
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  letter-spacing: -1.1%;
+  font-weight: var(--font-weight-medium);
 }
 
 .cardTitle {
-display: flex;
-gap: 0.75rem;
-align-items: center;
-margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem
 }
 
 .icon {
-    border-radius: 50%;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 8px;
 }
 
 .briefIcon {
-      background-color: var(--color-tag-business-career);
+  background-color: var(--color-tag-business-career);
 }
 
 .paletteIcon {
-    background-color: var(--color-tag-art);
+  background-color: var(--color-tag-art);
 }
 
 .paragraph {
@@ -55,7 +61,6 @@ margin-bottom: 0.75rem;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    padding-left: 2.25rem;
     list-style-type: none;
 }
 
