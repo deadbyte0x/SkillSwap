@@ -21,10 +21,9 @@
 }
 
 .label {
-    font-family: var(--font-jost);   
-    font-size: 20px;
-    line-height: var(--space-lg);
-    letter-spacing: -1.1%;
-    vertical-align: middle;
-    margin-bottom: 20px;
+    font-family: var(--font-jost);
+  font-weight: var(--font-weight-medium);
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 20px;
 }
