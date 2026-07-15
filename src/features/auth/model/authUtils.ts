@@ -22,3 +22,21 @@ export function saveAuthUser(user: Omit<AuthUser, 'token'>): AuthUser {
 export function clearAuthUser(): void {
   localStorage.removeItem(LOCAL_STORAGE_KEYS.AUTH_USER)
 }
+
+/** Фейковый логин по хардкоженным данным */
+export async function loginUser(
+  email: string,
+  password: string,
+): Promise<AuthUser> {
+  await new Promise((resolve) => setTimeout(resolve, 500))
+
+  if (email === 'test@example.com' && password === '12345678') {
+    return saveAuthUser({
+      id: '1',
+      name: 'SkillSwap User',
+      email: 'test@example.com',
+    })
+  }
+
+  throw new Error('Неверный email или пароль')
+}

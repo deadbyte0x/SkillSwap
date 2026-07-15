@@ -1,6 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import type { AuthUser } from '@/shared/types'
-import { getAuthUser, saveAuthUser, clearAuthUser } from '../model/authUtils'
+import {
+  getAuthUser,
+  saveAuthUser,
+  clearAuthUser,
+  loginUser,
+} from '../model/authUtils'
 
 export interface AuthState {
   user: AuthUser | null
@@ -9,13 +14,13 @@ export interface AuthState {
   error: string | null
 }
 
-// ─── НАЧАЛЬНОЕ СОСТОЯНИЕ ───
 const initialState: AuthState = {
   user: null,
   isAuthenticated: false,
   isLoading: false,
   error: null,
 }
+
 export const getUser = createAsyncThunk('auth/getUser', async () => {
   const user = getAuthUser()
   if (!user) throw new Error('Не авторизован')
@@ -33,7 +38,22 @@ export const clearUser = createAsyncThunk('auth/clearUser', async () => {
   clearAuthUser()
 })
 
-// ─── SLICE ───
+export const loginUserThunk = createAsyncThunk(
+  'auth/loginUser',
+  async (
+    credentials: { email: string; password: string },
+    { rejectWithValue },
+  ) => {
+    try {
+      const user = await loginUser(credentials.email, credentials.password)
+      return user
+    } catch (error) {
+      return rejectWithValue(
+        error instanceof Error ? error.message : 'Ошибка входа',
+      )
+    }
+  },
+)
 
 const authSlice = createSlice({
   name: 'auth',
@@ -43,9 +63,15 @@ const authSlice = createSlice({
       state.error = null
     },
   },
+  selectors: {
+    selectAuth: (state) => state,
+    selectUser: (state) => state.user,
+    selectIsAuthenticated: (state) => state.isAuthenticated,
+    selectIsLoading: (state) => state.isLoading,
+    selectAuthError: (state) => state.error,
+  },
   extraReducers: (builder) => {
     builder
-      // get user
       .addCase(getUser.pending, (state) => {
         state.isLoading = true
         state.error = null
@@ -62,7 +88,7 @@ const authSlice = createSlice({
         state.isAuthenticated = false
         state.error = action.error.message || 'Ошибка получения'
       })
-      // save user
+
       .addCase(saveUser.pending, (state) => {
         state.isLoading = true
         state.error = null
@@ -79,7 +105,7 @@ const authSlice = createSlice({
         state.isAuthenticated = false
         state.error = action.error.message || 'Ошибка сохранения'
       })
-      // clear user
+
       .addCase(clearUser.pending, (state) => {
         state.isLoading = true
       })
@@ -93,18 +119,34 @@ const authSlice = createSlice({
         state.isLoading = false
         state.error = action.error.message || 'Ошибка выхода'
       })
+
+      .addCase(loginUserThunk.pending, (state) => {
+        state.isLoading = true
+        state.error = null
+      })
+      .addCase(loginUserThunk.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.user = action.payload
+        state.isAuthenticated = true
+        state.error = null
+      })
+      .addCase(loginUserThunk.rejected, (state, action) => {
+        state.isLoading = false
+        state.user = null
+        state.isAuthenticated = false
+        state.error =
+          (action.payload as string) || action.error.message || 'Ошибка входа'
+      })
   },
-  selectors: {
-    selectAuth: state => state,
-    selectUser: state => state.user,
-    selectIsAuthenticated: (state) => state.isAuthenticated,
-    selectIsLoading: state => state.isLoading,
-    selectAuthError: state => state.error
-  }
 })
 
-// ─── СЕЛЕКТОРЫ ───
-export const { selectAuth, selectUser, selectIsAuthenticated, selectIsLoading, selectAuthError } = authSlice.selectors
+export const {
+  selectAuth,
+  selectUser,
+  selectIsAuthenticated,
+  selectIsLoading,
+  selectAuthError,
+} = authSlice.selectors
 
 export const { clearError } = authSlice.actions
 export default authSlice.reducer
