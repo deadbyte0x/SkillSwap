@@ -11,10 +11,6 @@ import {
   clearError,
 } from '@/features/auth/store/authSlice'
 
-import googleIcon from '@/assets/icons/google.svg'
-import appleIcon from '@/assets/icons/apple.svg'
-import illustration from '@/assets/light-bulb.svg'
-
 type FormData = {
   email: string
   password: string
@@ -75,7 +71,6 @@ export default function LoginPage() {
                 type="button"
                 className="mb-4 flex h-12 w-full items-center justify-center gap-3 rounded-2xl border border-[#a8a391] bg-white text-base text-[#2d2d20]"
               >
-                <img src={googleIcon} alt="Google" className="h-6 w-6" />
                 Продолжить с Google
               </button>
 
@@ -83,7 +78,6 @@ export default function LoginPage() {
                 type="button"
                 className="mb-6 flex h-12 w-full items-center justify-center gap-3 rounded-2xl border border-[#a8a391] bg-white text-base text-[#2d2d20]"
               >
-                <img src={appleIcon} alt="Apple" className="h-6 w-6" />
                 Продолжить с Apple
               </button>
 
@@ -175,11 +169,7 @@ export default function LoginPage() {
           </section>
 
           <section className="flex flex-col items-center justify-center rounded-3xl bg-white px-6 py-10 text-center shadow-sm sm:px-10">
-            <img
-              src={illustration}
-              alt="SkillSwap illustration"
-              className="mb-8 w-[180px] sm:w-[220px] lg:w-[260px]"
-            />
+            <div className="mb-8 text-7xl">💡</div>
 
             <h2 className="mb-4 text-[32px] font-semibold leading-tight text-[#2d2d20]">
               С возвращением в SkillSwap!
