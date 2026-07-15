@@ -7,16 +7,24 @@ import { SkillFilter } from '../../widgets/SkillFilter';
 import { CityFilter } from '../../widgets/CityFilter';
 import { GenderFilter } from '../../widgets/GenderFilter';
 import { SkillTypeFilter } from '../../widgets/SkillTypeFilter';
-import { UserCard } from '../../shared/ui/UserCard';
 import { SKILL_CATEGORIES, Cities } from '../../shared/lib/constants';
-import { loadAllData } from '../../features/data';
-import { ChevronRightIcon } from '@/shared/ui'
-import { Button } from '../../shared/ui/Button';
+import { loadAllData, getAllSkills, getUsersNewest, getUsersPopular, getUsersRecommended,} from '../../features/data';
+import { UserCardsSection } from '../../widgets/UserCardsSection'
 
 export default function CatalogPage() {
   const dispatch = useAppDispatch();
 
-  const { users, skills } = useAppSelector((state) => state.data);
+  const skills = useAppSelector(getAllSkills);
+
+  const popularUsers = useAppSelector((state) =>
+    getUsersPopular(state, 3, 0),
+  );
+  const newestUsers = useAppSelector((state) =>
+    getUsersNewest(state, 3, 0),
+  );
+  const recommendedUsers = useAppSelector((state) =>
+    getUsersRecommended(state, 9, 0),
+  );
 
   useEffect(() => {
     dispatch(loadAllData());
@@ -43,38 +51,27 @@ export default function CatalogPage() {
         </aside>
 
         <main className={styles.content}>
-          {/* Секция "Рекомендуем" - все карточки */}
-          <section className={styles.section}>
-            <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>Рекомендуем</h2>
-              <Button
-                variant="tertiary"
-                iconRight={<ChevronRightIcon />}
-                className={styles.seeAllButton}
-                onClick={() => {}}
-              >
-                Смотреть все
-              </Button>
-            </div>
+          <UserCardsSection
+            title="Популярное"
+            users={popularUsers}
+            skills={skills}
+            showSeeAllButton
+            onSeeAllClick={() => {}}
+          />
 
-            <div className={styles.grid}>
-              {users.map((user) => {
-                const skill = skills.find((s) => s.id === user.teachSkillId);
-                if (!skill) return null;
+          <UserCardsSection
+            title="Новое"
+            users={newestUsers}
+            skills={skills}
+            showSeeAllButton
+            onSeeAllClick={() => {}}
+          />
 
-                return (
-                  <UserCard
-                    key={user.id}
-                    user={user}
-                    teachSkill={{ title: skill.title, subCategoryId: skill.subCategoryId }}
-                    isLiked={false}
-                    onLike={() => {}}
-                    onDetailsClick={() => {}}
-                  />
-                );
-              })}
-            </div>
-          </section>
+          <UserCardsSection
+            title="Рекомендуем"
+            users={recommendedUsers}
+            skills={skills}
+          />
         </main>
       </div>
       <Footer />

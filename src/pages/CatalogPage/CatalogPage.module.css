@@ -2,6 +2,7 @@
   display: flex;
   gap: 24px;
   padding: 32px 36px;
+  align-items: flex-start;
 }
 
 .filters {
@@ -9,8 +10,7 @@
   flex-direction: column;
   gap: 40px;
   width: 324px;
-  min-height: 1012px;
-  background-color: #fff;
+  background-color: var(--color-card);
   border-radius: 12px;
   padding: 20px;
   flex-shrink: 0;
@@ -26,45 +26,4 @@
 
 .content {
   flex: 1;
-}
-
-.section {
-  margin-bottom: 40px;
-}
-
-.sectionHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-}
-
-.sectionTitle {
-  font-family: var(--font-jost);
-  font-weight: var(--font-weight-medium);
-  font-size: 28px;
-  line-height: 32px;
-  color: var(--color-text);
-}
-
-.seeAll {
-  font-size: 16px;
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.seeAll:hover {
-  color: var(--color-primary);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-}
-
-.seeAllButton {
-  width: 187px;
-  height: 48px;
 }
