@@ -3,7 +3,7 @@ import { Logo } from '../../shared/ui/logo';
 import { Button } from '../../shared/ui/Button';
 import SvgCross from '../../shared/ui/icons/CrossIcon';
 import { ThemeButton } from '../../shared/ui/ThemeButton';
-// import { NotificationBell } from '../../shared/ui/NotificationBell';
+import { NotificationBell } from '../../shared/ui/NotificationBell';
 import { LikeButton } from '../../shared/ui/LikeButton';
 import { useRef, useState } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from '@/shared/ui'
@@ -11,6 +11,7 @@ import { SkillsMenu } from '../SkillsMenu';
 import { useClickOutside } from '@/shared/hooks/useClickOutside';
 import { useEscapeKey } from '@/shared/hooks/useEscapeKey';
 import { ROUTES } from '@/shared/lib/constants.ts'
+import { SearchInput } from '../../shared/ui/SearchInput';
 
 interface HeaderProps {
   variant?: 'logged-out' | 'logged-in' | 'pure'; // вариант хэдера
@@ -34,7 +35,7 @@ export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderP
           <nav className={styles.nav}>
             <a href="#">О проекте</a>
             <button
-              className={styles.skillsContainer}
+              className={styles.navButton}
               type="button"
               onClick={() => setIsSkillsOpened(!isSkillsOpened)}
               ref={menuButtonRef}
@@ -45,6 +46,13 @@ export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderP
           </nav>
         )}
       </div>
+
+      {/* поисковая строка */}
+      {variant !== 'pure' && (
+        <div className={styles.search}>
+          <SearchInput onSearch={() => {}} />
+        </div>
+      )}
       {variant === 'pure' && (
         <Button variant="tertiary" iconRight={<SvgCross />} onClick={() => {}}>
           Закрыть
@@ -61,7 +69,7 @@ export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderP
       {variant === 'logged-in' && (
         <div className={styles.actions}>
           <ThemeButton isDark={false} onClick={() => {}} />
-          {/* <NotificationBell isActive={false} onClick={() => {}} /> */}
+          <NotificationBell isActive={false} onClick={() => {}} />
           <LikeButton isActive={false} onClick={() => {}} />
           <span>{userName}</span>
           {userAvatar && <img src={userAvatar} alt={userName} />}

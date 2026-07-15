@@ -1,0 +1,29 @@
+.page {
+  display: flex;
+  gap: 24px;
+  padding: 32px 36px;
+  align-items: flex-start;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 324px;
+  background-color: var(--color-card);
+  border-radius: 12px;
+  padding: 20px;
+  flex-shrink: 0;
+}
+
+.filtersTitle {
+  font-family: var(--font-jost);
+  font-weight: var(--font-weight-medium);
+  font-size: 24px;
+  line-height: 28px;
+  color: var(--color-text);
+}
+
+.content {
+  flex: 1;
+}
