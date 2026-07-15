@@ -68,13 +68,13 @@
   transform: rotate(0deg);
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .slide {
     flex: 0 0 calc(50% - 12px);
   }
 }
 
-@media (max-width: 640px) {
+@media (width <= 640px) {
   .slide {
     flex: 0 0 100%;
   }
