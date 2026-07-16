@@ -25,13 +25,11 @@ export default function CatalogPage() {
   const selectedCity = useAppSelector(selectCity);
   const allUsers = useAppSelector(getAllUsers);
 
-  // Получаем всех пользователей в нужном порядке
-  const allPopularUsers = useAppSelector((state) =>
-    getUsersPopular(state, allUsers.length, 0),
+  const popularUsers = useAppSelector((state) =>
+    getUsersPopular(state, 9, 0),
   );
-
-  const allNewestUsers = useAppSelector((state) =>
-    getUsersNewest(state, allUsers.length, 0),
+  const newestUsers = useAppSelector((state) =>
+    getUsersNewest(state, 9, 0),
   );
 
   const allRecommendedUsers = useAppSelector((state) =>
@@ -139,7 +137,8 @@ export default function CatalogPage() {
             users={popularUsers}
             skills={skills}
             showSeeAllButton
-            onSeeAllClick={() => {navigate(ROUTES.POPULAR)}}
+            singleRow
+            onSeeAllClick={() => {}}
           />
 
           <UserCardsSection
@@ -147,7 +146,8 @@ export default function CatalogPage() {
             users={newestUsers}
             skills={skills}
             showSeeAllButton
-            onSeeAllClick={() => {navigate(ROUTES.NEW)}}
+            singleRow
+            onSeeAllClick={() => {}}
           />
 
           <UserCardsSection

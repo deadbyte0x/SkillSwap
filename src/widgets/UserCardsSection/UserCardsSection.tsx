@@ -1,7 +1,9 @@
+import { useRef } from 'react'
 import type { TeachSkill, User } from '@/shared/types'
 import { UserCard } from '@/shared/ui/UserCard'
 import { Button } from '@/shared/ui/Button'
 import { ChevronRightIcon } from '@/shared/ui'
+import { useColumnsCount } from '@/shared/hooks/useColumnsCount'
 import styles from './UserCardsSection.module.css'
 
 interface UserCardsSectionProps {
@@ -10,6 +12,7 @@ interface UserCardsSectionProps {
   skills: TeachSkill[]
   showSeeAllButton?: boolean
   onSeeAllClick?: () => void
+  singleRow?: boolean
 }
 
 export const UserCardsSection = ({
@@ -18,7 +21,13 @@ export const UserCardsSection = ({
   skills,
   showSeeAllButton = false,
   onSeeAllClick,
+  singleRow = false,
 }: UserCardsSectionProps) => {
+  const gridRef = useRef<HTMLDivElement>(null)
+  const columns = useColumnsCount(gridRef)
+
+  const visibleUsers = singleRow ? users.slice(0, columns) : users
+
   return (
     <section className={styles.section}>
       <div className={styles.sectionHeader}>
@@ -36,8 +45,8 @@ export const UserCardsSection = ({
         )}
       </div>
 
-      <div className={styles.grid}>
-        {users.map((user) => {
+      <div className={styles.grid} ref={gridRef}>
+        {visibleUsers.map((user) => {
           const skill = skills.find((item) => item.id === user.teachSkillId)
           if (!skill) return null;
 
