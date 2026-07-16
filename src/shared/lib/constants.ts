@@ -8,6 +8,8 @@ export const ROUTES = {
   CREATE: '/create',
   LOGIN: '/login',
   REGISTER: '/register',
+  POPULAR: "/popular",
+  NEW: "/new",
   ERROR: '/500'
 } as const
 

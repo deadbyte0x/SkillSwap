@@ -13,6 +13,8 @@ const LoginPage = lazy(() => import('@/pages/LoginPage'))
 const RegisterPage = lazy(() => import('@/pages/RegisterPage'))
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'))
 const ServerErrorPage = lazy(() => import('@/pages/ServerErrorPage'))
+const PopularPage = lazy(() => import('@/pages/PopularPage'))
+const NewUsersPage = lazy(() => import('@/pages/NewUsersPage'))
 
 export function AppRouter() {
   return (
@@ -20,6 +22,8 @@ export function AppRouter() {
       <Suspense fallback={<div>Загрузка...</div>}>
         <Routes>
           <Route path={ROUTES.HOME} element={<CatalogPage />} />
+          <Route path={ROUTES.POPULAR} element={<PopularPage />} />
+          <Route path={ROUTES.NEW} element={<NewUsersPage />} />
           <Route path={ROUTES.SKILL} element={<SkillPage />} />
           <Route path={ROUTES.LOGIN} element={<AuthRoute><LoginPage /></AuthRoute>} />
           <Route path={ROUTES.REGISTER} element={<AuthRoute><RegisterPage /></AuthRoute>} />
