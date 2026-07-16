@@ -1,0 +1,18 @@
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.skillsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1; /* растягивает блок навыков, выталкивая кнопку "Подробнее" на одинаковый уровень у всех карточек */
+}
+
+.skillsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
