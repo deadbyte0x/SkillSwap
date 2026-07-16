@@ -24,9 +24,9 @@
 
 .formSection {
   border-radius: 24px;
-  background: #ffffff;
+  background: #fff;
   padding: 32px 24px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 8%);
 }
 
 .socialButton {
@@ -174,10 +174,10 @@
   align-items: center;
   justify-content: center;
   border-radius: 24px;
-  background: #ffffff;
+  background: #fff;
   padding: 40px 24px;
   text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 8%);
 }
 
 .infoIcon {
@@ -201,7 +201,7 @@
   color: #2d2d20;
 }
 
-@media (min-width: 640px) {
+@media (width >= 640px) {
   .formSection {
     padding: 32px 40px;
   }
@@ -211,7 +211,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .main {
     padding: 24px 24px 40px;
   }
