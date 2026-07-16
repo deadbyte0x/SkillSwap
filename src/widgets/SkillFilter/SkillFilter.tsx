@@ -19,11 +19,40 @@ export const SkillFilter = ({ categories, onCategoryChange, onSubcategoryChange 
 
   // открываем/закрываем подкатегории при клике на категорию
   const handleCategoryClick = (categoryId: string) => {
+    const isSelected = selectedCategoryIds.includes(categoryId);
+
+    if (isSelected) {
+      // Получаем подкатегории закрываемой категории
+      const subIds =
+        categories
+          .find((category) => category.id === categoryId)
+          ?.subCategories.map((subcategory) => subcategory.id) ?? [];
+
+      // Оставляем только те подкатегории, которые были выбраны
+      const selectedSubIdsFromCategory = selectedSubIds.filter((id) =>
+        subIds.includes(id),
+      );
+
+      // Убираем выбранные подкатегории из локального состояния
+      setSelectedSubIds((prev) =>
+        prev.filter((id) => !selectedSubIdsFromCategory.includes(id)),
+      );
+
+      // Убираем только выбранные подкатегории из Redux
+      selectedSubIdsFromCategory.forEach((id) => {
+        onSubcategoryChange(id);
+      });
+    }
+
+    // Открываем или закрываем список подкатегорий
     setSelectedCategoryIds((prev) =>
-      prev.includes(categoryId) ? prev.filter((id) => id != categoryId) : [...prev, categoryId]
-    )
-    onCategoryChange(categoryId)
-  }
+      isSelected
+        ? prev.filter((id) => id !== categoryId)
+        : [...prev, categoryId],
+    );
+
+    onCategoryChange(categoryId);
+  };
 
   // переключаем выбор подкатегории
   const handleSubcategoryClick = (subId: string) => {
