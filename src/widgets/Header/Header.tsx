@@ -18,6 +18,7 @@ import { getAllUsers } from '@/features/data'
 import { User } from '@/shared/types'
 import { Avatar } from '@/shared/ui/avatar'
 import { Link, useNavigate } from 'react-router-dom'
+import { UserMenu } from '../UserMenu'
 
 interface HeaderProps {
   variant?: 'logged-out' | 'logged-in' | 'pure'; // вариант хэдера
@@ -31,6 +32,12 @@ export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderP
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   useClickOutside([menuRef, menuButtonRef], () => setIsSkillsOpened(false), isSkillsOpened)
   useEscapeKey(() => setIsSkillsOpened(false), isSkillsOpened)
+  const [userMenuIsOpen, setUserMenuIsOpen] = useState(false)
+  const userMenuRef = useRef<HTMLDivElement>(null)
+  const userMenuButtonRef = useRef<HTMLButtonElement>(null)
+  useClickOutside([userMenuRef, userMenuButtonRef], () => setUserMenuIsOpen(false), userMenuIsOpen)
+  useEscapeKey(() => setUserMenuIsOpen(false), userMenuIsOpen)
+
   const authUser = useAppSelector(selectUser)
   const isAuthChecked = useAppSelector(selectIsAuthenticated)
   const users: User[] = useAppSelector(getAllUsers)
@@ -87,11 +94,14 @@ export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderP
           <ThemeButton isDark={false} onClick={() => {}} />
           <NotificationBell isActive={false} onClick={() => {}} />
           <LikeButton isActive={false} onClick={() => {navigate(ROUTES.FAVORITES)}} />
-          <span>{userName}</span>
-          {userAvatar && <Avatar image={userAvatar}/>}
+          <button onClick={() => {setUserMenuIsOpen(!userMenuIsOpen)}} className={styles.userInfo} ref={userMenuButtonRef}>
+            <span>{userName}</span>
+            {userAvatar && <Avatar image={userAvatar} alt={userName} />}
+          </button>
         </div>
       )}
       {isSkillsOpened && <SkillsMenu ref={menuRef} />}
+      {userMenuIsOpen && <UserMenu ref={userMenuRef} />}
     </header>
   )
 };
