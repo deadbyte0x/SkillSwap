@@ -17,14 +17,6 @@
   margin-bottom: 48px;
 }
 
-.avatar {
-  width: 128px;
-  height: 128px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
 .meta {
   display: flex;
   flex-direction: column;
@@ -83,18 +75,16 @@
   gap: 12px;
 }
 
-.tag {
-  display: inline-flex;
+.avatarFallback {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  color: #333;
+  display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
-  padding: 10px 24px;
-  border-radius: 40px;
-  background: #2d3b2d;
-  font-family: var(--font-roboto);
-  font-weight: var(--font-weight-regular);
-  font-size: 16px;
-  line-height: 24px;
-  color: var(--color-text);
-  white-space: nowrap;
+  font-size: 24px;
+  font-weight: 600;
+  flex-shrink: 0;
 }

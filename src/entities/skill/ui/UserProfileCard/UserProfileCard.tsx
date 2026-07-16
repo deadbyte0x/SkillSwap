@@ -1,13 +1,17 @@
 import type { TeachSkill, User } from '@/shared/types'
 import { SUBCATEGORY_BY_ID } from '@/shared/lib/constants'
-import styles from './UserCard.module.css'
+import { Avatar } from '@/shared/ui/avatar/Avatar.tsx'
+import { Tag, type TagCategory } from '@/shared/ui/Tag/Tag.tsx'
+import styles from './UserProfileCard.module.css'
 
-interface UserCardProps {
+interface UserProfileCardProps {
   user: User
   teachSkill: TeachSkill
 }
 
-export function UserCard({ user, teachSkill }: UserCardProps) {
+const getTagCategory = (): TagCategory => 'plus'
+
+export function UserProfileCard({ user, teachSkill }: UserProfileCardProps) {
   const learnLabels = user.learnSubcategoryIds
     .map((id) => SUBCATEGORY_BY_ID.get(id)?.name)
     .filter((label): label is string => Boolean(label))
@@ -15,11 +19,13 @@ export function UserCard({ user, teachSkill }: UserCardProps) {
   return (
     <aside className={styles.root}>
       <div className={styles.header}>
-        <img
-          className={styles.avatar}
-          src={user.avatarUrl ?? '/images/avatar-placeholder.png'}
-          alt={user.name}
-        />
+        {user.avatarUrl ? (
+          <Avatar image={user.avatarUrl} />
+        ) : (
+          <div className={styles.avatarFallback}>
+            {user.name.charAt(0).toUpperCase()}
+          </div>
+        )}
 
         <div className={styles.meta}>
           <h2 className={styles.name}>{user.name}</h2>
@@ -34,7 +40,7 @@ export function UserCard({ user, teachSkill }: UserCardProps) {
       <div className={styles.section}>
         <h3 className={styles.sectionTitle}>Может научить</h3>
         <div className={styles.tags}>
-          <span className={styles.tag}>{teachSkill.title}</span>
+          <Tag category={getTagCategory()}>{teachSkill.title}</Tag>
         </div>
       </div>
 
@@ -42,9 +48,9 @@ export function UserCard({ user, teachSkill }: UserCardProps) {
         <h3 className={styles.sectionTitle}>Хочет научиться</h3>
         <div className={styles.tags}>
           {learnLabels.map((label) => (
-            <span key={label} className={styles.tag}>
+            <Tag key={label} category={getTagCategory()}>
               {label}
-            </span>
+            </Tag>
           ))}
         </div>
       </div>
