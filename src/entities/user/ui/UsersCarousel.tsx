@@ -6,7 +6,7 @@ import { ChevronRightIcon } from '@/shared/ui/icons';
 import styles from './UsersCarousel.module.css';
 
 // один элемент карусели — все данные и хендлеры, которые требует UserCard
-interface UserCarouselItem {
+export interface UserCarouselItem {
   user: User;
   teachSkill: {
     title: string;
