@@ -8,7 +8,12 @@ interface NotificationBellProps {
 
 export const NotificationBell= ({ isActive, onClick }: NotificationBellProps) => {
   return (
-    <button onClick={onClick}>
+    <button
+      type="button"
+      className={styles.button}
+      onClick={onClick}
+      aria-label="Уведомления"
+    >
       <div className={styles.wrapper}>
         <SvgNotification />
         {isActive ? <div className={styles.dot} /> : null}
