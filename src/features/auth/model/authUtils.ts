@@ -35,6 +35,9 @@ export async function loginUser(
       id: '1',
       name: 'SkillSwap User',
       email: 'test@example.com',
+      favoriteUserIds: [],
+      unreadNotificationUserIds: [],
+      readNotificationUserIds: [],
     })
   }
 
