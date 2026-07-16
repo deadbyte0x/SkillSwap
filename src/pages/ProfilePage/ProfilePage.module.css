@@ -175,7 +175,7 @@
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .card {
     padding: 60px;
   }
@@ -185,7 +185,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .content {
     flex-direction: row-reverse;
     align-items: flex-start;
@@ -208,7 +208,7 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media (width >= 1280px) {
   .content {
     gap: 196px;
   }
