@@ -1,4 +1,3 @@
-import { renderToString } from 'react-dom/server'
 import { LikeIcon, LikeIconFilled } from '../icons'
 import styles from './LikeButton.module.css'
 import clsx from 'clsx'
@@ -20,7 +19,7 @@ export const LikeButton = ({ isActive, onClick, count }: LikeButtonProps) => {
       aria-pressed={isActive}
     >
       <Icon className={clsx(styles.icon, isActive ? styles.iconActive : '')} />
-      <span>{renderToString(count)}</span>
+      {count !== undefined && <span className={styles.count}>{count > 99 ? "99+" : count}</span>}
     </button>
   )
 }

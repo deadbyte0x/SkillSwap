@@ -3,14 +3,15 @@ import { Button } from '../Button';
 import { LikeButton } from '../LikeButton';
 import { Tag, TagCategory } from '../Tag';
 import { getAgeWord } from '../../lib/helpers';
-import { SUBCATEGORY_BY_ID } from '../../lib/constants';
+import { ROUTES, SUBCATEGORY_BY_ID } from '../../lib/constants'
 import { User } from '../../types';
-import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import { selectIsUserLiked, toggleFavoriteUser } from '@/features/auth';
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import { selectIsUserLiked, selectUser, toggleFavoriteUser } from '@/features/auth'
 import { getUserLikesCount } from '@/features/data';
+import { useNavigate } from 'react-router-dom'
 
 interface UserCardProps {
-  user: User;              
+  user: User;
   teachSkill: {
     title: string;
     subCategoryId: string;
@@ -54,12 +55,16 @@ const getVisibleLearnSkills = (subIds: string[]) => {
 };
 
 export const UserCard = ({ user, teachSkill, onDetailsClick }: UserCardProps) => {
- 
+
   const dispatch = useAppDispatch()
   const isLiked = useAppSelector((state) => selectIsUserLiked(state, user.id))
   const likeCount = useAppSelector((state) => getUserLikesCount(state,user.id))
+  const currentUser = useAppSelector(selectUser)
+  const navigate = useNavigate()
 
   const handleLike = () => {
+    if (!currentUser)
+      return navigate(ROUTES.LOGIN);
     dispatch(toggleFavoriteUser(user.id));
   }
    // получаем категорию навыка "может научить" для цвета тега

@@ -12,8 +12,6 @@ export interface UserCarouselItem {
     title: string;
     subCategoryId: string;
   };
-  isLiked: boolean;
-  onLike: () => void;
   onDetailsClick: () => void;
 }
 

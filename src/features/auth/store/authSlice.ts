@@ -46,10 +46,10 @@ export const toggleFavoriteUser = createAsyncThunk<
   const currentUser = getState().auth.user
 
   if (!currentUser) {
-    return  rejectWithValue('Не авторизован')
+    return rejectWithValue('Не авторизован')
   }
 
-  const wasLiked = currentUser.favoriteUserIds.includes(targetUserId)
+  const wasLiked = (currentUser.favoriteUserIds ?? []).includes(targetUserId)
   const favoriteUserIds = wasLiked
     ? currentUser.favoriteUserIds.filter((id) => id !== targetUserId)
     : [...currentUser.favoriteUserIds, targetUserId]
