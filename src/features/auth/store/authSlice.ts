@@ -12,6 +12,7 @@ export interface AuthState {
 // ─── НАЧАЛЬНОЕ СОСТОЯНИЕ ───
 const initialState: AuthState = {
   user: null,
+  // Проверили ли мы юзера
   isAuthenticated: false,
   isLoading: false,
   error: null,
@@ -59,7 +60,7 @@ const authSlice = createSlice({
       .addCase(getUser.rejected, (state, action) => {
         state.isLoading = false
         state.user = null
-        state.isAuthenticated = false
+        state.isAuthenticated = true
         state.error = action.error.message || 'Ошибка получения'
       })
       // save user
@@ -76,7 +77,7 @@ const authSlice = createSlice({
       .addCase(saveUser.rejected, (state, action) => {
         state.isLoading = false
         state.user = null
-        state.isAuthenticated = false
+        state.isAuthenticated = true
         state.error = action.error.message || 'Ошибка сохранения'
       })
       // clear user
@@ -86,7 +87,7 @@ const authSlice = createSlice({
       .addCase(clearUser.fulfilled, (state) => {
         state.isLoading = false
         state.user = null
-        state.isAuthenticated = false
+        state.isAuthenticated = true
         state.error = null
       })
       .addCase(clearUser.rejected, (state, action) => {

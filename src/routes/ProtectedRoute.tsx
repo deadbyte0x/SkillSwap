@@ -25,7 +25,7 @@ export const ProtectedRoute = ({ children }: { children: React.ReactElement }) =
         replace
       />
     )
-  } else {
-    return children
   }
+
+  return children
 }

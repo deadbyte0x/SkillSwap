@@ -12,6 +12,7 @@ import { useClickOutside } from '@/shared/hooks/useClickOutside';
 import { useEscapeKey } from '@/shared/hooks/useEscapeKey';
 import { ROUTES } from '@/shared/lib/constants.ts'
 import { SearchInput } from '../../shared/ui/SearchInput';
+import { Avatar } from '@/shared/ui/avatar'
 
 interface HeaderProps {
   variant?: 'logged-out' | 'logged-in' | 'pure'; // вариант хэдера
@@ -72,7 +73,7 @@ export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderP
           <NotificationBell isActive={false} onClick={() => {}} />
           <LikeButton isActive={false} onClick={() => {}} />
           <span>{userName}</span>
-          {userAvatar && <img src={userAvatar} alt={userName} />}
+          {userAvatar && <Avatar image={userAvatar}/>}
         </div>
       )}
       {isSkillsOpened && <SkillsMenu ref={menuRef} />}
