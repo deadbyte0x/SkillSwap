@@ -46,8 +46,6 @@ export const UserCardsSection = ({
               key={user.id}
               user={user}
               teachSkill={{ title: skill.title, subCategoryId: skill.subCategoryId }}
-              isLiked={false}
-              onLike={() => {}}
               onDetailsClick={() => {}}
             />
           )

@@ -12,8 +12,6 @@ export interface UserCarouselItem {
     title: string;
     subCategoryId: string;
   };
-  isLiked: boolean;
-  onLike: () => void;
   onDetailsClick: () => void;
 }
 
@@ -70,13 +68,11 @@ export const UsersCarousel = ({ items, title = 'Похожие предложе�
         <div className={styles.viewport} ref={emblaRef}>
           {/* container — обёртка слайдов, должен быть flex-контейнером */}
           <div className={styles.container}>
-            {items.map(({ user, teachSkill, isLiked, onLike, onDetailsClick }) => (
+            {items.map(({ user, teachSkill, onDetailsClick }) => (
               <div className={styles.slide} key={user.id}>
                 <UserCard
                   user={user}
                   teachSkill={teachSkill}
-                  isLiked={isLiked}
-                  onLike={onLike}
                   onDetailsClick={onDetailsClick}
                 />
               </div>

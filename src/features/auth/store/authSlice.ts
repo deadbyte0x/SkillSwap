@@ -1,6 +1,8 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit'
 import type { AuthUser } from '@/shared/types'
 import { getAuthUser, saveAuthUser, clearAuthUser } from '../model/authUtils'
+import { adjustLikesCount } from '@/features/data'
+import type { RootState, AppDispatch } from '@/store'
 
 export interface AuthState {
   user: AuthUser | null
@@ -32,6 +34,30 @@ export const saveUser = createAsyncThunk(
 
 export const clearUser = createAsyncThunk('auth/clearUser', async () => {
   clearAuthUser()
+})
+
+// Редьюсер лайка
+
+export const toggleFavoriteUser = createAsyncThunk<
+  AuthUser,
+  string,
+  { state: RootState; dispatch: AppDispatch; rejectValue: string }
+>('auth/toggleFavorite', async (targetUserId, { getState, dispatch, rejectWithValue }) => {
+  const currentUser = getState().auth.user
+
+  if (!currentUser) {
+    return rejectWithValue('Не авторизован')
+  }
+
+  const wasLiked = (currentUser.favoriteUserIds ?? []).includes(targetUserId)
+  const favoriteUserIds = wasLiked
+    ? currentUser.favoriteUserIds.filter((id) => id !== targetUserId)
+    : [...currentUser.favoriteUserIds, targetUserId]
+
+  const updatedUser = saveAuthUser({ ...currentUser, favoriteUserIds })
+  dispatch(adjustLikesCount({ userId: targetUserId, delta: wasLiked ? -1 : 1 }))
+
+  return updatedUser
 })
 
 // ─── SLICE ───
@@ -94,6 +120,13 @@ const authSlice = createSlice({
         state.isLoading = false
         state.error = action.error.message || 'Ошибка выхода'
       })
+      // Обработка событий лайка
+      .addCase(toggleFavoriteUser.fulfilled, (state, action) => {
+        state.user = action.payload
+      })
+      .addCase(toggleFavoriteUser.rejected, (state, action) => {
+        state.error = action.payload || 'Ошибка обновления лайка'
+      })
   },
   selectors: {
     selectAuth: state => state,
@@ -106,6 +139,8 @@ const authSlice = createSlice({
 
 // ─── СЕЛЕКТОРЫ ───
 export const { selectAuth, selectUser, selectIsAuthenticated, selectIsLoading, selectAuthError } = authSlice.selectors
+export const selectIsUserLiked = createSelector([selectUser, (_state: RootState, userId: string) => userId],
+(user, userId) => !!user?.favoriteUserIds.includes(userId))
 
 export const { clearError } = authSlice.actions
 export default authSlice.reducer
