@@ -7,14 +7,16 @@ import { SkillFilter } from '../../widgets/SkillFilter';
 import { CityFilter } from '../../widgets/CityFilter';
 import { GenderFilter } from '../../widgets/GenderFilter';
 import { SkillTypeFilter } from '../../widgets/SkillTypeFilter';
-import { SKILL_CATEGORIES, Cities } from '../../shared/lib/constants';
+import { SKILL_CATEGORIES, Cities, ROUTES } from '../../shared/lib/constants'
 import { loadAllData, getAllSkills, getAllUsers, getUsersPopular, getUsersNewest, getUsersRecommended, } from '../../features/data';
 import { UserCardsSection } from '../../widgets/UserCardsSection'
 import { selectType, setType, toggleCategory, selectCategories, setGender, setCity, selectCity, selectGender } from '../../features/filters';
 import type { User } from '../../shared/types';
+import { useNavigate } from 'react-router-dom'
 
 export default function CatalogPage() {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const skills = useAppSelector(getAllSkills);
   const selectedType = useAppSelector(selectType);
@@ -93,7 +95,7 @@ export default function CatalogPage() {
       return true;
     });
   };
-  
+
   // Фильтруем упорядоченные списки и оставляем нужное количество карточек
   const popularUsers = filterUsers(allPopularUsers).slice(0, 3);
   const newestUsers = filterUsers(allNewestUsers).slice(0, 3);
@@ -137,7 +139,7 @@ export default function CatalogPage() {
             users={popularUsers}
             skills={skills}
             showSeeAllButton
-            onSeeAllClick={() => {}}
+            onSeeAllClick={() => {navigate(ROUTES.POPULAR)}}
           />
 
           <UserCardsSection
@@ -145,7 +147,7 @@ export default function CatalogPage() {
             users={newestUsers}
             skills={skills}
             showSeeAllButton
-            onSeeAllClick={() => {}}
+            onSeeAllClick={() => {navigate(ROUTES.NEW)}}
           />
 
           <UserCardsSection

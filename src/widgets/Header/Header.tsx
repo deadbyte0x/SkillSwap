@@ -17,7 +17,7 @@ import { selectIsAuthenticated, selectUser } from '@/features/auth'
 import { getAllUsers } from '@/features/data'
 import { User } from '@/shared/types'
 import { Avatar } from '@/shared/ui/avatar'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 interface HeaderProps {
   variant?: 'logged-out' | 'logged-in' | 'pure'; // вариант хэдера
@@ -40,6 +40,7 @@ export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderP
     userName = u.name;
     userAvatar = u.avatarUrl || undefined;
   }
+  const navigate = useNavigate();
   return (
     <header className={styles.header}>
       <div className={styles.left}>
@@ -69,15 +70,15 @@ export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderP
         </div>
       )}
       {variant === 'pure' && (
-        <Button variant="tertiary" iconRight={<SvgCross />} onClick={() => {}}>
+        <Button variant="tertiary" iconRight={<SvgCross />} onClick={() => {navigate(-1)}}>
           Закрыть
         </Button>
       )}
       {variant === 'logged-out' && (
         <div className={styles.actions}>
           <ThemeButton isDark={false} onClick={() => {}} />
-          <Button variant="secondary" onClick={() => {}}>Войти</Button>
-          <Button variant="primary" onClick={() => {}}>Зарегистрироваться</Button>
+          <Button variant="secondary" onClick={() => {navigate(ROUTES.LOGIN)}}>Войти</Button>
+          <Button variant="primary" onClick={() => {navigate(ROUTES.REGISTER)}}>Зарегистрироваться</Button>
         </div>
       )}
 
@@ -85,7 +86,7 @@ export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderP
         <div className={styles.actions}>
           <ThemeButton isDark={false} onClick={() => {}} />
           <NotificationBell isActive={false} onClick={() => {}} />
-          <LikeButton isActive={false} onClick={() => {}} />
+          <LikeButton isActive={false} onClick={() => {navigate(ROUTES.FAVORITES)}} />
           <span>{userName}</span>
           {userAvatar && <Avatar image={userAvatar}/>}
         </div>

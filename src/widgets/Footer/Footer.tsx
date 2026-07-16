@@ -18,7 +18,7 @@ export const Footer = () => {
         <a href="#" className={styles.link}>
           Политика конфиденциальности
         </a>
-        <a href="#" className={styles.link}>
+        <a href={ROUTES.HOME} className={styles.link}>
           Все навыки
         </a>
         <a href="#" className={styles.link}>
