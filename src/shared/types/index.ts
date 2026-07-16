@@ -68,4 +68,7 @@ export interface AuthUser {
   name: string
   email: string
   token: string
+  favoriteUserIds: string[]
+  unreadNotificationUserIds: string[]
+  readNotificationUserIds: string[]
 }

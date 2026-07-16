@@ -17,7 +17,7 @@ export const GenderFilter = ({ onChange }: FilterProps) => {
   };
 
   return (
-    <>
+    <div>
     <h3 className={styles.label}>Пол автора</h3>
     <ul className={styles.container} >
       <li className={styles.li}>
@@ -44,6 +44,6 @@ export const GenderFilter = ({ onChange }: FilterProps) => {
         <span className={styles.text}>Женский</span>
       </li>
     </ul>
-    </>
+    </div>
   );
 };
