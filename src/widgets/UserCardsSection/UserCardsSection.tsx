@@ -12,7 +12,9 @@ interface UserCardsSectionProps {
   skills: TeachSkill[]
   showSeeAllButton?: boolean
   onSeeAllClick?: () => void
-  singleRow?: boolean
+  singleRow?: boolean // показать ровно 1 ряд ("Популярное"/"Новое")
+  fillFullRows?: boolean // обрезать по полным рядам (без хвоста)
+  maxRows?: number // ограничить сверху N рядами (для "Рекомендуем" = 3)
 }
 
 export const UserCardsSection = ({
@@ -22,11 +24,29 @@ export const UserCardsSection = ({
   showSeeAllButton = false,
   onSeeAllClick,
   singleRow = false,
+  fillFullRows = false,
+  maxRows,
 }: UserCardsSectionProps) => {
   const gridRef = useRef<HTMLDivElement>(null)
   const columns = useColumnsCount(gridRef)
 
-  const visibleUsers = singleRow ? users.slice(0, columns) : users
+  let visibleUsers = users
+
+  if (singleRow) {
+    visibleUsers = users.slice(0, columns)
+  } else if (fillFullRows) {
+    let fullRowsCount = Math.floor(users.length / columns) * columns
+    fullRowsCount = fullRowsCount || Math.min(columns, users.length)
+
+    // Если задан maxRows — не даём вылезти больше, чем на maxRows рядов,
+    // даже если данных хватило бы на больше полных рядов
+    if (maxRows) {
+      const capped = Math.min(fullRowsCount, columns * maxRows)
+      visibleUsers = users.slice(0, capped)
+    } else {
+      visibleUsers = users.slice(0, fullRowsCount)
+    }
+  }
 
   return (
     <section className={styles.section}>
@@ -48,7 +68,7 @@ export const UserCardsSection = ({
       <div className={styles.grid} ref={gridRef}>
         {visibleUsers.map((user) => {
           const skill = skills.find((item) => item.id === user.teachSkillId)
-          if (!skill) return null;
+          if (!skill) return null
 
           return (
             <UserCard

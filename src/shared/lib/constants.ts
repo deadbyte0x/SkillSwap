@@ -54,7 +54,7 @@ export const SKILL_CATEGORIES: Category[] = [
       { id: 'japanese', name: 'Японский', categoryId: 'foreign-languages' },
       {
         id: 'exam-prep',
-        name: 'Подготовка к экзаменам (IELTS, TOEFL)',
+        name: 'Экзамены (IELTS, TOEFL)',
         categoryId: 'foreign-languages',
       },
     ],
