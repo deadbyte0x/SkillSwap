@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import { ROUTES } from '@/shared/lib/constants'
+import { ProtectedRoute } from '@/routes/ProtectedRoute'
+import { AuthRoute } from '@/routes/AuthRoute'
 
 // Lazy-загрузка страниц — каждая страница грузится только при переходе на неё
 const CatalogPage = lazy(() => import('@/pages/CatalogPage'))
@@ -19,12 +21,12 @@ export function AppRouter() {
         <Routes>
           <Route path={ROUTES.HOME} element={<CatalogPage />} />
           <Route path={ROUTES.SKILL} element={<SkillPage />} />
-          <Route path={ROUTES.LOGIN} element={<LoginPage />} />
-          <Route path={ROUTES.REGISTER} element={<RegisterPage />} />
+          <Route path={ROUTES.LOGIN} element={<AuthRoute><LoginPage /></AuthRoute>} />
+          <Route path={ROUTES.REGISTER} element={<AuthRoute><RegisterPage /></AuthRoute>} />
 
           {/* Защищённые маршруты — добавь PrivateRoute обёртку */}
-          <Route path={ROUTES.PROFILE} element={<ProfilePage />} />
-          <Route path={ROUTES.FAVORITES} element={<FavoritesPage />} />
+          <Route path={ROUTES.PROFILE} element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
+          <Route path={ROUTES.FAVORITES} element={<ProtectedRoute><FavoritesPage /></ProtectedRoute>} />
 
           <Route path={ROUTES.ERROR} element={<ServerErrorPage />} />
           <Route path="*" element={<NotFoundPage />} />
