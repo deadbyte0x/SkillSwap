@@ -144,44 +144,43 @@ const dataSlice = createSlice({
     getUsersNewest: createSelector(
       [
         (sliceState: DataState) => sliceState.users,
-        (_sliceState: DataState, limit: number) => limit,
-        (_sliceState: DataState, _limit: number, offset: number) => offset,
+        (_sliceState: DataState, limit?: number) => limit,
+        (_sliceState: DataState, _limit?: number, offset?: number) => offset,
       ],
       (users, limit, offset) =>
         [...users]
           .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
-          .slice(offset, offset + limit),
+          .slice(offset ?? 0, (offset ?? 0) + (limit ?? users.length)),
     ),
 
     getUsersPopular: createSelector(
       [
         (sliceState: DataState) => sliceState.users,
-        (_sliceState: DataState, limit: number) => limit,
-        (_sliceState: DataState, _limit: number, offset: number) => offset,
+        (_sliceState: DataState, limit?: number) => limit,
+        (_sliceState: DataState, _limit?: number, offset?: number) => offset,
       ],
       (users, limit, offset) =>
         [...users]
           .sort((a, b) => (b.likesCount ?? 0) - (a.likesCount ?? 0))
-          .slice(offset, offset + limit),
+          .slice(offset ?? 0, (offset ?? 0) + (limit ?? users.length)),
     ),
     getUsersRecommended: createSelector(
       [
         (sliceState: DataState) => sliceState.users,
-        (_sliceState: DataState, limit: number) => limit,
-        (_sliceState: DataState, _limit: number, offset: number) => offset,
+        (_sliceState: DataState, limit?: number) => limit,
+        (_sliceState: DataState, _limit?: number, offset?: number) => offset,
       ],
       (users, limit, offset) => {
         // Some smart recommendation system
         const n = users.length
         const step = 13
         const result: User[] = []
-        for (let k = 0, i = step - 1; k < n; k++, i = (i+ step) % n) {
+        for (let k = 0, i = step - 1; k < n; k++, i = (i + step) % n) {
           result.push(users[i])
         }
-        return result.slice(offset, offset + limit)
-      }
+        return result.slice(offset ?? 0, (offset ?? 0) + (limit ?? users.length))
+      },
     ),
-  
   },
 })
 

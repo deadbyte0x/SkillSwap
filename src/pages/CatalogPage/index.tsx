@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import styles from './CatalogPage.module.css';
 import { Header } from '../../widgets/Header';
@@ -8,7 +7,7 @@ import { CityFilter } from '../../widgets/CityFilter';
 import { GenderFilter } from '../../widgets/GenderFilter';
 import { SkillTypeFilter } from '../../widgets/SkillTypeFilter';
 import { SKILL_CATEGORIES, Cities, ROUTES } from '../../shared/lib/constants'
-import { loadAllData, getAllSkills, getAllUsers, getUsersPopular, getUsersNewest, getUsersRecommended, } from '../../features/data';
+import { getAllSkills, getAllUsers, getUsersPopular, getUsersNewest, getUsersRecommended, } from '../../features/data';
 import { UserCardsSection } from '../../widgets/UserCardsSection'
 import { selectType, setType, toggleCategory, selectCategories, setGender, setCity, selectCity, selectGender } from '../../features/filters';
 import type { User } from '../../shared/types';
@@ -37,10 +36,6 @@ export default function CatalogPage() {
   const allRecommendedUsers = useAppSelector((state) =>
     getUsersRecommended(state, allUsers.length, 0),
   );
-
-  useEffect(() => {
-    dispatch(loadAllData());
-  }, [dispatch]);
 
   // Возвращает пользователей, подходящих под выбранные фильтры
   const filterUsers = (users: User[]) => {
