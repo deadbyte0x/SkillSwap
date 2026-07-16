@@ -7,7 +7,6 @@
   background: var(--color-card);
   border: 2px solid var(--color-disabled);
   border-radius: var(--radius-lg);
-  box-sizing: border-box;
 }
 
 .header {
@@ -48,31 +47,6 @@
   font-size: 16px;
   line-height: 24px;
   color: var(--color-text);
-}
-
-.section {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.section + .section {
-  margin-top: 40px;
-}
-
-.sectionTitle {
-  margin: 0;
-  font-family: var(--font-jost);
-  font-weight: var(--font-weight-medium);
-  font-size: 24px;
-  line-height: 32px;
-  color: var(--color-text);
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
 }
 
 .avatarFallback {

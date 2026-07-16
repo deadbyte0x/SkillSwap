@@ -6,6 +6,7 @@
   background-color: var(--color-card);
   border-radius: 12px;
   width: 324px;
+  height: 368px; /* фиксированная высота по Figma */
   position: relative;
 }
 
@@ -14,32 +15,22 @@
   align-items: center;
   gap: 12px;
   position: relative;
+  min-height: 100px; /* резервирует место под аватар, даже если avatarUrl === null */
 }
 
 .user img {
   width: 100px;
   height: 100px;
+  flex-shrink: 0; /* картинка не сжимается, если рядом длинное имя */
+}
+
+/* заглушка того же размера, что и реальный аватар — вместо исчезновения элемента */
+.avatarPlaceholder {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  object-fit: cover;
-}
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-
-.skillsSection {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  flex: 1;
-}
-
-.skillsBlock {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  background-color: var(--color-disabled);
+  flex-shrink: 0;
 }
 
 .likeButton {
