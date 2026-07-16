@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit'
 import type { AuthUser } from '@/shared/types'
 import {
   getAuthUser,
@@ -16,6 +16,7 @@ export interface AuthState {
 
 const initialState: AuthState = {
   user: null,
+  // Проверили ли мы юзера
   isAuthenticated: false,
   isLoading: false,
   error: null,
@@ -85,7 +86,7 @@ const authSlice = createSlice({
       .addCase(getUser.rejected, (state, action) => {
         state.isLoading = false
         state.user = null
-        state.isAuthenticated = false
+        state.isAuthenticated = true
         state.error = action.error.message || 'Ошибка получения'
       })
 
@@ -102,7 +103,7 @@ const authSlice = createSlice({
       .addCase(saveUser.rejected, (state, action) => {
         state.isLoading = false
         state.user = null
-        state.isAuthenticated = false
+        state.isAuthenticated = true
         state.error = action.error.message || 'Ошибка сохранения'
       })
 
@@ -112,7 +113,7 @@ const authSlice = createSlice({
       .addCase(clearUser.fulfilled, (state) => {
         state.isLoading = false
         state.user = null
-        state.isAuthenticated = false
+        state.isAuthenticated = true
         state.error = null
       })
       .addCase(clearUser.rejected, (state, action) => {

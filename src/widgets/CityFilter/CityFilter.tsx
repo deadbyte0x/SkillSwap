@@ -10,19 +10,19 @@ interface City {
 
 interface CityFilterProps {
   cities: City[]; // список городов
-  onCityChange: (cityId: string) => void; // колбэк при выборе города
+  onCityChange: (cityId: string | null) => void; // колбэк при выборе города
 }
 
 export const CityFilter = ({ cities, onCityChange }: CityFilterProps) => {
-  const [selectedCityIds, setSelectedCityIds] = useState<string[]>([]); // выбранные города
+  const [selectedCityId, setSelectedCityId] = useState<string | null>(null); // выбранный город
   const [showAll, setShowAll] = useState(false); // показывать все или 6
 
   // при клике: если город уже выбран — убираем, если нет — добавляем
   const handleCityClick = (cityId: string) => {
-    setSelectedCityIds(prev =>
-      prev.includes(cityId) ? prev.filter(id => id !== cityId) : [...prev, cityId]
-    );
-    onCityChange(cityId);
+  const newValue = selectedCityId === cityId ? null : cityId;
+
+    setSelectedCityId(newValue);
+    onCityChange(newValue);
   };
 
   // показываем первые 6 или все
@@ -35,7 +35,7 @@ export const CityFilter = ({ cities, onCityChange }: CityFilterProps) => {
         <div key={city.id} className={styles.cityRow}>
           {/* чекбокс активен если город в списке выбранных */}
           <CheckBox
-            isActive={selectedCityIds.includes(city.id)}
+            isActive={selectedCityId === city.id}
             type="check"
             onClick={() => handleCityClick(city.id)}
           />

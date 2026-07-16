@@ -95,6 +95,13 @@ const dataSlice = createSlice({
         state.skills = [...state.skills, action.payload.skill]
       },
     },
+    // Счетчик лайков у пользователя
+    adjustLikesCount: (state, action: PayloadAction<{userId:string; delta: 1 | -1}>) => {
+      const user = state.users.find((u) => u.id === action.payload.userId)
+      if (user) {
+        user.likesCount = Math.max(0, (user.likesCount ?? 0 ) + action.payload.delta )
+      }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -128,47 +135,51 @@ const dataSlice = createSlice({
     getDataIsLoaded: (sliceState) => sliceState.isLoaded,
     getUserById: (sliceState, id: string) => sliceState.users.find((u) => u.id === id),
     getSkillById: (sliceState, id: string) => sliceState.skills.find((s) => s.id === id),
+    getUserLikesCount: (sliceState, userId: string) => {
+      const user = sliceState.users.find((u) => u.id === userId)
+      return user?.likesCount ?? 0
+    },
     getUsersByIds: (sliceState, ids: string[]) =>
       sliceState.users.filter((u) => ids.includes(u.id)),
     getUsersNewest: createSelector(
       [
         (sliceState: DataState) => sliceState.users,
-        (_sliceState: DataState, limit: number) => limit,
-        (_sliceState: DataState, _limit: number, offset: number) => offset,
+        (_sliceState: DataState, limit?: number) => limit,
+        (_sliceState: DataState, _limit?: number, offset?: number) => offset,
       ],
       (users, limit, offset) =>
         [...users]
           .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
-          .slice(offset, offset + limit),
+          .slice(offset ?? 0, (offset ?? 0) + (limit ?? users.length)),
     ),
 
     getUsersPopular: createSelector(
       [
         (sliceState: DataState) => sliceState.users,
-        (_sliceState: DataState, limit: number) => limit,
-        (_sliceState: DataState, _limit: number, offset: number) => offset,
+        (_sliceState: DataState, limit?: number) => limit,
+        (_sliceState: DataState, _limit?: number, offset?: number) => offset,
       ],
       (users, limit, offset) =>
         [...users]
           .sort((a, b) => (b.likesCount ?? 0) - (a.likesCount ?? 0))
-          .slice(offset, offset + limit),
+          .slice(offset ?? 0, (offset ?? 0) + (limit ?? users.length)),
     ),
     getUsersRecommended: createSelector(
       [
         (sliceState: DataState) => sliceState.users,
-        (_sliceState: DataState, limit: number) => limit,
-        (_sliceState: DataState, _limit: number, offset: number) => offset,
+        (_sliceState: DataState, limit?: number) => limit,
+        (_sliceState: DataState, _limit?: number, offset?: number) => offset,
       ],
       (users, limit, offset) => {
         // Some smart recommendation system
         const n = users.length
         const step = 13
         const result: User[] = []
-        for (let k = 0, i = step - 1; k < n; k++, i = (i+ step) % n) {
+        for (let k = 0, i = step - 1; k < n; k++, i = (i + step) % n) {
           result.push(users[i])
         }
-        return result.slice(offset, offset + limit)
-      }
+        return result.slice(offset ?? 0, (offset ?? 0) + (limit ?? users.length))
+      },
     ),
   },
 })
@@ -181,10 +192,11 @@ export const {
   getDataIsLoaded,
   getUserById,
   getSkillById,
+  getUserLikesCount,
   getUsersByIds,
   getUsersNewest,
   getUsersPopular,
   getUsersRecommended
 } = dataSlice.selectors
-export const { clearData, clearError, addUserWithSkill } = dataSlice.actions
+export const { clearData, clearError, addUserWithSkill, adjustLikesCount } = dataSlice.actions
 export default dataSlice.reducer
