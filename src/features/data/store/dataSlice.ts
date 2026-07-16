@@ -95,6 +95,13 @@ const dataSlice = createSlice({
         state.skills = [...state.skills, action.payload.skill]
       },
     },
+    // Счетчик лайков у пользователя
+    adjustLikesCount: (state, action: PayloadAction<{userId:string; delta: 1 | -1}>) => {
+      const user = state.users.find((u) => u.id === action.payload.userId)
+      if (user) {
+        user.likesCount = Math.max(0, (user.likesCount ?? 0 ) + action.payload.delta )
+      }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -128,6 +135,10 @@ const dataSlice = createSlice({
     getDataIsLoaded: (sliceState) => sliceState.isLoaded,
     getUserById: (sliceState, id: string) => sliceState.users.find((u) => u.id === id),
     getSkillById: (sliceState, id: string) => sliceState.skills.find((s) => s.id === id),
+    getUserLikesCount: (sliceState, userId: string) => {
+      const user = sliceState.users.find((u) => u.id === userId)
+      return user?.likesCount ?? 0
+    },
     getUsersByIds: (sliceState, ids: string[]) =>
       sliceState.users.filter((u) => ids.includes(u.id)),
     getUsersNewest: createSelector(
@@ -170,6 +181,7 @@ const dataSlice = createSlice({
         return result.slice(offset, offset + limit)
       }
     ),
+  
   },
 })
 
@@ -181,10 +193,11 @@ export const {
   getDataIsLoaded,
   getUserById,
   getSkillById,
+  getUserLikesCount,
   getUsersByIds,
   getUsersNewest,
   getUsersPopular,
   getUsersRecommended
 } = dataSlice.selectors
-export const { clearData, clearError, addUserWithSkill } = dataSlice.actions
+export const { clearData, clearError, addUserWithSkill, adjustLikesCount } = dataSlice.actions
 export default dataSlice.reducer

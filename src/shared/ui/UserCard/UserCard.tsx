@@ -5,6 +5,9 @@ import { Tag, TagCategory } from '../Tag';
 import { getAgeWord } from '../../lib/helpers';
 import { SUBCATEGORY_BY_ID } from '../../lib/constants';
 import { User } from '../../types';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { selectIsUserLiked, toggleFavoriteUser } from '@/features/auth';
+import { getUserLikesCount } from '@/features/data';
 
 interface UserCardProps {
   user: User;              
@@ -12,8 +15,7 @@ interface UserCardProps {
     title: string;
     subCategoryId: string;
   };
-  isLiked: boolean;
-  onLike: () => void;
+
   onDetailsClick: () => void;
 }
 
@@ -51,8 +53,16 @@ const getVisibleLearnSkills = (subIds: string[]) => {
   };
 };
 
-export const UserCard = ({ user, teachSkill, isLiked, onLike, onDetailsClick }: UserCardProps) => {
-  // получаем категорию навыка "может научить" для цвета тега
+export const UserCard = ({ user, teachSkill, onDetailsClick }: UserCardProps) => {
+ 
+  const dispatch = useAppDispatch()
+  const isLiked = useAppSelector((state) => selectIsUserLiked(state, user.id))
+  const likeCount = useAppSelector((state) => getUserLikesCount(state,user.id))
+
+  const handleLike = () => {
+    dispatch(toggleFavoriteUser(user.id));
+  }
+   // получаем категорию навыка "может научить" для цвета тега
   const teachSub = SUBCATEGORY_BY_ID.get(teachSkill.subCategoryId);
   const teachCategoryId = (teachSub?.categoryId ?? 'plus') as TagCategory;
 
@@ -75,7 +85,7 @@ export const UserCard = ({ user, teachSkill, isLiked, onLike, onDetailsClick }: 
           <p className={styles.location}>{user.city}, {user.age} {getAgeWord(user.age)}</p>
         </div>
         <div className={styles.likeButton}>
-          <LikeButton isActive={isLiked} onClick={onLike} />
+          <LikeButton isActive={isLiked} onClick={handleLike} count={likeCount}/>
         </div>
       </div>
 
