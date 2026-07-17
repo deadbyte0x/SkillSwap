@@ -9,7 +9,7 @@ export const Footer = () => {
         <Logo />
       </a>
       <ul className={styles.links}>
-        <a href="#" className={styles.link}>
+        <a href={ROUTES.ABOUT} className={styles.link}>
           О проекте
         </a>
         <a href="#" className={styles.link}>

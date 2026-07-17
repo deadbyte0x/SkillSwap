@@ -10,6 +10,7 @@ export const ROUTES = {
   REGISTER: '/register',
   POPULAR: "/popular",
   NEW: "/new",
+  ABOUT: "/about",
   ERROR: '/500',
   NOT_FOUND: '/404'
 } as const
