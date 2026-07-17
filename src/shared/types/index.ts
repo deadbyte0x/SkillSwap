@@ -72,3 +72,16 @@ export interface AuthUser {
   unreadNotificationUserIds: string[]
   readNotificationUserIds: string[]
 }
+
+export type FilterType = 'all' | 'learn' | 'teach'
+export type GenderFilterType = 'any' | 'male' | 'female'
+export type SortOption = 'popular' | 'newest' | 'rating'
+
+export interface FilterState {
+  type: FilterType
+  subcategories: string[]
+  gender: GenderFilterType
+  cities: string[]
+  searchQuery: string
+  sort: SortOption
+}

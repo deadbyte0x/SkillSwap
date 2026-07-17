@@ -1,46 +1,31 @@
 import { RadioButton } from "@/shared/ui/radio-button"
-import { useState } from "react"
 import styles from './skill-type-filter.module.css'
+import { FilterType } from '@/shared/types'
 
 interface FilterProps {
-    onChange: (value: FilterValue) => void
+  value: FilterType
+  onChange: (value: FilterType) => void
 }
 
-type FilterValue = "all" | "learn" | "teach"
 
-export const SkillTypeFilter = ({ onChange }: FilterProps) => {
-  const [selected, setSelected] = useState<FilterValue>("all");
-
-  const handleClick = (value: FilterValue) => {
-    setSelected(value);
-    onChange(value);
-  };
+export const SkillTypeFilter = ({ value, onChange }: FilterProps) => {
 
   return (
-    <ul className={styles.container} >
+    <ul className={styles.container}>
       <li className={styles.li}>
-        <RadioButton
-          checked={selected === "all"}
-          onClick={() => handleClick("all")}
-        />
+        <RadioButton checked={value === 'all'} onClick={() => onChange('all')} />
         <span className={styles.text}>Все</span>
       </li>
 
       <li className={styles.li}>
-        <RadioButton
-          checked={selected === "learn"}
-          onClick={() => handleClick("learn")}
-        />
+        <RadioButton checked={value === 'learn'} onClick={() => onChange('learn')} />
         <span className={styles.text}>Хочу научиться</span>
       </li>
 
       <li className={styles.li}>
-        <RadioButton
-          checked={selected === "teach"}
-          onClick={() => handleClick("teach")}
-        />
+        <RadioButton checked={value === 'teach'} onClick={() => onChange('teach')} />
         <span className={styles.text}>Могу научить</span>
       </li>
     </ul>
-  );
+  )
 };

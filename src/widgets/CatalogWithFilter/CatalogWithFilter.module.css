@@ -16,12 +16,30 @@
   flex-shrink: 0;
 }
 
+.title {
+  display: flex;
+  gap: 40px;
+}
+
 .filtersTitle {
   font-family: var(--font-jost);
   font-weight: var(--font-weight-medium);
   font-size: 24px;
   line-height: 28px;
   color: var(--color-text);
+}
+
+.clearButton {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-regular);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2%;
+  vertical-align: middle;
+  color: var(--color-text-link)
 }
 
 .content {
