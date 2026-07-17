@@ -21,13 +21,13 @@ export const SkillFilter = ({ selectedSubcategories, selectedCategories, isShowA
   return (
     <div className={styles.filter}>
       <h3 className={styles.title}>Навыки</h3>
-      {visibleCategories.map(category => (
+      {visibleCategories.map((category) => (
         <div key={category.id}>
           {/* строка с чекбоксом и названием категории */}
           <div className={styles.categoryRow}>
             <CheckBox
               isActive={selectedCategories.includes(category.id)}
-              type='minus'
+              type="minus"
               onClick={() => onCategoryChange(category.id)}
             />
             <span>{category.name}</span>
@@ -35,7 +35,7 @@ export const SkillFilter = ({ selectedSubcategories, selectedCategories, isShowA
           {/* подкатегории снизу */}
           {selectedCategories.includes(category.id) && (
             <div className={styles.subcategories}>
-              {category.subCategories.map(sub => (
+              {category.subCategories.map((sub) => (
                 <div key={sub.id} className={styles.categoryRow}>
                   <CheckBox
                     isActive={selectedSubcategories.includes(sub.id)}
@@ -50,9 +50,9 @@ export const SkillFilter = ({ selectedSubcategories, selectedCategories, isShowA
         </div>
       ))}
       {/* кнопка показать все категории */}
-      <button onClick={onShowAllClick}>
+      <button type="button" onClick={onShowAllClick}>
         Все категории {isShowAll ? <ChevronUpIcon /> : <ChevronDownIcon />}
       </button>
     </div>
-  );
+  )
 };

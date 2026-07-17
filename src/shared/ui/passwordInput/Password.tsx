@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, ChangeEvent } from "react"
 import { useDebounce } from "@/shared/hooks/useDebounce"
 import { EyeToggle } from "../EyeToggle"
 import styles from "./Password.module.css"
@@ -23,23 +23,31 @@ export const Password = ({ title='Пароль', placeholder='Введите в�
     }
 
     useEffect(() => {
-        if (validate) {
-            const result = validate(debouncedPassword)
-            setError(result)
-        } else {
-            setError(null)
-        }
+      setError(validate ? validate(debouncedPassword) : null)
+    }, [debouncedPassword, validate])
 
-        onChange?.(debouncedPassword)
-    }, [debouncedPassword, onChange, validate])
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+      setPassword(e.target.value)
+      onChange?.(e.target.value)
+    }
     return (
-        <div className={styles.container}>
-            <label className={styles.label_text}>{title}</label>
-            <div className={styles.input_wraper}>
-            <input type={showPassword ? 'text' : 'password'} placeholder={placeholder} className={clsx(styles.input_field, isError ? styles.input_error : '')} value={password} onChange={(e) => setPassword(e.target.value)}/>
-            <span className={styles.eye}><EyeToggle isVisible={showPassword} onClick={onClick}></EyeToggle></span>
-            </div>
-            <span className={`${styles.hint_text} ${isError ? styles.hint_error : ''} `}>{error || hint}</span>
+      <div className={styles.container}>
+        <label className={styles.label_text}>{title}</label>
+        <div className={styles.input_wraper}>
+          <input
+            type={showPassword ? 'text' : 'password'}
+            placeholder={placeholder}
+            className={clsx(styles.input_field, isError ? styles.input_error : '')}
+            value={password}
+            onChange={handleChange}
+          />
+          <span className={styles.eye}>
+            <EyeToggle isVisible={showPassword} onClick={onClick}></EyeToggle>
+          </span>
         </div>
+        <span className={`${styles.hint_text} ${isError ? styles.hint_error : ''} `}>
+          {error || hint}
+        </span>
+      </div>
     )
 }

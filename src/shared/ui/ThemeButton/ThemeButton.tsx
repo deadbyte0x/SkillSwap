@@ -10,6 +10,7 @@ interface ThemeButtonProps {
 const ThemeButton = ({ isDark, onClick }: ThemeButtonProps) => {
   return (
     <button
+      type="button"
       className={clsx(styles.button, isDark ? styles.active : '')}
       onClick={onClick}
       aria-label={isDark ? 'Светлая тема' : 'Тёмная тема'}

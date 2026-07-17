@@ -19,7 +19,11 @@ export const CheckBox= ({ isActive, onClick, type }: CheckBoxProps) => {
   })();
 
   return (
-    <button onClick={onClick} className={clsx(styles.button, isActive ? styles.active : '')}>
+    <button
+      type="button"
+      onClick={onClick}
+      className={clsx(styles.button, isActive ? styles.active : '')}
+    >
       {isActive ? <CheckboxActiveIcon /> : <CheckboxEmptyIcon />}
     </button>
   )

@@ -22,3 +22,22 @@ export function saveAuthUser(user: Omit<AuthUser, 'token'>): AuthUser {
 export function clearAuthUser(): void {
   localStorage.removeItem(LOCAL_STORAGE_KEYS.AUTH_USER)
 }
+
+export function loginUser(email: string, password: string): AuthUser {
+  const EXPECTED_EMAIL = "abc@abc.abc"
+  const EXPECTED_PASSWORD = "12345678"
+  if (EXPECTED_EMAIL === email && EXPECTED_PASSWORD === password) {
+    return saveAuthUser({
+      id: 'user-1',
+      name: '',
+      email: 'abc@abc.abc',
+      favoriteUserIds: ['user-2', 'user-3'],
+      unreadNotificationUserIds: [],
+      readNotificationUserIds: [],
+    })
+  }
+
+  throw new Error(
+    'Email или пароль введён неверно. Пожалуйста проверьте правильность введённых данных',
+  )
+}

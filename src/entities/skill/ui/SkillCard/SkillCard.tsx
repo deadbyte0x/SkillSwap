@@ -27,10 +27,20 @@ export function SkillCard({
     <div className={styles.root}>
       <div className={styles.actions}>
         <LikeButton isActive={isFavorite} onClick={onFavoriteToggle} />
-        <button className={styles.actionButton} onClick={onShare} aria-label="Поделиться">
+        <button
+          type="button"
+          className={styles.actionButton}
+          onClick={onShare}
+          aria-label="Поделиться"
+        >
           <ShareIcon />
         </button>
-        <button className={styles.actionButton} onClick={onMoreClick} aria-label="Ещё">
+        <button
+          type="button"
+          className={styles.actionButton}
+          onClick={onMoreClick}
+          aria-label="Ещё"
+        >
           <MoreSquareIcon />
         </button>
       </div>

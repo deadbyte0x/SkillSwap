@@ -77,15 +77,35 @@ export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderP
         </div>
       )}
       {variant === 'pure' && (
-        <Button variant="tertiary" iconRight={<SvgCross />} onClick={() => {navigate(-1)}}>
+        <Button
+          variant="tertiary"
+          iconRight={<SvgCross />}
+          onClick={() => {
+            navigate(-1)
+          }}
+        >
           Закрыть
         </Button>
       )}
       {variant === 'logged-out' && (
         <div className={styles.actions}>
           <ThemeButton isDark={false} onClick={() => {}} />
-          <Button variant="secondary" onClick={() => {navigate(ROUTES.LOGIN)}}>Войти</Button>
-          <Button variant="primary" onClick={() => {navigate(ROUTES.REGISTER)}}>Зарегистрироваться</Button>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              navigate(ROUTES.LOGIN)
+            }}
+          >
+            Войти
+          </Button>
+          <Button
+            variant="primary"
+            onClick={() => {
+              navigate(ROUTES.REGISTER)
+            }}
+          >
+            Зарегистрироваться
+          </Button>
         </div>
       )}
 
@@ -93,8 +113,20 @@ export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderP
         <div className={styles.actions}>
           <ThemeButton isDark={false} onClick={() => {}} />
           <NotificationBell isActive={false} onClick={() => {}} />
-          <LikeButton isActive={false} onClick={() => {navigate(ROUTES.FAVORITES)}} />
-          <button onClick={() => {setUserMenuIsOpen(!userMenuIsOpen)}} className={styles.userInfo} ref={userMenuButtonRef}>
+          <LikeButton
+            isActive={false}
+            onClick={() => {
+              navigate(ROUTES.FAVORITES)
+            }}
+          />
+          <button
+            type="button"
+            onClick={() => {
+              setUserMenuIsOpen(!userMenuIsOpen)
+            }}
+            className={styles.userInfo}
+            ref={userMenuButtonRef}
+          >
             <span>{userName}</span>
             {userAvatar && <Avatar image={userAvatar} alt={userName} />}
           </button>

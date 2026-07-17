@@ -19,7 +19,7 @@ export const UserMenu = forwardRef<HTMLDivElement>(( _props, ref) => {
       <Link to={ROUTES.PROFILE} className={styles.link}>
         Личный кабинет
       </Link>
-      <button onClick={handleLogout} className={styles.link} >
+      <button type="button" onClick={handleLogout} className={styles.link}>
         <span>Выйти из аккаунта</span>
         <LogoutIcon />
       </button>

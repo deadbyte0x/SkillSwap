@@ -52,6 +52,7 @@ export const DropdownSelect: React.FC<DropdownProps> = ({
       {label && <span className={styles.label}>{label}</span>}
       <div ref={wrapperRef} className={clsx(styles.inputWrapper, isOpen && styles.open)}>
         <button
+          type="button"
           onClick={() => {
             setIsOpen(!isOpen)
           }}
