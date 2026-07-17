@@ -7,6 +7,7 @@ import { SUBCATEGORY_BY_ID } from '../../shared/lib/constants'
 import { ReactNode, useCallback, useState } from 'react'
 import { FilterState } from '@/shared/types'
 import { toggleItem } from '@/shared/lib/helpers.ts'
+import { CrossIcon } from '@/shared/ui'
 
 type UIState = {
   showAllSkills: boolean,
@@ -38,6 +39,20 @@ export default function CatalogWithFilter({ children }: CatalogWithFilterProps) 
 
   const [filter, setFilter] = useState(initialFilterState);
   const [ui, setUi] = useState(initialUIState);
+
+  const selectedFiltersCount = [
+    filter.type !== 'all',
+    filter.subcategories.length > 0,
+    filter.gender !== 'any',
+    filter.cities.length > 0,
+    filter.searchQuery.length > 0,
+  ].filter(Boolean).length
+
+
+  const handleReset = () => {
+    setFilter(initialFilterState);
+    setUi(initialUIState);
+  }
 
   const handleFilterChange = useCallback(
     <K extends keyof FilterState>(key: K, value: FilterState[K]) => {
@@ -100,7 +115,17 @@ export default function CatalogWithFilter({ children }: CatalogWithFilterProps) 
     <div className={styles.page}>
       {/* боковая панель с фильтрами */}
       <aside className={styles.filters}>
-        <h2 className={styles.filtersTitle}>Фильтры</h2>
+        <div className={styles.title}>
+          <h2
+            className={styles.filtersTitle}
+          >{`Фильтры${selectedFiltersCount > 0 ? ` (${selectedFiltersCount})` : ''}`}</h2>
+          {selectedFiltersCount > 0 && (
+            <button type="button" className={styles.clearButton} onClick={handleReset}>
+              <span>Сбросить</span>
+              <CrossIcon />
+            </button>
+          )}
+        </div>
         <SkillTypeFilter
           value={filter.type}
           onChange={(value) => {
