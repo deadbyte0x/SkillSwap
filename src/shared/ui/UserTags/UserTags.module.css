@@ -11,6 +11,10 @@
   flex: 1; /* растягивает блок навыков, выталкивая кнопку "Подробнее" на одинаковый уровень у всех карточек */
 }
 
+.skillsSection.skillPageStyle {
+  gap: 24px;
+}
+
 .skillsBlock {
   display: flex;
   flex-direction: column;

@@ -7,21 +7,21 @@ import { User } from '../../types';
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { selectIsUserLiked, selectUser, toggleFavoriteUser } from '@/features/auth'
 import { getUserLikesCount } from '@/features/data';
-import { useNavigate } from 'react-router-dom'
+import { generatePath, useNavigate } from 'react-router-dom'
 import { UserTags } from '@/shared/ui/UserTags'
 import { Avatar } from '@/shared/ui/avatar'
 
 interface UserCardProps {
   user: User;
   teachSkill: {
+    id: string
     title: string;
     subCategoryId: string;
   };
 
-  onDetailsClick: () => void;
 }
 
-export const UserCard = ({ user, teachSkill, onDetailsClick }: UserCardProps) => {
+export const UserCard = ({ user, teachSkill }: UserCardProps) => {
 
   const dispatch = useAppDispatch()
   const isLiked = useAppSelector((state) => selectIsUserLiked(state, user.id))
@@ -61,7 +61,7 @@ export const UserCard = ({ user, teachSkill, onDetailsClick }: UserCardProps) =>
       <UserTags user={user} teachSkill={teachSkill} />
 
       {/* кнопка перехода на страницу пользователя */}
-      <Button onClick={onDetailsClick}>Подробнее</Button>
+      <Button onClick={() => {navigate(generatePath(ROUTES.SKILL, {id: teachSkill.id}))}}>Подробнее</Button>
     </div>
   )
 };

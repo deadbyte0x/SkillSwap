@@ -6,6 +6,7 @@ import {
   createSelector,
 } from '@reduxjs/toolkit'
 import type {  TeachSkill, User } from '@/shared/types'
+import { CATEGORY_BY_ID, SUBCATEGORY_BY_ID } from '@/shared/lib/constants.ts'
 
 interface DataState {
   skills: TeachSkill[]
@@ -96,10 +97,10 @@ const dataSlice = createSlice({
       },
     },
     // Счетчик лайков у пользователя
-    adjustLikesCount: (state, action: PayloadAction<{userId:string; delta: 1 | -1}>) => {
+    adjustLikesCount: (state, action: PayloadAction<{ userId: string; delta: 1 | -1 }>) => {
       const user = state.users.find((u) => u.id === action.payload.userId)
       if (user) {
-        user.likesCount = Math.max(0, (user.likesCount ?? 0 ) + action.payload.delta )
+        user.likesCount = Math.max(0, (user.likesCount ?? 0) + action.payload.delta)
       }
     },
   },
@@ -135,6 +136,14 @@ const dataSlice = createSlice({
     getDataIsLoaded: (sliceState) => sliceState.isLoaded,
     getUserById: (sliceState, id: string) => sliceState.users.find((u) => u.id === id),
     getSkillById: (sliceState, id: string) => sliceState.skills.find((s) => s.id === id),
+    getSimilarSkillsBySubcategoryId: (sliceState, id: string) => {
+      const subcategory = SUBCATEGORY_BY_ID.get(id)
+      const category = CATEGORY_BY_ID.get(subcategory?.categoryId || "")
+      const subcategoriesIds = category?.subCategories.map((s) => s.id) || []
+      const sameSubcategory = sliceState.skills.filter((s) => s.subCategoryId === id)
+      const sameCategory = sliceState.skills.filter((s) => subcategoriesIds.includes(s.subCategoryId) && s.subCategoryId !== id)
+      return [...sameSubcategory, ...sameCategory]
+    },
     getUserLikesCount: (sliceState, userId: string) => {
       const user = sliceState.users.find((u) => u.id === userId)
       return user?.likesCount ?? 0
@@ -196,7 +205,8 @@ export const {
   getUsersByIds,
   getUsersNewest,
   getUsersPopular,
-  getUsersRecommended
+  getUsersRecommended,
+  getSimilarSkillsBySubcategoryId,
 } = dataSlice.selectors
 export const { clearData, clearError, addUserWithSkill, adjustLikesCount } = dataSlice.actions
 export default dataSlice.reducer

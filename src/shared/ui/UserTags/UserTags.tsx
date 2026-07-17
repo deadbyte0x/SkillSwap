@@ -2,6 +2,7 @@ import styles from './UserTags.module.css';
 import { Tag, TagCategory } from '../Tag';
 import { SUBCATEGORY_BY_ID } from '../../lib/constants'
 import { User } from '../../types';
+import clsx from 'clsx'
 
 
 interface UserTagsProps {
@@ -10,10 +11,11 @@ interface UserTagsProps {
     title: string;
     subCategoryId: string;
   };
+  style?: 'card' | 'skillPage'
 }
 
 // примерный лимит символов в одной строке тегов (подобрать под реальную верстку)
-const MAX_CHARS_PER_ROW = 25;
+const MAX_CHARS_PER_ROW = 24;
 
 // динамически считает, сколько тегов "хочет научиться" влезает без переноса,
 // основываясь на суммарной длине их названий, а не на жёстком slice(0, 2)
@@ -46,7 +48,7 @@ const getVisibleLearnSkills = (subIds: string[]) => {
   };
 };
 
-export const UserTags = ({ user, teachSkill }: UserTagsProps) => {
+export const UserTags = ({ user, teachSkill, style = 'card' }: UserTagsProps) => {
 
    // получаем категорию навыка "может научить" для цвета тега
   const teachSub = SUBCATEGORY_BY_ID.get(teachSkill.subCategoryId);
@@ -56,7 +58,7 @@ export const UserTags = ({ user, teachSkill }: UserTagsProps) => {
   const { visible, hiddenCount } = getVisibleLearnSkills(user.learnSubcategoryIds);
 
   return (
-    <div className={styles.skillsSection}>
+    <div className={clsx(styles.skillsSection, style === 'skillPage' && styles.skillPageStyle)}>
       <div className={styles.skillsBlock}>
         <p>Может научить:</p>
         <div className={styles.skills}>

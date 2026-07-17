@@ -10,7 +10,8 @@ export const ROUTES = {
   REGISTER: '/register',
   POPULAR: "/popular",
   NEW: "/new",
-  ERROR: '/500'
+  ERROR: '/500',
+  NOT_FOUND: '/404'
 } as const
 
 export const SKILL_CATEGORIES: Category[] = [
