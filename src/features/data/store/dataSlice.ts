@@ -138,10 +138,12 @@ const dataSlice = createSlice({
     getSkillById: (sliceState, id: string) => sliceState.skills.find((s) => s.id === id),
     getSimilarSkillsBySubcategoryId: (sliceState, id: string) => {
       const subcategory = SUBCATEGORY_BY_ID.get(id)
-      const category = CATEGORY_BY_ID.get(subcategory?.categoryId || "")
+      const category = CATEGORY_BY_ID.get(subcategory?.categoryId || '')
       const subcategoriesIds = category?.subCategories.map((s) => s.id) || []
       const sameSubcategory = sliceState.skills.filter((s) => s.subCategoryId === id)
-      const sameCategory = sliceState.skills.filter((s) => subcategoriesIds.includes(s.subCategoryId) && s.subCategoryId !== id)
+      const sameCategory = sliceState.skills.filter(
+        (s) => subcategoriesIds.includes(s.subCategoryId) && s.subCategoryId !== id,
+      )
       return [...sameSubcategory, ...sameCategory]
     },
     getUserLikesCount: (sliceState, userId: string) => {
@@ -159,6 +161,8 @@ const dataSlice = createSlice({
       (users, limit, offset) =>
         [...users]
           .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
+          // Some arbitrary limit
+          .slice(0, 15)
           .slice(offset ?? 0, (offset ?? 0) + (limit ?? users.length)),
     ),
 
@@ -171,6 +175,8 @@ const dataSlice = createSlice({
       (users, limit, offset) =>
         [...users]
           .sort((a, b) => (b.likesCount ?? 0) - (a.likesCount ?? 0))
+          // Some arbitrary limit
+          .slice(0, 15)
           .slice(offset ?? 0, (offset ?? 0) + (limit ?? users.length)),
     ),
     getUsersRecommended: createSelector(

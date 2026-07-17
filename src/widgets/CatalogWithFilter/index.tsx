@@ -116,9 +116,9 @@ export default function CatalogWithFilter({ children }: CatalogWithFilterProps) 
       {/* боковая панель с фильтрами */}
       <aside className={styles.filters}>
         <div className={styles.title}>
-          <h2
-            className={styles.filtersTitle}
-          >{`Фильтры${selectedFiltersCount > 0 ? ` (${selectedFiltersCount})` : ''}`}</h2>
+          <h2 className={styles.filtersTitle}>
+            {`Фильтры${selectedFiltersCount > 0 ? ` (${selectedFiltersCount})` : ''}`}
+          </h2>
           {selectedFiltersCount > 0 && (
             <button type="button" className={styles.clearButton} onClick={handleReset}>
               <span>Сбросить</span>

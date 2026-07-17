@@ -1,12 +1,14 @@
 .section {
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .sectionHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
 }
 
 .sectionTitle {
@@ -26,4 +28,8 @@
 .seeAllButton {
   width: 187px;
   height: 48px;
+}
+
+.showMoreButton {
+  align-self: center;
 }

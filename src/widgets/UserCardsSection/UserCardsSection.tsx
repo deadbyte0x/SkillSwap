@@ -10,6 +10,8 @@ interface UserCardsSectionProps {
   skills: TeachSkill[]
   showSeeAllButton?: boolean
   onSeeAllClick?: () => void
+  showMoreButton?: boolean
+  onShowMoreClick?: () => void
 }
 
 export const UserCardsSection = ({
@@ -18,6 +20,8 @@ export const UserCardsSection = ({
   skills,
   showSeeAllButton = false,
   onSeeAllClick,
+  showMoreButton = false,
+  onShowMoreClick
 }: UserCardsSectionProps) => {
   return (
     <section className={styles.section}>
@@ -50,6 +54,11 @@ export const UserCardsSection = ({
           )
         })}
       </div>
+      {showMoreButton && (
+        <Button variant={'tertiary'} className={styles.showMoreButton} onClick={onShowMoreClick} >
+          Загрузить ещё
+        </Button>
+      )}
     </section>
   )
 }

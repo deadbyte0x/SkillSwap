@@ -7,6 +7,7 @@ import { UserCardsSection } from '../../widgets/UserCardsSection'
 import { useNavigate } from 'react-router-dom'
 import CatalogWithFilter from '@/widgets/CatalogWithFilter'
 import { filterUsers } from '@/shared/lib/helpers.ts'
+import { useState } from 'react'
 
 export default function CatalogPage() {
   const navigate = useNavigate();
@@ -17,6 +18,12 @@ export default function CatalogPage() {
   const allPopularUsers = useAppSelector(getUsersPopular);
   const allNewestUsers = useAppSelector(getUsersNewest);
   const allRecommendedUsers = useAppSelector(getUsersRecommended);
+
+  const [recommendedCount, setRecommendedCount] = useState(6)
+
+  const handleShowMoreRecommended = () => {
+    setRecommendedCount((prev) => prev + 6);
+  }
 
 
   return (
@@ -47,8 +54,10 @@ export default function CatalogPage() {
 
             <UserCardsSection
               title="Рекомендуем"
-              users={filterUsers(allRecommendedUsers, skills, filter).slice(0, 9)}
+              users={filterUsers(allRecommendedUsers, skills, filter).slice(0, recommendedCount)}
               skills={skills}
+              showMoreButton={recommendedCount < allRecommendedUsers.length}
+              onShowMoreClick={handleShowMoreRecommended}
             />
           </>
         )}
