@@ -15,6 +15,8 @@ const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'))
 const ServerErrorPage = lazy(() => import('@/pages/ServerErrorPage'))
 const PopularPage = lazy(() => import('@/pages/PopularPage'))
 const NewUsersPage = lazy(() => import('@/pages/NewUsersPage'))
+const AboutPage = lazy(() => import('@/pages/AboutPage'))
+
 
 export function AppRouter() {
   return (
@@ -27,6 +29,7 @@ export function AppRouter() {
           <Route path={ROUTES.SKILL} element={<SkillPage />} />
           <Route path={ROUTES.LOGIN} element={<AuthRoute><LoginPage /></AuthRoute>} />
           <Route path={ROUTES.REGISTER} element={<AuthRoute><RegisterPage /></AuthRoute>} />
+          <Route path={ROUTES.ABOUT} element={<AboutPage/>} />
 
           {/* Защищённые маршруты — добавь PrivateRoute обёртку */}
           <Route path={ROUTES.PROFILE} element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />

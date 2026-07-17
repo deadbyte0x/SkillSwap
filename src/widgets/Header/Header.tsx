@@ -56,7 +56,7 @@ export const Header = ({ variant = 'logged-out', userName, userAvatar }: HeaderP
         </Link>
         {variant !== 'pure' && (
           <nav className={styles.nav}>
-            <a href="#">О проекте</a>
+            <a href={ROUTES.ABOUT}>О проекте</a>
             <button
               className={styles.navButton}
               type="button"
