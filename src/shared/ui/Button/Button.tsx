@@ -10,6 +10,7 @@ interface ButtonProps {
   iconRight?: React.ReactNode; // иконка справа от текста
   onClick?: () => void; // функция при нажатии
   className?: string; // дополнительный класс для кастомизации снаружи (например, ширина)
+  type?: 'button' | 'submit'
 }
 
 export const Button = ({
@@ -20,11 +21,12 @@ export const Button = ({
   iconRight, // иконка справа
   onClick,
   className, // внешний класс, добавляется последним, чтобы можно было переопределить стили
+  type = 'button'
 }: ButtonProps) => {
   return (
     <button
-      type="button"
-      className={clsx(styles.button, styles[variant],className ?? '')} // берем класс button, variant и внешний className
+      type={type}
+      className={clsx(styles.button, styles[variant], className ?? '')} // берем класс button, variant и внешний className
       disabled={disabled}
       onClick={onClick}
     >
@@ -32,5 +34,5 @@ export const Button = ({
       {children}
       {iconRight}
     </button>
-  );
+  )
 };

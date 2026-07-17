@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit'
 import type { AuthUser } from '@/shared/types'
-import { getAuthUser, saveAuthUser, clearAuthUser } from '../model/authUtils'
+import { getAuthUser, saveAuthUser, clearAuthUser, loginUser } from '../model/authUtils'
 import { adjustLikesCount } from '@/features/data'
 import type { RootState, AppDispatch } from '@/store'
 
@@ -35,6 +35,13 @@ export const saveUser = createAsyncThunk(
 export const clearUser = createAsyncThunk('auth/clearUser', async () => {
   clearAuthUser()
 })
+
+export const loginUserThunk = createAsyncThunk(
+  'auth/loginUser',
+  async (input: {email: string, password: string}) => {
+    return loginUser(input.email, input.password)
+  },
+)
 
 // Редьюсер лайка
 
@@ -126,6 +133,22 @@ const authSlice = createSlice({
       })
       .addCase(toggleFavoriteUser.rejected, (state, action) => {
         state.error = action.payload || 'Ошибка обновления лайка'
+      })
+      .addCase(loginUserThunk.pending, (state) => {
+        state.isLoading = true
+        state.error = null
+      })
+      .addCase(loginUserThunk.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.isAuthenticated = true
+        state.user = action.payload
+        state.error = null
+      })
+      .addCase(loginUserThunk.rejected, (state, action) => {
+        state.isLoading = false
+        state.user = null
+        state.isAuthenticated = true
+        state.error = action.error.message || 'Ошибка логина'
       })
   },
   selectors: {

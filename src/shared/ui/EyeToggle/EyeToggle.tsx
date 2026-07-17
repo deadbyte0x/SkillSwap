@@ -8,7 +8,7 @@ interface EyeToggleProps {
 
 export const EyeToggle = ({ isVisible, onClick }: EyeToggleProps) => {
   return (
-    <button onClick={onClick}>
+    <button type='button' onClick={onClick}>
       {/* если isVisible - показываем открытый глаз, иначе - закрытый */}
       {isVisible ? <SvgEye /> : <SvgEyeSlash />}
     </button>

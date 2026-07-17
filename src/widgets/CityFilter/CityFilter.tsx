@@ -17,7 +17,7 @@ export const CityFilter = ({ value, isShowAll, onShowAllClick, onCityChange }: C
   return (
     <div className={styles.filter}>
       <h3 className={styles.title}>Город</h3>
-      {visibleCity.map(city => (
+      {visibleCity.map((city) => (
         <div key={city} className={styles.cityRow}>
           {/* чекбокс активен если город в списке выбранных */}
           <CheckBox
@@ -29,9 +29,9 @@ export const CityFilter = ({ value, isShowAll, onShowAllClick, onCityChange }: C
         </div>
       ))}
       {/* кнопка показать все города */}
-      <button onClick={onShowAllClick}>
+      <button type="button" onClick={onShowAllClick}>
         Все города {isShowAll ? <ChevronUpIcon /> : <ChevronDownIcon />}
       </button>
     </div>
-  );
+  )
 };

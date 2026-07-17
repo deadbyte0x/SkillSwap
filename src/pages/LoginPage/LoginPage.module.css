@@ -1,0 +1,175 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-sizing: border-box;
+  padding: 0 152px;
+  align-items: center;
+}
+
+.title {
+  font-family: var(--font-jost);
+  font-weight: var(--font-weight-medium);
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -1.1%;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--color-text)
+}
+
+.cards {
+  display: flex;
+  gap: 24px;
+}
+
+.card {
+  width: 556px;
+  height: 692px;
+  opacity: 1;
+  gap: 32px;
+  border-radius: 12px;
+  padding-inline: 60px;
+  background-color: var(--color-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textCard {
+  gap: 40px;
+  padding-block: 132px;
+  color: var(--color-text)
+}
+
+.illustration {
+  width: 300px;
+  height: 300px;
+}
+
+.textCardText {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.textCardTitle {
+  font-family: var(--font-jost);
+  font-weight: var(--font-weight-medium);
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -1.1%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.textCardSubtitle {
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-regular);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.formCard {
+  padding-block: 112px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.formUpper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.externalLoginButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.separationLine {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.separator {
+  width: 200px;
+  height: 0;
+  opacity: 1;
+  border: 1px solid var(--color-disabled)
+
+}
+
+.separatorText {
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-regular);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2%;
+  vertical-align: middle;
+  color: var(--color-text);
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.registerButton {
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-regular);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2%;
+  color: var(--color-text-link);
+}
+
+.registerButton:hover {
+  opacity: 0.7;
+}
+
+.errorInputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.formError {
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-regular);
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 2%;
+  color: var(--color-error);
+}

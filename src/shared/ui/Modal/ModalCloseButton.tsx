@@ -7,8 +7,8 @@ interface ModalCloseButtonProps {
 
 export const ModalCloseButton = ({ onClick }: ModalCloseButtonProps) => {
   return (
-    <button className={styles.closeButton} onClick={onClick} aria-label="Закрыть">
+    <button type="button" className={styles.closeButton} onClick={onClick} aria-label="Закрыть">
       <CrossIcon width={24} height={24} />
     </button>
-  );
+  )
 };

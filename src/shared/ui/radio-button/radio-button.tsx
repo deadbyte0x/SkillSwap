@@ -11,12 +11,12 @@ interface RadioButtonProps {
 export const RadioButton = ({checked, onClick}:RadioButtonProps) => {
 
     return (
-<button className={styles.container} onClick={onClick}>
-  {checked ? (
-    <RadiobuttonActiveIcon className={styles.filledRadio} />
-  ) : (
-    <RadiobuttonEmptyIcon />
-  )}
-</button>
+      <button type="button" className={styles.container} onClick={onClick}>
+        {checked ? (
+          <RadiobuttonActiveIcon className={styles.filledRadio} />
+        ) : (
+          <RadiobuttonEmptyIcon />
+        )}
+      </button>
     )
 }
