@@ -45,8 +45,7 @@ export const UserCardsSection = ({
             <UserCard
               key={user.id}
               user={user}
-              teachSkill={{ title: skill.title, subCategoryId: skill.subCategoryId }}
-              onDetailsClick={() => {}}
+              teachSkill={skill}
             />
           )
         })}

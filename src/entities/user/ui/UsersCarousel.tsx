@@ -9,10 +9,10 @@ import styles from './UsersCarousel.module.css';
 export interface UserCarouselItem {
   user: User;
   teachSkill: {
+    id: string
     title: string;
     subCategoryId: string;
   };
-  onDetailsClick: () => void;
 }
 
 interface UsersCarouselProps {
@@ -68,12 +68,11 @@ export const UsersCarousel = ({ items, title = 'Похожие предложе�
         <div className={styles.viewport} ref={emblaRef}>
           {/* container — обёртка слайдов, должен быть flex-контейнером */}
           <div className={styles.container}>
-            {items.map(({ user, teachSkill, onDetailsClick }) => (
+            {items.map(({ user, teachSkill }) => (
               <div className={styles.slide} key={user.id}>
                 <UserCard
                   user={user}
                   teachSkill={teachSkill}
-                  onDetailsClick={onDetailsClick}
                 />
               </div>
             ))}
