@@ -1,50 +1,36 @@
-import { useState } from 'react';
 import styles from './CityFilter.module.css';
 import { CheckBox } from '../../shared/ui/CheckBox';
 import { ChevronDownIcon, ChevronUpIcon } from '../../shared/ui/icons';
-
-interface City {
-  id: string;
-  name: string;
-}
+import { Cities } from '@/shared/lib/constants.ts'
 
 interface CityFilterProps {
-  cities: City[]; // список городов
-  onCityChange: (cityId: string | null) => void; // колбэк при выборе города
+  value: string[]
+  isShowAll: boolean
+  onShowAllClick: () => void
+  onCityChange: (cityId: string) => void; // колбэк при выборе города
 }
 
-export const CityFilter = ({ cities, onCityChange }: CityFilterProps) => {
-  const [selectedCityId, setSelectedCityId] = useState<string | null>(null); // выбранный город
-  const [showAll, setShowAll] = useState(false); // показывать все или 6
-
-  // при клике: если город уже выбран — убираем, если нет — добавляем
-  const handleCityClick = (cityId: string) => {
-  const newValue = selectedCityId === cityId ? null : cityId;
-
-    setSelectedCityId(newValue);
-    onCityChange(newValue);
-  };
-
+export const CityFilter = ({ value, isShowAll, onShowAllClick, onCityChange }: CityFilterProps) => {
   // показываем первые 6 или все
-  const visibleCity = showAll ? cities : cities.slice(0, 6);
+  const visibleCity = isShowAll ? Cities : Cities.slice(0, 6);
 
   return (
     <div className={styles.filter}>
       <h3 className={styles.title}>Город</h3>
       {visibleCity.map(city => (
-        <div key={city.id} className={styles.cityRow}>
+        <div key={city} className={styles.cityRow}>
           {/* чекбокс активен если город в списке выбранных */}
           <CheckBox
-            isActive={selectedCityId === city.id}
+            isActive={value.includes(city)}
             type="check"
-            onClick={() => handleCityClick(city.id)}
+            onClick={() => onCityChange(city)}
           />
-          <span>{city.name}</span>
+          <span>{city}</span>
         </div>
       ))}
       {/* кнопка показать все города */}
-      <button onClick={() => setShowAll(!showAll)} className={styles.showAllButton}>
-        Все города {showAll ? <ChevronUpIcon /> : <ChevronDownIcon />}
+      <button onClick={onShowAllClick}>
+        Все города {isShowAll ? <ChevronUpIcon /> : <ChevronDownIcon />}
       </button>
     </div>
   );
